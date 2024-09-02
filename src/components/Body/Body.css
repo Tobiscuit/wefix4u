@@ -1,0 +1,10 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: none;
+}
+
+.container__main__body {
+    background-color: white;
+    border-radius: .25rem;
+}
