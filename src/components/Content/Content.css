@@ -1,0 +1,23 @@
+.container-grid {
+    
+}
+
+.container-grid > article {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: white;
+}
+/* 
+.container-grid .section-left {
+    grid-template-columns: "left";
+    padding: 1rem;
+}
+
+.container-grid .section-right {
+    grid-template-columns: "right";
+    padding: 1rem;
+} */
+
+.paragraph {
+    padding: 1rem;
+}

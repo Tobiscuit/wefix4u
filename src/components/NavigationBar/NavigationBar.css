@@ -1,0 +1,48 @@
+.navigation-bar {
+    background: linear-gradient(45deg, #fdbe01 0%, #fdbe01 5%,transparent 5%, transparent 10%, #fdbe01 10%, #fdbe01 15%,transparent 15%,transparent 20%, #fdbe01 20%, #fdbe01 25%,transparent 25%,transparent 30%, #fdbe01 30%, #fdbe01 35%,transparent 35%,transparent 40%, #fdbe01 40%, #fdbe01 45%,transparent 45%,transparent 50%, #fdbe01 50%, #fdbe01 55%,transparent 55%,transparent 60%, #fdbe01 60%, #fdbe01 65%,transparent 65%,transparent 70%, #fdbe01 70%, #fdbe01 75%,transparent 70%,transparent 80%, #fdbe01 80%, #fdbe01 85%,transparent 85%,transparent 90%, #fdbe01 90%, #fdbe01 95%,transparent 95%);
+    background-size: 3em 3em;
+    background-color: #ffffff;
+    opacity: 1
+}
+
+.navigation-bar > ul {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    /* background-color: antiquewhite; */
+    padding: 1rem;
+}
+
+.navigation-bar > ul > li {
+    padding: 1em 1.25em;
+    background-color: antiquewhite;
+    border-radius: 10px;
+    margin: 0.25rem;
+}
+
+.navigation-bar > ul > li > a {
+    text-decoration: none;
+    color: black;
+}
+
+@media (max-width: 400px) {
+    .navigation-bar {
+        height: 100vh;
+    }
+    .navigation-bar > ul {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        list-style: none;
+        /* background-color: antiquewhite; */
+        padding: 1rem;
+    }
+    .navigation-bar > ul > li {
+        /* padding: .5em;
+        background-color: antiquewhite;
+        border-radius: 10px;
+        margin: 0.25rem; */
+    }
+  }
+
+  
