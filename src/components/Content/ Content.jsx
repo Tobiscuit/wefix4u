@@ -1,5 +1,7 @@
 import 'src/components/Content/Content.css';
 import phoneImage from 'src/static/images/broken_iphone.jpg';
+import React from 'react';
+
 
 function Content() {
   return (

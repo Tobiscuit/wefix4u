@@ -1,4 +1,5 @@
-import "src/components/Title/Title.css"
+import "./components/Title/Title.css"
+import React from 'react';
 
 const Title = () => {
     return <h1 className="title">Have your gadged fixed!</h1>

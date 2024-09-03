@@ -1,20 +1,20 @@
-import logo from 'src/logo.svg';
-import 'src/App.css';
-import NavigationBar from 'src/components/NavigationBar/NavigationBar';
-import Body from 'src/components/Body/Body';
-import Content from 'src/components/Content/ Content';
-import Footer from 'src/components/Footer.jsx/Footer';
-
+import './App.css';
+import NavigationBar from '/components/NavigationBar/NavigationBar';
+import Body from './components/Body/Body';
+import Content from '/components/Content/ Content';
+import Footer from '/components/Footer.jsx/Footer';
+import React from "react";
 
 const App = () => {
+
   return (
-    <div className="container__main">
+    <div className="container">
       <NavigationBar />
       <Body />
       <Content />
       <Footer />
     </div>
-  )
-}
+  );
+};
 
 export default App;

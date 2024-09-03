@@ -1,5 +1,6 @@
-import "src/components/Body/Body.css"
-import Title from "src/components/Title/Title"
+import "./Body.css"
+import Title from "./components/Title/Title"
+import React from 'react';
 
 const Body = () => {
     return (
