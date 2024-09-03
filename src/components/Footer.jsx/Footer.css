@@ -1,0 +1,10 @@
+.footer {
+  color: white; 
+}
+
+.footer__container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  background-color: #333;
+  padding: 1rem;
+}
