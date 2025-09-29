@@ -9,9 +9,8 @@ export default function Header() {
     <header className="bg-white shadow-md sticky top-0 z-50">
       <nav className="container mx-auto px-6 py-3 flex justify-between items-center">
         <a 
-          className="text-2xl font-bold text-[var(--trusted-blue)]" 
-          href="#" 
-          style={{ fontFamily: 'Montserrat, sans-serif' }}
+          className="text-2xl font-bold text-[var(--trusted-blue)] font-montserrat" 
+          href="#"
         >
           WE FIX 4U
         </a>

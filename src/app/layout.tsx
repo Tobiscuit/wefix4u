@@ -27,13 +27,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${montserrat.variable} ${roboto.variable}`}>
-      <head>
-        <link
-          href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
-          rel="stylesheet"
-        />
-      </head>
+    <html lang="en" className={`${montserrat.variable} ${roboto.variable} antialiased`}>
       <body className="bg-[var(--light-gray)]">
         {children}
       </body>

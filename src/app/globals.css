@@ -1,6 +1,10 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons+Outlined');
+@import 'tailwindcss';
+
+@theme inline {
+  --font-sans: var(--font-roboto);
+  --font-montserrat: var(--font-montserrat);
+}
 
 :root {
   --trusted-blue: #3D5AFE;
@@ -12,7 +16,7 @@
 }
 
 body {
-  font-family: var(--font-roboto), sans-serif;
+  font-family: var(--font-roboto), 'Roboto', sans-serif;
   background-color: var(--light-gray);
   color: var(--dark-text);
 }
@@ -23,7 +27,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-montserrat), sans-serif;
+  font-family: var(--font-montserrat), 'Montserrat', sans-serif;
 }
 
 .shadow-md {
