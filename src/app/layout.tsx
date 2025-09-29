@@ -19,6 +19,28 @@ const roboto = Roboto({
 export const metadata: Metadata = {
   title: 'WE FIX 4U - Tech Repair',
   description: 'Fast, reliable repairs for your favorite devices. From cracked screens to slow laptops, our certified technicians get you back up and running in no time.',
+  openGraph: {
+    title: 'WE FIX 4U - Tech Repair',
+    description: 'Fast, reliable repairs for your favorite devices. From cracked screens to slow laptops, our certified technicians get you back up and running in no time.',
+    url: 'https://wefix4u.vercel.app',
+    siteName: 'WE FIX 4U',
+    images: [
+      {
+        url: '/og-image.svg',
+        width: 1200,
+        height: 630,
+        alt: 'WE FIX 4U - Professional Tech Repair Services',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'WE FIX 4U - Tech Repair',
+    description: 'Fast, reliable repairs for your favorite devices. From cracked screens to slow laptops, our certified technicians get you back up and running in no time.',
+    images: ['/og-image.svg'],
+  },
 }
 
 export default function RootLayout({
