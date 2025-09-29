@@ -152,7 +152,7 @@ export default function GoogleReviews({
                 ) : (
                   <div className="w-10 h-10 bg-[var(--trusted-blue)] rounded-full flex items-center justify-center">
                     <span className="text-white font-bold text-sm">
-                      {review.authorName.charAt(0).toUpperCase()}
+                      {review.authorName?.charAt(0)?.toUpperCase() || '?'}
                     </span>
                   </div>
                 )}
@@ -160,7 +160,7 @@ export default function GoogleReviews({
               <div className="flex-1 min-w-0">
                 <div className="flex items-center justify-between">
                   <h4 className="font-semibold text-[var(--dark-text)] text-sm">
-                    {review.authorName}
+                    {review.authorName || 'Anonymous'}
                   </h4>
                   <div className="flex items-center">
                     {renderStars(review.rating)}
