@@ -21,14 +21,15 @@ export async function GET(request: NextRequest) {
   }
 
   try {
-    // Using the new Places API (New) endpoint
-    const url = `https://places.googleapis.com/v1/places/${placeId}?fields=reviews,rating,userRatingCount&key=${apiKey}`
+    // Using the new Places API (New) endpoint with correct format
+    const url = `https://places.googleapis.com/v1/places/${placeId}`
     
     const response = await fetch(url, {
       next: { revalidate: 3600 }, // Cache for 1 hour
       headers: {
         'Content-Type': 'application/json',
         'X-Goog-FieldMask': 'reviews,rating,userRatingCount',
+        'X-Goog-Api-Key': apiKey,
       },
     })
 
