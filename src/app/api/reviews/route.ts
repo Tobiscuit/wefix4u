@@ -28,7 +28,7 @@ export async function GET(request: NextRequest) {
       next: { revalidate: 3600 }, // Cache for 1 hour
       headers: {
         'Content-Type': 'application/json',
-        'X-Goog-FieldMask': 'reviews,rating,userRatingCount',
+        'X-Goog-FieldMask': 'id,displayName,reviews,rating,userRatingCount,googleMapsUri,formattedAddress,attributions',
         'X-Goog-Api-Key': apiKey,
       },
     })
@@ -53,23 +53,37 @@ export async function GET(request: NextRequest) {
 
     return NextResponse.json({
       reviews: reviews.map((review: {
-        time?: number
-        author_name?: string
-        profile_photo_url?: string
+        name?: string
+        relativePublishTimeDescription?: string
         rating?: number
-        text?: string | { text: string; languageCode: string }
-        relative_time_description?: string
+        text?: { text: string; languageCode: string }
+        originalText?: { text: string; languageCode: string }
+        authorAttribution?: {
+          displayName?: string
+          uri?: string
+          photoUri?: string
+        }
+        publishTime?: string
+        flagContentUri?: string
+        googleMapsUri?: string
       }) => ({
-        id: review.time || Date.now(),
-        authorName: review.author_name || 'Anonymous',
-        authorPhoto: review.profile_photo_url,
+        id: review.name || Date.now().toString(),
+        authorName: review.authorAttribution?.displayName || 'Anonymous',
+        authorPhoto: review.authorAttribution?.photoUri,
+        authorUri: review.authorAttribution?.uri,
         rating: review.rating || 0,
-        text: typeof review.text === 'string' ? review.text : review.text?.text || '',
-        time: review.time || Date.now(),
-        relativeTime: review.relative_time_description || 'Recently',
+        text: review.text?.text || review.originalText?.text || '',
+        time: review.publishTime ? new Date(review.publishTime).getTime() : Date.now(),
+        relativeTime: review.relativePublishTimeDescription || 'Recently',
+        flagContentUri: review.flagContentUri,
+        googleMapsUri: review.googleMapsUri,
       })),
       overallRating: rating,
       totalRatings,
+      placeName: data.displayName?.text || 'Business',
+      placeAddress: data.formattedAddress || '',
+      googleMapsUri: data.googleMapsUri || '',
+      attributions: data.attributions || [],
     })
   } catch (error) {
     console.error('Error fetching Google Reviews:', error)

@@ -3,19 +3,26 @@ import { useState, useEffect } from 'react'
 import Image from 'next/image'
 
 interface Review {
-  id: number
+  id: string
   authorName: string
   authorPhoto?: string
+  authorUri?: string
   rating: number
   text: string
   time: number
   relativeTime: string
+  flagContentUri?: string
+  googleMapsUri?: string
 }
 
 interface GoogleReviewsData {
   reviews: Review[]
   overallRating: number
   totalRatings: number
+  placeName?: string
+  placeAddress?: string
+  googleMapsUri?: string
+  attributions?: string[]
 }
 
 interface GoogleReviewsProps {
@@ -183,7 +190,7 @@ export default function GoogleReviews({
       {data.reviews.length > maxReviews && (
         <div className="text-center mt-6">
           <a
-            href={`https://www.google.com/maps/place/?q=place_id:${placeId}`}
+            href={data.googleMapsUri || `https://www.google.com/maps/place/?q=place_id:${placeId}`}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center text-[var(--trusted-blue)] hover:text-[var(--action-orange)] transition-colors duration-300 text-sm font-medium"
@@ -193,6 +200,31 @@ export default function GoogleReviews({
           </a>
         </div>
       )}
+
+      {/* Required Google Attribution */}
+      <div className="mt-4 pt-4 border-t border-gray-200">
+        <div className="flex items-center justify-center text-xs text-gray-500">
+          <span className="mr-1">Powered by</span>
+          <a
+            href="https://maps.google.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-600 hover:underline"
+          >
+            Google Maps
+          </a>
+        </div>
+        {data.attributions && data.attributions.length > 0 && (
+          <div className="mt-2 text-xs text-gray-400 text-center">
+            {data.attributions.map((attribution, index) => (
+              <span key={index}>
+                {attribution}
+                {index < data.attributions!.length - 1 && ', '}
+              </span>
+            ))}
+          </div>
+        )}
+      </div>
     </div>
   )
 }
