@@ -17,7 +17,7 @@ export default function Header() {
         
         <div className="hidden md:flex items-center space-x-6">
           <a 
-            className="active-nav-link text-gray-700 hover:text-[var(--action-orange)] transition-colors duration-300" 
+            className="text-gray-700 hover:text-[var(--action-orange)] hover:underline hover:font-bold transition-all duration-300" 
             href="#services"
           >
             Services
