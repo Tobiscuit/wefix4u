@@ -81,135 +81,68 @@ export default function ServicePage({ params }: { params: { service: string } })
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <Header />
-      
-      <main className="mt-8">
-        {/* Hero Section */}
-        <div className="px-4 md:px-20 lg:px-40">
-          <div className="max-w-[960px] mx-auto">
-            <div 
-              className="flex min-h-[400px] flex-col gap-6 bg-cover bg-center bg-no-repeat rounded-xl items-center justify-center p-4 md:gap-8"
-              style={{
-                backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.5) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuBhKiIFScv3WNjKXVnTG6xfWde7-cKonZ9l6IwtS1cmSolMOzLYCH5st3QYXLByk9l4o3HWnWUKjGc7jTwO6w0QMVIqs7t55-gOZIY3GSPNsRJWSZkI2xBD_7ca_PbQCJj9YMpRrhYFIC5TWV_fZt9qTtkcCtEq7Fd3CjVctI5_8Gx88H2LykOx2f-C3jtMfJRUuwAGCw1QXL6NMkBRxP047aj2tmUtxTSBdQsyV5hagqiZNrN67rL0kvY3uH6I1QXtgxfSMLD6nAFJ")`
-              }}
-            >
-              <span className="material-icons text-6xl text-white mb-4">
-                {service.icon}
-              </span>
-              <h1 className="text-white text-4xl font-black leading-tight tracking-[-0.033em] md:text-5xl text-center font-montserrat">
-                {service.title}
-              </h1>
-              <p className="text-white text-lg text-center max-w-2xl">
-                {service.description}
-              </p>
-            </div>
-          </div>
-        </div>
-
-        {/* Service Details */}
-        <div className="px-4 py-10">
-          <div className="max-w-[960px] mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              {/* What We Fix */}
-              <div>
-                <h2 className="text-[#111218] text-[22px] font-bold leading-tight tracking-[-0.015em] mb-6 font-montserrat">
-                  What We Fix
-                </h2>
-                
-                <div className="grid grid-cols-2 gap-4">
-                  {service.services.map((serviceItem, index) => (
-                    <div key={index} className="flex items-center p-4 bg-white rounded-xl shadow-sm">
-                      <span className="material-icons text-2xl text-[#3D5AFE] mr-3">
-                        check_circle
-                      </span>
-                      <span className="text-[#111218] font-medium">{serviceItem}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Service Details */}
-              <div>
-                <h3 className="text-[#111218] text-[22px] font-bold leading-tight tracking-[-0.015em] mb-6 font-montserrat">
-                  Service Details
-                </h3>
-                
-                <div className="bg-white p-6 rounded-xl shadow-sm">
-                  <div className="space-y-4">
-                    <div className="flex justify-between items-center py-2 border-b border-gray-200">
-                      <span className="text-[#5f678c]">Starting Price</span>
-                      <span className="text-[#111218] font-bold">{service.pricing}</span>
-                    </div>
-                    
-                    <div className="flex justify-between items-center py-2 border-b border-gray-200">
-                      <span className="text-[#5f678c]">Duration</span>
-                      <span className="text-[#111218] font-bold">{service.duration}</span>
-                    </div>
-                    
-                    <div className="flex justify-between items-center py-2 border-b border-gray-200">
-                      <span className="text-[#5f678c]">Warranty</span>
-                      <span className="text-[#111218] font-bold">{service.warranty}</span>
-                    </div>
-                  </div>
-
-                  <button className="w-full mt-6 bg-[#3D5AFE] text-white font-bold py-3 px-4 rounded-xl hover:bg-[#304FFE] transition-colors duration-300">
-                    Request Repair Quote
-                  </button>
-                  
-                  <button className="w-full mt-3 border-2 border-[#3D5AFE] text-[#3D5AFE] font-bold py-3 px-4 rounded-xl hover:bg-[#3D5AFE] hover:text-white transition-colors duration-300">
-                    Call Now
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* FAQ Section */}
-        <div className="px-4 py-10">
-          <div className="max-w-[960px] mx-auto">
-            <h2 className="text-center text-gray-900 text-[22px] font-bold leading-tight tracking-[-0.015em] mb-6 font-montserrat">
-              Frequently Asked Questions
-            </h2>
+    <div className="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden bg-[#F5F5F5]" style={{fontFamily: 'Roboto, "Noto Sans", sans-serif'}}>
+      <div className="layout-container flex h-full grow flex-col">
+        <div className="px-4 md:px-20 lg:px-40 flex flex-1 justify-center py-5">
+          <div className="layout-content-container flex flex-col max-w-[960px] flex-1">
+            <Header />
             
-            <div className="space-y-4 max-w-2xl mx-auto">
-              <details className="group bg-white p-4 rounded-xl shadow-sm">
-                <summary className="flex cursor-pointer items-center justify-between">
-                  <h3 className="text-gray-900 font-medium">How long do repairs take?</h3>
-                  <span className="material-icons transition group-open:rotate-180">expand_more</span>
-                </summary>
-                <p className="text-gray-600 mt-2">
-                  Most {service.title.toLowerCase()} repairs are completed within {service.duration}. 
-                  More complex issues may take longer, but we&apos;ll always provide an estimated timeframe upfront.
-                </p>
-              </details>
+            <main className="mt-8">
+              {/* Hero Section */}
+              <div className="@container">
+                <div className="@[480px]:p-4">
+                  <div 
+                    className="flex min-h-[400px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 rounded-xl items-center justify-center p-4" 
+                    data-alt="Abstract illustration of interconnected electronic components in blue and orange hues."
+                    style={{
+                      backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.5) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuBhKiIFScv3WNjKXVnTG6xfWde7-cKonZ9l6IwtS1cmSolMOzLYCH5st3QYXLByk9l4o3HWnWUKjGc7jTwO6w0QMVIqs7t55-gOZIY3GSPNsRJWSZkI2xBD_7ca_PbQCJj9YMpRrhYFIC5TWV_fZt9qTtkcCtEq7Fd3CjVctI5_8Gx88H2LykOx2f-C3jtMfJRUuwAGCw1QXL6NMkBRxP047aj2tmUtxTSBdQsyV5hagqiZNrN67rL0kvY3uH6I1QXtgxfSMLD6nAFJ")`
+                    }}
+                  >
+                    <h1 className="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em] text-center font-montserrat">
+                      {service.title}
+                    </h1>
+                  </div>
+                </div>
+              </div>
 
-              <details className="group bg-white p-4 rounded-xl shadow-sm">
-                <summary className="flex cursor-pointer items-center justify-between">
-                  <h3 className="text-gray-900 font-medium">Do you use original parts?</h3>
-                  <span className="material-icons transition group-open:rotate-180">expand_more</span>
-                </summary>
-                <p className="text-gray-600 mt-2">
-                  We use high-quality, third-party parts that meet or exceed original specifications. 
-                  This allows us to offer affordable repairs without compromising on quality. All our repairs come with a warranty.
-                </p>
-              </details>
+              <h2 className="text-[#111218] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-10 font-montserrat">What We Fix</h2>
+              <div className="grid grid-cols-2 gap-4 p-4">
+                {service.services.map((serviceItem, index) => (
+                  <div key={index} className="flex items-center p-4 bg-white rounded-xl shadow-sm">
+                    <span className="material-icons text-2xl text-[#3D5AFE] mr-3">
+                      check_circle
+                    </span>
+                    <span className="text-[#111218] font-medium">{serviceItem}</span>
+                  </div>
+                ))}
+              </div>
 
-              <details className="group bg-white p-4 rounded-xl shadow-sm">
-                <summary className="flex cursor-pointer items-center justify-between">
-                  <h3 className="text-gray-900 font-medium">Is my data safe during the repair?</h3>
-                  <span className="material-icons transition group-open:rotate-180">expand_more</span>
-                </summary>
-                <p className="text-gray-600 mt-2">
-                  We highly recommend you back up your data before any repair. While we take the utmost care, 
-                  we are not responsible for data loss. For most repairs, your data will not be affected.
-                </p>
-              </details>
-            </div>
-          </div>
-        </div>
-
+              <div className="px-4 py-10">
+                <h2 className="text-center text-[#111218] text-[22px] font-bold leading-tight tracking-[-0.015em] mb-6 font-montserrat">Frequently Asked Questions</h2>
+                <div className="space-y-4 max-w-2xl mx-auto">
+                  <details className="group bg-white p-4 rounded-xl shadow-sm">
+                    <summary className="flex cursor-pointer items-center justify-between">
+                      <h3 className="text-[#111218] font-medium">How long do repairs take?</h3>
+                      <span className="material-icons transition group-open:rotate-180">expand_more</span>
+                    </summary>
+                    <p className="text-[#5f678c] mt-2">Most common repairs, like screen or battery replacements, are completed within 1-2 hours. More complex issues may take longer, but we&apos;ll always provide an estimated timeframe upfront.</p>
+                  </details>
+                  <details className="group bg-white p-4 rounded-xl shadow-sm">
+                    <summary className="flex cursor-pointer items-center justify-between">
+                      <h3 className="text-[#111218] font-medium">Do you use original parts?</h3>
+                      <span className="material-icons transition group-open:rotate-180">expand_more</span>
+                    </summary>
+                    <p className="text-[#5f678c] mt-2">We use high-quality, third-party parts that meet or exceed original specifications. This allows us to offer affordable repairs without compromising on quality. All our repairs come with a warranty.</p>
+                  </details>
+                  <details className="group bg-white p-4 rounded-xl shadow-sm">
+                    <summary className="flex cursor-pointer items-center justify-between">
+                      <h3 className="text-[#111218] font-medium">Is my data safe during the repair?</h3>
+                      <span className="material-icons transition group-open:rotate-180">expand_more</span>
+                    </summary>
+                    <p className="text-[#5f678c] mt-2">We highly recommend you back up your data before any repair. While we take the utmost care, we are not responsible for data loss. For most repairs, your data will not be affected.</p>
+                  </details>
+                </div>
+              </div>
         {/* Contact Form Section */}
         <div className="bg-white p-8 rounded-xl shadow-sm mt-8 mx-4 md:mx-20 lg:mx-40">
           <div className="max-w-[960px] mx-auto">
