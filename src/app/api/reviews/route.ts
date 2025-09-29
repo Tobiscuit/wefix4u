@@ -38,6 +38,9 @@ export async function GET(request: NextRequest) {
 
     const data = await response.json()
     
+    // Debug logging to see what we're getting
+    console.log('Google Places API Response:', JSON.stringify(data, null, 2))
+    
     // The new Places API (New) doesn't have a status field like the old API
     if (!data) {
       throw new Error('No data received from Google Places API')
@@ -48,21 +51,14 @@ export async function GET(request: NextRequest) {
     const totalRatings = data.userRatingCount || 0
 
     return NextResponse.json({
-      reviews: reviews.map((review: {
-        time: number
-        author_name: string
-        profile_photo_url?: string
-        rating: number
-        text: string
-        relative_time_description: string
-      }) => ({
-        id: review.time,
-        authorName: review.author_name,
+      reviews: reviews.map((review: any) => ({
+        id: review.time || Date.now(),
+        authorName: review.author_name || 'Anonymous',
         authorPhoto: review.profile_photo_url,
-        rating: review.rating,
-        text: review.text,
-        time: review.time,
-        relativeTime: review.relative_time_description,
+        rating: review.rating || 0,
+        text: typeof review.text === 'string' ? review.text : review.text?.text || '',
+        time: review.time || Date.now(),
+        relativeTime: review.relative_time_description || 'Recently',
       })),
       overallRating: rating,
       totalRatings,
