@@ -25,7 +25,7 @@ export default function ServicesPage() {
         </div>
 
         {/* Services Section */}
-        <div className="px-4 md:px-20 lg:px-40 py-10">
+        <div id="services" className="px-4 md:px-20 lg:px-40 py-10">
           <div className="max-w-[960px] mx-auto">
             <h2 className="text-gray-900 text-[22px] font-bold leading-tight tracking-[-0.015em] pb-3 pt-10 font-montserrat">
               Our Services
@@ -35,7 +35,7 @@ export default function ServicesPage() {
               {/* Phone Repair Card */}
               <Link href="/services/phone-repair" className="group h-full">
                 <div className="flex flex-col gap-4 p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 h-full">
-                  <span className="material-symbols-outlined text-4xl text-blue-600">phone_iphone</span>
+                  <span className="material-icons text-4xl text-blue-600">phone_iphone</span>
                   <div className="flex-1">
                     <p className="text-gray-900 text-base font-medium leading-normal">Phone Repair</p>
                     <p className="text-gray-600 text-sm font-normal leading-normal mt-1">
@@ -44,7 +44,7 @@ export default function ServicesPage() {
                   </div>
                   <div className="flex items-center text-blue-600 font-medium group-hover:text-blue-700">
                     <span>Learn More</span>
-                    <span className="material-symbols-outlined ml-1">arrow_forward</span>
+                    <span className="material-icons ml-1">arrow_forward</span>
                   </div>
                 </div>
               </Link>
@@ -52,7 +52,7 @@ export default function ServicesPage() {
               {/* Laptop Repair Card */}
               <Link href="/services/laptop-repair" className="group h-full">
                 <div className="flex flex-col gap-4 p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 h-full">
-                  <span className="material-symbols-outlined text-4xl text-blue-600">laptop</span>
+                  <span className="material-icons text-4xl text-blue-600">laptop</span>
                   <div className="flex-1">
                     <p className="text-gray-900 text-base font-medium leading-normal">Laptop Repair</p>
                     <p className="text-gray-600 text-sm font-normal leading-normal mt-1">
@@ -61,7 +61,7 @@ export default function ServicesPage() {
                   </div>
                   <div className="flex items-center text-blue-600 font-medium group-hover:text-blue-700">
                     <span>Learn More</span>
-                    <span className="material-symbols-outlined ml-1">arrow_forward</span>
+                    <span className="material-icons ml-1">arrow_forward</span>
                   </div>
                 </div>
               </Link>
@@ -69,7 +69,7 @@ export default function ServicesPage() {
               {/* Tablet Repair Card */}
               <Link href="/services/tablet-repair" className="group h-full">
                 <div className="flex flex-col gap-4 p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 h-full">
-                  <span className="material-symbols-outlined text-4xl text-blue-600">tablet</span>
+                  <span className="material-icons text-4xl text-blue-600">tablet</span>
                   <div className="flex-1">
                     <p className="text-gray-900 text-base font-medium leading-normal">Tablet Repair</p>
                     <p className="text-gray-600 text-sm font-normal leading-normal mt-1">
@@ -78,7 +78,7 @@ export default function ServicesPage() {
                   </div>
                   <div className="flex items-center text-blue-600 font-medium group-hover:text-blue-700">
                     <span>Learn More</span>
-                    <span className="material-symbols-outlined ml-1">arrow_forward</span>
+                    <span className="material-icons ml-1">arrow_forward</span>
                   </div>
                 </div>
               </Link>
@@ -96,7 +96,7 @@ export default function ServicesPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {/* Screen Replacement */}
               <div className="flex flex-col gap-4 p-6 bg-white rounded-xl shadow-sm">
-                <span className="material-symbols-outlined text-4xl text-blue-600">phone_iphone</span>
+                <span className="material-icons text-4xl text-blue-600">phone_iphone</span>
                 <div>
                   <p className="text-gray-900 text-base font-medium leading-normal">Screen Replacement</p>
                   <p className="text-gray-600 text-sm font-normal leading-normal mt-1">
@@ -110,7 +110,7 @@ export default function ServicesPage() {
 
               {/* Battery Repair */}
               <div className="flex flex-col gap-4 p-6 bg-white rounded-xl shadow-sm">
-                <span className="material-symbols-outlined text-4xl text-blue-600">battery_charging_full</span>
+                <span className="material-icons text-4xl text-blue-600">battery_charging_full</span>
                 <div>
                   <p className="text-gray-900 text-base font-medium leading-normal">Battery Repair</p>
                   <p className="text-gray-600 text-sm font-normal leading-normal mt-1">
@@ -124,7 +124,7 @@ export default function ServicesPage() {
 
               {/* Charging Port Repair */}
               <div className="flex flex-col gap-4 p-6 bg-white rounded-xl shadow-sm">
-                <span className="material-symbols-outlined text-4xl text-blue-600">power</span>
+                <span className="material-icons text-4xl text-blue-600">power</span>
                 <div>
                   <p className="text-gray-900 text-base font-medium leading-normal">Charging Port Repair</p>
                   <p className="text-gray-600 text-sm font-normal leading-normal mt-1">
@@ -138,7 +138,7 @@ export default function ServicesPage() {
 
               {/* Water Damage Repair */}
               <div className="flex flex-col gap-4 p-6 bg-white rounded-xl shadow-sm">
-                <span className="material-symbols-outlined text-4xl text-blue-600">water_drop</span>
+                <span className="material-icons text-4xl text-blue-600">water_drop</span>
                 <div>
                   <p className="text-gray-900 text-base font-medium leading-normal">Water Damage Repair</p>
                   <p className="text-gray-600 text-sm font-normal leading-normal mt-1">
@@ -152,7 +152,7 @@ export default function ServicesPage() {
 
               {/* Software Issues */}
               <div className="flex flex-col gap-4 p-6 bg-white rounded-xl shadow-sm">
-                <span className="material-symbols-outlined text-4xl text-blue-600">build_circle</span>
+                <span className="material-icons text-4xl text-blue-600">build_circle</span>
                 <div>
                   <p className="text-gray-900 text-base font-medium leading-normal">Software Issues</p>
                   <p className="text-gray-600 text-sm font-normal leading-normal mt-1">
@@ -166,7 +166,7 @@ export default function ServicesPage() {
 
               {/* Other Phone Repairs */}
               <div className="flex flex-col gap-4 p-6 bg-white rounded-xl shadow-sm">
-                <span className="material-symbols-outlined text-4xl text-blue-600">build</span>
+                <span className="material-icons text-4xl text-blue-600">build</span>
                 <div>
                   <p className="text-gray-900 text-base font-medium leading-normal">Other Phone Repairs</p>
                   <p className="text-gray-600 text-sm font-normal leading-normal mt-1">
@@ -192,7 +192,7 @@ export default function ServicesPage() {
               <details className="group bg-white p-4 rounded-xl shadow-sm">
                 <summary className="flex cursor-pointer items-center justify-between">
                   <h3 className="text-gray-900 font-medium">How long do repairs take?</h3>
-                  <span className="material-symbols-outlined transition group-open:rotate-180">expand_more</span>
+                  <span className="material-icons transition group-open:rotate-180">expand_more</span>
                 </summary>
                 <p className="text-gray-600 mt-2">
                   Most common repairs, like screen or battery replacements, are completed within 1-2 hours. 
@@ -203,7 +203,7 @@ export default function ServicesPage() {
               <details className="group bg-white p-4 rounded-xl shadow-sm">
                 <summary className="flex cursor-pointer items-center justify-between">
                   <h3 className="text-gray-900 font-medium">Do you use original parts?</h3>
-                  <span className="material-symbols-outlined transition group-open:rotate-180">expand_more</span>
+                  <span className="material-icons transition group-open:rotate-180">expand_more</span>
                 </summary>
                 <p className="text-gray-600 mt-2">
                   We use high-quality, third-party parts that meet or exceed original specifications. 
@@ -214,7 +214,7 @@ export default function ServicesPage() {
               <details className="group bg-white p-4 rounded-xl shadow-sm">
                 <summary className="flex cursor-pointer items-center justify-between">
                   <h3 className="text-gray-900 font-medium">Is my data safe during the repair?</h3>
-                  <span className="material-symbols-outlined transition group-open:rotate-180">expand_more</span>
+                  <span className="material-icons transition group-open:rotate-180">expand_more</span>
                 </summary>
                 <p className="text-gray-600 mt-2">
                   We highly recommend you back up your data before any repair. While we take the utmost care, 

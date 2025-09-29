@@ -19,16 +19,16 @@ export default function Header() {
         </Link>
         
         <div className="hidden md:flex items-center space-x-6">
-          <Link 
+          <a 
             className={`transition-all duration-300 ${
-              pathname === '/services' 
+              pathname === '/services' || pathname.startsWith('/services/')
                 ? 'text-[var(--action-orange)] font-bold underline' 
                 : 'text-gray-700 hover:text-[var(--action-orange)] hover:underline hover:font-bold'
             }`}
-            href="/services"
+            href="/services#services"
           >
             Services
-          </Link>
+          </a>
           <a 
             className="text-gray-700 hover:text-[var(--action-orange)] hover:underline hover:font-bold transition-all duration-300" 
             href="#shop"
@@ -69,7 +69,7 @@ export default function Header() {
             className="text-gray-700 focus:outline-none"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
-            <span className="material-icons-outlined">
+            <span className="material-icons">
               menu
             </span>
           </button>
@@ -80,17 +80,17 @@ export default function Header() {
       {isMobileMenuOpen && (
         <div className="md:hidden bg-white border-t border-gray-200 px-6 py-4">
           <div className="flex flex-col space-y-4">
-            <Link 
+            <a 
               className={`transition-colors duration-300 ${
-                pathname === '/services' 
+                pathname === '/services' || pathname.startsWith('/services/')
                   ? 'text-[var(--action-orange)] font-bold' 
                   : 'text-gray-700 hover:text-[var(--action-orange)]'
               }`}
-              href="/services"
+              href="/services#services"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Services
-            </Link>
+            </a>
             <a 
               className="text-gray-700 hover:text-[var(--action-orange)] transition-colors duration-300" 
               href="#shop"

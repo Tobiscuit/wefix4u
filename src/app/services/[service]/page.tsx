@@ -94,7 +94,7 @@ export default function ServicePage({ params }: { params: { service: string } })
                 backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.5) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuBhKiIFScv3WNjKXVnTG6xfWde7-cKonZ9l6IwtS1cmSolMOzLYCH5st3QYXLByk9l4o3HWnWUKjGc7jTwO6w0QMVIqs7t55-gOZIY3GSPNsRJWSZkI2xBD_7ca_PbQCJj9YMpRrhYFIC5TWV_fZt9qTtkcCtEq7Fd3CjVctI5_8Gx88H2LykOx2f-C3jtMfJRUuwAGCw1QXL6NMkBRxP047aj2tmUtxTSBdQsyV5hagqiZNrN67rL0kvY3uH6I1QXtgxfSMLD6nAFJ")`
               }}
             >
-              <span className="material-symbols-outlined text-6xl text-white mb-4">
+              <span className="material-icons text-6xl text-white mb-4">
                 {service.icon}
               </span>
               <h1 className="text-white text-4xl font-black leading-tight tracking-[-0.033em] md:text-5xl text-center font-montserrat">
@@ -120,7 +120,7 @@ export default function ServicePage({ params }: { params: { service: string } })
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {service.services.map((serviceItem, index) => (
                     <div key={index} className="flex items-center p-4 bg-white rounded-xl shadow-sm">
-                      <span className="material-symbols-outlined text-2xl text-blue-600 mr-3">
+                      <span className="material-icons text-2xl text-blue-600 mr-3">
                         check_circle
                       </span>
                       <span className="text-gray-900 font-medium">{serviceItem}</span>
@@ -177,7 +177,7 @@ export default function ServicePage({ params }: { params: { service: string } })
               <details className="group bg-white p-4 rounded-xl shadow-sm">
                 <summary className="flex cursor-pointer items-center justify-between">
                   <h3 className="text-gray-900 font-medium">How long do repairs take?</h3>
-                  <span className="material-symbols-outlined transition group-open:rotate-180">expand_more</span>
+                  <span className="material-icons transition group-open:rotate-180">expand_more</span>
                 </summary>
                 <p className="text-gray-600 mt-2">
                   Most {service.title.toLowerCase()} repairs are completed within {service.duration}. 
@@ -188,7 +188,7 @@ export default function ServicePage({ params }: { params: { service: string } })
               <details className="group bg-white p-4 rounded-xl shadow-sm">
                 <summary className="flex cursor-pointer items-center justify-between">
                   <h3 className="text-gray-900 font-medium">Do you use original parts?</h3>
-                  <span className="material-symbols-outlined transition group-open:rotate-180">expand_more</span>
+                  <span className="material-icons transition group-open:rotate-180">expand_more</span>
                 </summary>
                 <p className="text-gray-600 mt-2">
                   We use high-quality, third-party parts that meet or exceed original specifications. 
@@ -199,7 +199,7 @@ export default function ServicePage({ params }: { params: { service: string } })
               <details className="group bg-white p-4 rounded-xl shadow-sm">
                 <summary className="flex cursor-pointer items-center justify-between">
                   <h3 className="text-gray-900 font-medium">Is my data safe during the repair?</h3>
-                  <span className="material-symbols-outlined transition group-open:rotate-180">expand_more</span>
+                  <span className="material-icons transition group-open:rotate-180">expand_more</span>
                 </summary>
                 <p className="text-gray-600 mt-2">
                   We highly recommend you back up your data before any repair. While we take the utmost care, 
