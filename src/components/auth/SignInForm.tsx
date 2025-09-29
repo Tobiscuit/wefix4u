@@ -102,7 +102,7 @@ export default function SignInForm() {
       
       <div className="mt-4 text-center">
         <p className="text-sm text-[#5f678c]">
-          Don't have an account?{' '}
+          Don&apos;t have an account?{' '}
           <a href="/sign-up" className="text-[#3D5AFE] hover:underline">
             Sign up
           </a>

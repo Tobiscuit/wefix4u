@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { signUp } from 'aws-amplify/auth';
-import { useRouter } from 'next/navigation';
+// import { useRouter } from 'next/navigation'; // Not used yet
 
 export default function SignUpForm() {
   const [formData, setFormData] = useState({
