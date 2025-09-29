@@ -21,7 +21,7 @@ export default function Header() {
         <div className="hidden md:flex items-center space-x-6">
           <Link 
             className={`transition-all duration-300 ${
-              pathname === '/' || pathname.startsWith('/services/')
+              pathname.startsWith('/services/')
                 ? 'text-[var(--action-orange)] font-bold underline' 
                 : 'text-gray-700 hover:text-[var(--action-orange)] hover:underline hover:font-bold'
             }`}
@@ -82,7 +82,7 @@ export default function Header() {
           <div className="flex flex-col space-y-4">
             <Link 
               className={`transition-colors duration-300 ${
-                pathname === '/' || pathname.startsWith('/services/')
+                pathname.startsWith('/services/')
                   ? 'text-[var(--action-orange)] font-bold' 
                   : 'text-gray-700 hover:text-[var(--action-orange)]'
               }`}
