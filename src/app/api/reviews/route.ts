@@ -51,7 +51,14 @@ export async function GET(request: NextRequest) {
     const totalRatings = data.userRatingCount || 0
 
     return NextResponse.json({
-      reviews: reviews.map((review: any) => ({
+      reviews: reviews.map((review: {
+        time?: number
+        author_name?: string
+        profile_photo_url?: string
+        rating?: number
+        text?: string | { text: string; languageCode: string }
+        relative_time_description?: string
+      }) => ({
         id: review.time || Date.now(),
         authorName: review.author_name || 'Anonymous',
         authorPhoto: review.profile_photo_url,
