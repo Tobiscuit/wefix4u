@@ -1,5 +1,6 @@
 'use client'
 import { useState, useEffect } from 'react'
+import Image from 'next/image'
 
 interface Review {
   id: string
@@ -178,9 +179,11 @@ export default function Testimonials() {
               <div key={index} className="py-4 text-left">
                 <div className="flex items-center mb-2">
                   {testimonial.isGoogle && testimonial.authorAttribution?.photoUri ? (
-                    <img
+                    <Image
                       src={testimonial.authorAttribution.photoUri}
                       alt={testimonial.authorAttribution.displayName || testimonial.name}
+                      width={32}
+                      height={32}
                       className="w-8 h-8 rounded-full mr-3"
                     />
                   ) : (

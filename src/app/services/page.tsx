@@ -51,7 +51,7 @@ export default function ServicesPage() {
                 <div>
                   <p className="text-gray-900 text-base font-medium leading-normal">Battery Repair</p>
                   <p className="text-gray-600 text-sm font-normal leading-normal mt-1">
-                    Restore your phone's battery life with a quick and efficient replacement.
+                    Restore your phone&apos;s battery life with a quick and efficient replacement.
                   </p>
                 </div>
                 <button className="flex mt-auto min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 bg-blue-600 text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-blue-700">
@@ -107,7 +107,7 @@ export default function ServicesPage() {
                 <div>
                   <p className="text-gray-900 text-base font-medium leading-normal">Other Phone Repairs</p>
                   <p className="text-gray-600 text-sm font-normal leading-normal mt-1">
-                    If your issue isn't listed, describe it to us, and we'll see how we can help.
+                    If your issue isn&apos;t listed, describe it to us, and we&apos;ll see how we can help.
                   </p>
                 </div>
                 <button className="flex mt-auto min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 bg-blue-600 text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-blue-700">
@@ -133,7 +133,7 @@ export default function ServicesPage() {
                 </summary>
                 <p className="text-gray-600 mt-2">
                   Most common repairs, like screen or battery replacements, are completed within 1-2 hours. 
-                  More complex issues may take longer, but we'll always provide an estimated timeframe upfront.
+                  More complex issues may take longer, but we&apos;ll always provide an estimated timeframe upfront.
                 </p>
               </details>
 
