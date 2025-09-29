@@ -31,7 +31,7 @@ export default function WhyChooseUs() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10 text-center">
           {features.map((feature, index) => (
             <div key={index} className="flex flex-col items-center">
-              <span className="material-icons-outlined text-5xl mb-3">
+              <span className="material-icons text-5xl mb-3">
                 {feature.icon}
               </span>
               <h3 className="text-xl font-bold mb-2">

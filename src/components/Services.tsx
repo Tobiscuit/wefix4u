@@ -33,7 +33,7 @@ export default function Services() {
               className="bg-white p-8 rounded-lg shadow-md text-center flex flex-col items-center justify-between"
             >
               <div>
-                <span className="material-icons-outlined text-6xl text-[var(--trusted-blue)] mb-4">
+                <span className="material-icons text-6xl text-[var(--trusted-blue)] mb-4">
                   {service.icon}
                 </span>
                 <h3 className="text-2xl font-bold text-[var(--dark-text)] mb-2">

@@ -132,13 +132,13 @@ export default function Testimonials() {
 
     for (let i = 0; i < fullStars; i++) {
       stars.push(
-        <span key={i} className="material-icons-outlined text-lg">star</span>
+        <span key={i} className="material-icons text-lg">star</span>
       )
     }
 
     if (hasHalfStar) {
       stars.push(
-        <span key="half" className="material-icons-outlined text-lg">star_half</span>
+        <span key="half" className="material-icons text-lg">star_half</span>
       )
     }
 
@@ -170,7 +170,7 @@ export default function Testimonials() {
             </div>
           ) : error ? (
             <div className="text-center text-gray-500 py-8">
-              <span className="material-icons-outlined text-4xl mb-2 block">error_outline</span>
+              <span className="material-icons text-4xl mb-2 block">error_outline</span>
               <p>Unable to load reviews at this time.</p>
               <p className="text-sm mt-1">Showing static testimonials below.</p>
             </div>
