@@ -110,54 +110,54 @@ export default function ServicePage({ params }: { params: { service: string } })
         {/* Service Details */}
         <div className="px-4 py-10">
           <div className="max-w-[960px] mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-              {/* Service Info Cards */}
-              <div className="lg:col-span-2">
-                <h2 className="text-gray-900 text-[22px] font-bold leading-tight tracking-[-0.015em] mb-6 font-montserrat">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              {/* What We Fix */}
+              <div>
+                <h2 className="text-[#111218] text-[22px] font-bold leading-tight tracking-[-0.015em] mb-6 font-montserrat">
                   What We Fix
                 </h2>
                 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="grid grid-cols-2 gap-4">
                   {service.services.map((serviceItem, index) => (
                     <div key={index} className="flex items-center p-4 bg-white rounded-xl shadow-sm">
-                      <span className="material-icons text-2xl text-blue-600 mr-3">
+                      <span className="material-icons text-2xl text-[#3D5AFE] mr-3">
                         check_circle
                       </span>
-                      <span className="text-gray-900 font-medium">{serviceItem}</span>
+                      <span className="text-[#111218] font-medium">{serviceItem}</span>
                     </div>
                   ))}
                 </div>
               </div>
 
-              {/* Pricing & Info Sidebar */}
-              <div className="lg:col-span-1">
-                <div className="bg-white p-6 rounded-xl shadow-sm sticky top-24">
-                  <h3 className="text-gray-900 text-lg font-bold mb-4 font-montserrat">
-                    Service Details
-                  </h3>
-                  
+              {/* Service Details */}
+              <div>
+                <h3 className="text-[#111218] text-[22px] font-bold leading-tight tracking-[-0.015em] mb-6 font-montserrat">
+                  Service Details
+                </h3>
+                
+                <div className="bg-white p-6 rounded-xl shadow-sm">
                   <div className="space-y-4">
                     <div className="flex justify-between items-center py-2 border-b border-gray-200">
-                      <span className="text-gray-600">Starting Price</span>
-                      <span className="text-gray-900 font-bold">{service.pricing}</span>
+                      <span className="text-[#5f678c]">Starting Price</span>
+                      <span className="text-[#111218] font-bold">{service.pricing}</span>
                     </div>
                     
                     <div className="flex justify-between items-center py-2 border-b border-gray-200">
-                      <span className="text-gray-600">Duration</span>
-                      <span className="text-gray-900 font-bold">{service.duration}</span>
+                      <span className="text-[#5f678c]">Duration</span>
+                      <span className="text-[#111218] font-bold">{service.duration}</span>
                     </div>
                     
                     <div className="flex justify-between items-center py-2 border-b border-gray-200">
-                      <span className="text-gray-600">Warranty</span>
-                      <span className="text-gray-900 font-bold">{service.warranty}</span>
+                      <span className="text-[#5f678c]">Warranty</span>
+                      <span className="text-[#111218] font-bold">{service.warranty}</span>
                     </div>
                   </div>
 
-                  <button className="w-full mt-6 bg-blue-600 text-white font-bold py-3 px-4 rounded-xl hover:bg-blue-700 transition-colors duration-300">
+                  <button className="w-full mt-6 bg-[#3D5AFE] text-white font-bold py-3 px-4 rounded-xl hover:bg-[#304FFE] transition-colors duration-300">
                     Request Repair Quote
                   </button>
                   
-                  <button className="w-full mt-3 border-2 border-blue-600 text-blue-600 font-bold py-3 px-4 rounded-xl hover:bg-blue-600 hover:text-white transition-colors duration-300">
+                  <button className="w-full mt-3 border-2 border-[#3D5AFE] text-[#3D5AFE] font-bold py-3 px-4 rounded-xl hover:bg-[#3D5AFE] hover:text-white transition-colors duration-300">
                     Call Now
                   </button>
                 </div>
