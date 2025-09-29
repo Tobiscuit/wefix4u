@@ -25,7 +25,7 @@ export default function ServicesPage() {
         </div>
 
         {/* Services Section */}
-        <div className="px-4 py-10">
+        <div className="px-4 md:px-20 lg:px-40 py-10">
           <div className="max-w-[960px] mx-auto">
             <h2 className="text-gray-900 text-[22px] font-bold leading-tight tracking-[-0.015em] pb-3 pt-10 font-montserrat">
               Our Services
@@ -33,16 +33,16 @@ export default function ServicesPage() {
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {/* Phone Repair Card */}
-              <Link href="/services/phone-repair" className="group">
-                <div className="flex flex-col gap-4 p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300">
+              <Link href="/services/phone-repair" className="group h-full">
+                <div className="flex flex-col gap-4 p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 h-full">
                   <span className="material-symbols-outlined text-4xl text-blue-600">phone_iphone</span>
-                  <div>
+                  <div className="flex-1">
                     <p className="text-gray-900 text-base font-medium leading-normal">Phone Repair</p>
                     <p className="text-gray-600 text-sm font-normal leading-normal mt-1">
                       Screen replacement, battery repair, water damage, and more for all phone models.
                     </p>
                   </div>
-                  <div className="flex mt-auto items-center text-blue-600 font-medium group-hover:text-blue-700">
+                  <div className="flex items-center text-blue-600 font-medium group-hover:text-blue-700">
                     <span>Learn More</span>
                     <span className="material-symbols-outlined ml-1">arrow_forward</span>
                   </div>
@@ -50,16 +50,16 @@ export default function ServicesPage() {
               </Link>
 
               {/* Laptop Repair Card */}
-              <Link href="/services/laptop-repair" className="group">
-                <div className="flex flex-col gap-4 p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300">
+              <Link href="/services/laptop-repair" className="group h-full">
+                <div className="flex flex-col gap-4 p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 h-full">
                   <span className="material-symbols-outlined text-4xl text-blue-600">laptop</span>
-                  <div>
+                  <div className="flex-1">
                     <p className="text-gray-900 text-base font-medium leading-normal">Laptop Repair</p>
                     <p className="text-gray-600 text-sm font-normal leading-normal mt-1">
                       Screen replacement, keyboard repair, hardware upgrades, and more for all laptop brands.
                     </p>
                   </div>
-                  <div className="flex mt-auto items-center text-blue-600 font-medium group-hover:text-blue-700">
+                  <div className="flex items-center text-blue-600 font-medium group-hover:text-blue-700">
                     <span>Learn More</span>
                     <span className="material-symbols-outlined ml-1">arrow_forward</span>
                   </div>
@@ -67,16 +67,16 @@ export default function ServicesPage() {
               </Link>
 
               {/* Tablet Repair Card */}
-              <Link href="/services/tablet-repair" className="group">
-                <div className="flex flex-col gap-4 p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300">
+              <Link href="/services/tablet-repair" className="group h-full">
+                <div className="flex flex-col gap-4 p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 h-full">
                   <span className="material-symbols-outlined text-4xl text-blue-600">tablet</span>
-                  <div>
+                  <div className="flex-1">
                     <p className="text-gray-900 text-base font-medium leading-normal">Tablet Repair</p>
                     <p className="text-gray-600 text-sm font-normal leading-normal mt-1">
                       iPad repair, Android tablet repair, screen replacement, and more tablet services.
                     </p>
                   </div>
-                  <div className="flex mt-auto items-center text-blue-600 font-medium group-hover:text-blue-700">
+                  <div className="flex items-center text-blue-600 font-medium group-hover:text-blue-700">
                     <span>Learn More</span>
                     <span className="material-symbols-outlined ml-1">arrow_forward</span>
                   </div>
@@ -87,7 +87,7 @@ export default function ServicesPage() {
         </div>
 
         {/* Individual Service Cards - Keep the original detailed cards */}
-        <div className="px-4 py-10">
+        <div className="px-4 md:px-20 lg:px-40 py-10">
           <div className="max-w-[960px] mx-auto">
             <h2 className="text-gray-900 text-[22px] font-bold leading-tight tracking-[-0.015em] pb-3 pt-10 font-montserrat">
               Phone Repair Services
@@ -182,7 +182,7 @@ export default function ServicesPage() {
         </div>
 
         {/* FAQ Section */}
-        <div className="px-4 py-10">
+        <div className="px-4 md:px-20 lg:px-40 py-10">
           <div className="max-w-[960px] mx-auto">
             <h2 className="text-center text-gray-900 text-[22px] font-bold leading-tight tracking-[-0.015em] mb-6 font-montserrat">
               Frequently Asked Questions
