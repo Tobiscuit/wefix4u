@@ -24,13 +24,26 @@ interface GoogleReviewsData {
   attributions?: string[]
 }
 
+interface TestimonialItem {
+  name: string
+  rating: number
+  text: string
+  timeAgo: string
+  isGoogle: boolean
+  authorAttribution?: {
+    displayName: string
+    uri?: string
+    photoUri?: string
+  }
+}
+
 export default function Testimonials() {
   const [googleReviews, setGoogleReviews] = useState<GoogleReviewsData | null>(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
 
   // Static testimonials as fallback
-  const staticTestimonials = [
+  const staticTestimonials: TestimonialItem[] = [
     {
       name: 'Sarah L.',
       rating: 5,
@@ -90,15 +103,18 @@ export default function Testimonials() {
   }, [])
 
   // Combine Google reviews with static testimonials
-  const allTestimonials = [
+  const allTestimonials: TestimonialItem[] = [
     ...(googleReviews?.reviews.slice(0, 2).map(review => ({
       name: review.authorName,
       rating: review.rating,
       text: review.text,
       timeAgo: review.relativeTime,
       isGoogle: true,
-      authorPhoto: review.authorPhoto,
-      authorUri: review.authorUri
+      authorAttribution: {
+        displayName: review.authorName,
+        uri: review.authorUri,
+        photoUri: review.authorPhoto
+      }
     })) || []),
     ...staticTestimonials.slice(0, 2)
   ]
@@ -159,10 +175,10 @@ export default function Testimonials() {
             allTestimonials.map((testimonial, index) => (
               <div key={index} className="py-4 text-left">
                 <div className="flex items-center mb-2">
-                  {testimonial.isGoogle && testimonial.authorPhoto ? (
+                  {testimonial.isGoogle && testimonial.authorAttribution?.photoUri ? (
                     <img
-                      src={testimonial.authorPhoto}
-                      alt={testimonial.name}
+                      src={testimonial.authorAttribution.photoUri}
+                      alt={testimonial.authorAttribution.displayName || testimonial.name}
                       className="w-8 h-8 rounded-full mr-3"
                     />
                   ) : (
@@ -173,14 +189,14 @@ export default function Testimonials() {
                     </div>
                   )}
                   <h4 className="font-bold text-[var(--dark-text)] mr-3">
-                    {testimonial.isGoogle && testimonial.authorUri ? (
+                    {testimonial.isGoogle && testimonial.authorAttribution?.uri ? (
                       <a
-                        href={testimonial.authorUri}
+                        href={testimonial.authorAttribution.uri}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="hover:text-[var(--action-orange)] transition-colors"
                       >
-                        {testimonial.name}
+                        {testimonial.authorAttribution.displayName || testimonial.name}
                       </a>
                     ) : (
                       testimonial.name
