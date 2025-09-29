@@ -1,4 +1,6 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# WeFix4U
+
+A modern Next.js application built with the latest version (15.5.4) and React 19, ready for deployment on Vercel.
 
 ## Getting Started
 
