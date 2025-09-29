@@ -1,3 +1,5 @@
+import GoogleReviews from './GoogleReviews'
+
 export default function Testimonials() {
   const testimonials = [
     {
@@ -48,11 +50,11 @@ export default function Testimonials() {
 
   return (
     <section className="py-20 bg-white" id="reviews">
-      <div className="container mx-auto px-6 text-center max-w-4xl">
+      <div className="container mx-auto px-6 text-center max-w-6xl">
         <h2 className="text-4xl font-bold text-center text-[var(--dark-text)] mb-4">
           What Our Customers Say
         </h2>
-        <div className="flex justify-center items-center mb-6">
+        <div className="flex justify-center items-center mb-8">
           <p className="text-lg text-[var(--body-text)] mr-2">4.9</p>
           <div className="flex text-yellow-500">
             <span className="material-icons-outlined text-2xl">star</span>
@@ -62,34 +64,46 @@ export default function Testimonials() {
             <span className="material-icons-outlined text-2xl">star_half</span>
           </div>
         </div>
-        <div className="h-96 overflow-y-auto border-y border-gray-200 divide-y divide-gray-200 p-4 bg-gray-50 rounded-lg shadow-inner">
-          {testimonials.map((testimonial, index) => (
-            <div key={index} className="py-4 text-left">
-              <div className="flex items-center mb-2">
-                <h4 className="font-bold text-[var(--dark-text)] mr-3">
-                  {testimonial.name}
-                </h4>
-                <div className="flex text-yellow-500">
-                  {renderStars(testimonial.rating)}
-                </div>
-              </div>
-              <p className="text-[var(--body-text)] text-sm mb-1">
-                &ldquo;{testimonial.text}&rdquo;
-              </p>
-              <span className="text-xs text-gray-400">
-                {testimonial.timeAgo}
-              </span>
-            </div>
-          ))}
+        
+        {/* Google Reviews Section */}
+        <div className="mb-12">
+          <h3 className="text-2xl font-bold text-[var(--dark-text)] mb-6">
+            Google Reviews
+          </h3>
+          <div className="max-w-4xl mx-auto">
+            <GoogleReviews 
+              placeId={process.env.NEXT_PUBLIC_GOOGLE_PLACE_ID || ''} 
+              maxReviews={3}
+              showOverallRating={true}
+            />
+          </div>
         </div>
-        <div className="mt-8">
-          <a 
-            className="text-sm text-[var(--trusted-blue)] hover:underline" 
-            href="#" 
-            target="_blank"
-          >
-            View All Reviews on Google
-          </a>
+
+        {/* Static Testimonials Section */}
+        <div>
+          <h3 className="text-2xl font-bold text-[var(--dark-text)] mb-6">
+            Customer Testimonials
+          </h3>
+          <div className="h-96 overflow-y-auto border-y border-gray-200 divide-y divide-gray-200 p-4 bg-gray-50 rounded-lg shadow-inner">
+            {testimonials.map((testimonial, index) => (
+              <div key={index} className="py-4 text-left">
+                <div className="flex items-center mb-2">
+                  <h4 className="font-bold text-[var(--dark-text)] mr-3">
+                    {testimonial.name}
+                  </h4>
+                  <div className="flex text-yellow-500">
+                    {renderStars(testimonial.rating)}
+                  </div>
+                </div>
+                <p className="text-[var(--body-text)] text-sm mb-1">
+                  &ldquo;{testimonial.text}&rdquo;
+                </p>
+                <span className="text-xs text-gray-400">
+                  {testimonial.timeAgo}
+                </span>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
