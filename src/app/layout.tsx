@@ -18,10 +18,10 @@ const roboto = Roboto({
 
 export const metadata: Metadata = {
   title: 'WE FIX 4U - Tech Repair',
-  description: 'Fast, reliable repairs for your favorite devices. From cracked screens to slow laptops, our certified technicians get you back up and running in no time.',
+  description: 'Fast, reliable repairs for your favorite devices. From cracked screens to slow laptops, our experienced technicians get you back up and running in no time.',
   openGraph: {
     title: 'WE FIX 4U - Tech Repair',
-    description: 'Fast, reliable repairs for your favorite devices. From cracked screens to slow laptops, our certified technicians get you back up and running in no time.',
+    description: 'Fast, reliable repairs for your favorite devices. From cracked screens to slow laptops, our experienced technicians get you back up and running in no time.',
     url: 'https://wefix4u.vercel.app',
     siteName: 'WE FIX 4U',
     images: [
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'WE FIX 4U - Tech Repair',
-    description: 'Fast, reliable repairs for your favorite devices. From cracked screens to slow laptops, our certified technicians get you back up and running in no time.',
+    description: 'Fast, reliable repairs for your favorite devices. From cracked screens to slow laptops, our experienced technicians get you back up and running in no time.',
     images: ['/og-image.svg'],
   },
 }

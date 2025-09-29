@@ -9,7 +9,7 @@ export default function Hero() {
             Fast, Reliable Repairs for Your Favorite Devices.
           </h1>
           <p className="text-lg text-[var(--body-text)] mb-8">
-            From cracked screens to slow laptops, our certified technicians get you back up and running in no time.
+            From cracked screens to slow laptops, our experienced technicians get you back up and running in no time.
           </p>
           <div className="flex flex-col items-center md:items-start gap-y-6">
             <div className="flex justify-center md:justify-start space-x-4">
