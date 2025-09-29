@@ -102,22 +102,24 @@ export default function Testimonials() {
     }
   }, [])
 
-  // Combine Google reviews with static testimonials
-  const allTestimonials: TestimonialItem[] = [
-    ...(googleReviews?.reviews.slice(0, 2).map(review => ({
-      name: review.authorName,
-      rating: review.rating,
-      text: review.text,
-      timeAgo: review.relativeTime,
-      isGoogle: true,
-      authorAttribution: {
-        displayName: review.authorName,
-        uri: review.authorUri,
-        photoUri: review.authorPhoto
-      }
-    })) || []),
-    ...staticTestimonials.slice(0, 2)
-  ]
+  // Show only Google Reviews when available, filter for 4+ star reviews
+  const allTestimonials: TestimonialItem[] = googleReviews?.reviews && googleReviews.reviews.length > 0
+    ? googleReviews.reviews
+        .filter(review => review.rating >= 4) // Only show 4+ star reviews
+        .slice(0, 4)
+        .map(review => ({
+          name: review.authorName,
+          rating: review.rating,
+          text: review.text,
+          timeAgo: review.relativeTime,
+          isGoogle: true,
+          authorAttribution: {
+            displayName: review.authorName,
+            uri: review.authorUri,
+            photoUri: review.authorPhoto
+          }
+        }))
+    : staticTestimonials.slice(0, 4)
 
   const overallRating = googleReviews?.overallRating || 4.9
   const totalRatings = googleReviews?.totalRatings || 0
