@@ -74,7 +74,7 @@ export default function Testimonials() {
                 </div>
               </div>
               <p className="text-[var(--body-text)] text-sm mb-1">
-                "{testimonial.text}"
+                &ldquo;{testimonial.text}&rdquo;
               </p>
               <span className="text-xs text-gray-400">
                 {testimonial.timeAgo}

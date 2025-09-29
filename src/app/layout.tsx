@@ -5,12 +5,14 @@ import './globals.css'
 const montserrat = Montserrat({
   subsets: ['latin'],
   weight: ['700'],
+  display: 'swap',
   variable: '--font-montserrat',
 })
 
 const roboto = Roboto({
   subsets: ['latin'],
   weight: ['400', '500', '700'],
+  display: 'swap',
   variable: '--font-roboto',
 })
 
@@ -25,20 +27,14 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${montserrat.variable} ${roboto.variable}`}>
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;500;700&display=swap"
-          rel="stylesheet"
-        />
         <link
           href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
           rel="stylesheet"
         />
       </head>
-      <body className={`${montserrat.variable} ${roboto.variable} bg-[var(--light-gray)]`}>
+      <body className="bg-[var(--light-gray)]">
         {children}
       </body>
     </html>
