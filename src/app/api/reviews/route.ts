@@ -21,10 +21,15 @@ export async function GET(request: NextRequest) {
   }
 
   try {
-    const url = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&fields=reviews,rating,user_ratings_total&key=${apiKey}`
+    // Using the new Places API (New) endpoint
+    const url = `https://places.googleapis.com/v1/places/${placeId}?fields=reviews,rating,userRatingCount&key=${apiKey}`
     
     const response = await fetch(url, {
       next: { revalidate: 3600 }, // Cache for 1 hour
+      headers: {
+        'Content-Type': 'application/json',
+        'X-Goog-FieldMask': 'reviews,rating,userRatingCount',
+      },
     })
 
     if (!response.ok) {
@@ -33,14 +38,14 @@ export async function GET(request: NextRequest) {
 
     const data = await response.json()
     
-    if (data.status !== 'OK') {
-      throw new Error(`Google Places API error: ${data.status}`)
+    // The new Places API (New) doesn't have a status field like the old API
+    if (!data) {
+      throw new Error('No data received from Google Places API')
     }
 
-    const result = data.result
-    const reviews = result.reviews || []
-    const rating = result.rating || 0
-    const totalRatings = result.user_ratings_total || 0
+    const reviews = data.reviews || []
+    const rating = data.rating || 0
+    const totalRatings = data.userRatingCount || 0
 
     return NextResponse.json({
       reviews: reviews.map((review: any) => ({

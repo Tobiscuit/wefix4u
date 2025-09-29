@@ -12,9 +12,9 @@ This guide will help you set up Google Reviews integration for your WE FIX 4U we
 
 1. Go to the [Google Cloud Console](https://console.cloud.google.com/)
 2. Create a new project or select an existing one
-3. Enable the **Places API** for your project:
+3. Enable the **Places API (New)** for your project:
    - Go to "APIs & Services" > "Library"
-   - Search for "Places API"
+   - Search for "Places API (New)"
    - Click on it and press "Enable"
 4. Create an API key:
    - Go to "APIs & Services" > "Credentials"
@@ -24,7 +24,7 @@ This guide will help you set up Google Reviews integration for your WE FIX 4U we
    - Click on your API key to edit it
    - Under "Application restrictions", select "HTTP referrers"
    - Add your domain (e.g., `wefix4u.vercel.app/*`)
-   - Under "API restrictions", select "Restrict key" and choose "Places API"
+   - Under "API restrictions", select "Restrict key" and choose "Places API (New)"
 
 ## Step 2: Find Your Place ID
 
