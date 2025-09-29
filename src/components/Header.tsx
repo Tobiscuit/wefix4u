@@ -1,24 +1,30 @@
 'use client'
 
 import { useState } from 'react'
+import { usePathname } from 'next/navigation'
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const pathname = usePathname()
 
   return (
     <header className="bg-white shadow-md sticky top-0 z-50">
       <nav className="container mx-auto px-6 py-3 flex justify-between items-center">
         <a 
           className="text-2xl font-bold text-[var(--trusted-blue)] font-montserrat" 
-          href="#"
+          href="/"
         >
           WE FIX 4U
         </a>
         
         <div className="hidden md:flex items-center space-x-6">
           <a 
-            className="text-gray-700 hover:text-[var(--action-orange)] hover:underline hover:font-bold transition-all duration-300" 
-            href="#services"
+            className={`transition-all duration-300 ${
+              pathname === '/services' 
+                ? 'text-[var(--action-orange)] font-bold underline' 
+                : 'text-gray-700 hover:text-[var(--action-orange)] hover:underline hover:font-bold'
+            }`}
+            href="/services"
           >
             Services
           </a>
@@ -74,8 +80,12 @@ export default function Header() {
         <div className="md:hidden bg-white border-t border-gray-200 px-6 py-4">
           <div className="flex flex-col space-y-4">
             <a 
-              className="text-gray-700 hover:text-[var(--action-orange)] transition-colors duration-300" 
-              href="#services"
+              className={`transition-colors duration-300 ${
+                pathname === '/services' 
+                  ? 'text-[var(--action-orange)] font-bold' 
+                  : 'text-gray-700 hover:text-[var(--action-orange)]'
+              }`}
+              href="/services"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Services
