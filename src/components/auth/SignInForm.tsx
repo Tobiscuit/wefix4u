@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { signIn } from 'aws-amplify/auth';
 import { useRouter } from 'next/navigation';
 
@@ -10,6 +10,14 @@ export default function SignInForm() {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
   const router = useRouter();
+
+  // Check if Amplify is configured
+  const [isAmplifyConfigured, setIsAmplifyConfigured] = useState(false);
+
+  useEffect(() => {
+    // Simple check if we're in development mode
+    setIsAmplifyConfigured(process.env.NODE_ENV === 'development' || window.location.hostname !== 'localhost');
+  }, []);
 
   const handleSignIn = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -25,6 +33,24 @@ export default function SignInForm() {
       setIsLoading(false);
     }
   };
+
+  if (!isAmplifyConfigured) {
+    return (
+      <div className="max-w-md mx-auto bg-white p-8 rounded-xl shadow-sm">
+        <div className="text-center">
+          <div className="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <span className="material-icons text-yellow-600 text-2xl">warning</span>
+          </div>
+          <h2 className="text-2xl font-bold text-[#111218] font-montserrat mb-4">
+            Authentication Not Configured
+          </h2>
+          <p className="text-[#5f678c] mb-6">
+            AWS Amplify backend needs to be deployed first. Please contact your developer to set up authentication.
+          </p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="max-w-md mx-auto bg-white p-8 rounded-xl shadow-sm">

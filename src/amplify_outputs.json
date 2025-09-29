@@ -1,0 +1,18 @@
+{
+  "version": "1",
+  "auth": {
+    "user_pool_id": "placeholder",
+    "user_pool_client_id": "placeholder",
+    "identity_pool_id": "placeholder",
+    "aws_region": "us-east-1"
+  },
+  "data": {
+    "aws_region": "us-east-1",
+    "url": "placeholder",
+    "api_key": "placeholder"
+  },
+  "storage": {
+    "aws_region": "us-east-1",
+    "bucket_name": "placeholder"
+  }
+}
