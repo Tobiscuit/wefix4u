@@ -19,7 +19,7 @@ export default function Header() {
         </Link>
         
         <div className="hidden md:flex items-center space-x-6">
-          <a 
+          <Link 
             className={`transition-all duration-300 ${
               pathname === '/' || pathname.startsWith('/services/')
                 ? 'text-[var(--action-orange)] font-bold underline' 
@@ -28,7 +28,7 @@ export default function Header() {
             href="/#services"
           >
             Services
-          </a>
+          </Link>
           <a 
             className="text-gray-700 hover:text-[var(--action-orange)] hover:underline hover:font-bold transition-all duration-300" 
             href="#shop"
@@ -80,7 +80,7 @@ export default function Header() {
       {isMobileMenuOpen && (
         <div className="md:hidden bg-white border-t border-gray-200 px-6 py-4">
           <div className="flex flex-col space-y-4">
-            <a 
+            <Link 
               className={`transition-colors duration-300 ${
                 pathname === '/' || pathname.startsWith('/services/')
                   ? 'text-[var(--action-orange)] font-bold' 
@@ -90,7 +90,7 @@ export default function Header() {
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Services
-            </a>
+            </Link>
             <a 
               className="text-gray-700 hover:text-[var(--action-orange)] transition-colors duration-300" 
               href="#shop"
