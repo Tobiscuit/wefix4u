@@ -1,6 +1,5 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { serviceContent } from '@/data/service-content';
 import { Metadata } from 'next';
@@ -16,7 +15,7 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
   const deviceType = params.device;
   const serviceType = params.service;
 
-  const content = serviceContent[deviceType as keyof typeof serviceContent]?.[serviceType as keyof typeof serviceContent['phone-repair']];
+  const content = serviceContent[deviceType]?.[serviceType];
 
   if (!content) {
     return {};
@@ -42,7 +41,7 @@ export default function IndividualServicePage({ params }: ServicePageProps) {
   const deviceType = params.device;
   const serviceType = params.service;
 
-  const content = serviceContent[deviceType as keyof typeof serviceContent]?.[serviceType as keyof typeof serviceContent['phone-repair']];
+  const content = serviceContent[deviceType]?.[serviceType];
 
   if (!content) {
     notFound();
