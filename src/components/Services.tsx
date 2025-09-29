@@ -4,19 +4,19 @@ export default function Services() {
       icon: 'phone_iphone',
       title: 'Phone Repair',
       description: 'Screen replacement, battery issues, charging ports, and more.',
-      link: '#phone-repair'
+      link: '/services/phone-repair'
     },
     {
       icon: 'laptop_mac',
       title: 'Laptop Repair',
       description: 'Virus removal, hardware upgrades, data recovery, and performance tuning.',
-      link: '#laptop-repair'
+      link: '/services/laptop-repair'
     },
     {
       icon: 'tablet_android',
       title: 'Tablet & Other Devices',
       description: 'We also service tablets, game consoles, and other common electronics.',
-      link: '#tablet-repair'
+      link: '/services/tablet-repair'
     }
   ]
 
