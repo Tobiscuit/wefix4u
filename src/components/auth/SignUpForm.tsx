@@ -16,7 +16,7 @@ export default function SignUpForm() {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
   const [success, setSuccess] = useState(false);
-  const router = useRouter();
+  // const router = useRouter(); // Not used yet
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({
@@ -50,8 +50,8 @@ export default function SignUpForm() {
         },
       });
       setSuccess(true);
-    } catch (err: any) {
-      setError(err.message || 'An error occurred during sign up');
+    } catch (err: unknown) {
+      setError((err as Error).message || 'An error occurred during sign up');
     } finally {
       setIsLoading(false);
     }
@@ -68,7 +68,7 @@ export default function SignUpForm() {
             Check Your Email
           </h2>
           <p className="text-[#5f678c] mb-6">
-            We've sent you a confirmation link. Please check your email and click the link to verify your account.
+            We&apos;ve sent you a confirmation link. Please check your email and click the link to verify your account.
           </p>
           <a
             href="/sign-in"
