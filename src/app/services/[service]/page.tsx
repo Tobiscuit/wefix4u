@@ -58,7 +58,7 @@ const serviceData: Record<string, ServiceData> = {
     icon: 'tablet',
     services: [
       { name: 'Screen Replacement', description: 'Restore your tablet\'s display to its original clarity.' },
-      { name: 'Battery Issues', description: 'Extend your tablet\'s life with a new, high-capacity battery.' },
+      { name: 'Battery Repair', description: 'Extend your tablet\'s life with a new, high-capacity battery.' },
       { name: 'Charging Port Repair', description: 'Fix connectivity problems and ensure reliable charging.' },
       { name: 'HDMI Port Repair', description: 'No signal? We can fix or replace your console\'s HDMI port.' },
       { name: 'Disk Drive Issues', description: 'Console not reading games? We\'ll get you back in the game.' },
@@ -94,7 +94,7 @@ const serviceNameToSlug = {
   'HDMI Port Repair': 'hdmi-port-repair',
   'Disk Drive Issues': 'disk-drive-issues',
   'Overheating Solutions': 'overheating-solutions'
-}
+};
 
 export default function ServicePage({ params }: { params: { service: string } }) {
   const service = serviceData[params.service]
