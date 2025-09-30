@@ -1,0 +1,7 @@
+# Ignore Amplify backend files
+amplify/
+*.json
+node_modules/
+.next/
+dist/
+build/
