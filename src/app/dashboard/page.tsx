@@ -1,13 +1,13 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { getCurrentUser, signOut } from 'aws-amplify/auth';
+import { getCurrentUser, signOut, type AuthUser } from 'aws-amplify/auth';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { useRouter } from 'next/navigation';
 
 export default function DashboardPage() {
-  const [user, setUser] = useState<{ userId: string; signInDetails?: { loginId: string } } | null>(null);
+  const [user, setUser] = useState<AuthUser | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const router = useRouter();
 
@@ -101,7 +101,7 @@ export default function DashboardPage() {
                 <div className="mt-8 p-6 bg-blue-50 rounded-xl">
                   <h3 className="text-lg font-semibold text-[#111218] mb-2">Account Information</h3>
                   <div className="space-y-2 text-sm">
-                    <p><span className="font-medium">Email:</span> {user.signInDetails?.loginId}</p>
+                    <p><span className="font-medium">Email:</span> {user.signInDetails?.loginId || 'Not available'}</p>
                     <p><span className="font-medium">User ID:</span> {user.userId}</p>
                   </div>
                 </div>
