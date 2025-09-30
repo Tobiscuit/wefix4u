@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Montserrat, Roboto } from 'next/font/google'
 import './globals.css'
 import '@/lib/amplify'
+import HeaderToggle from '@/components/HeaderToggle'
 
 const montserrat = Montserrat({
   subsets: ['latin'],
@@ -49,9 +50,13 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+  // Toggle between old and new header design
+  const useJoyHeader = true; // Set to false to use the old header
+
   return (
     <html lang="en" className={`${montserrat.variable} ${roboto.variable} antialiased`}>
       <body className="bg-[var(--light-gray)]">
+        <HeaderToggle useJoyHeader={useJoyHeader} />
         {children}
       </body>
     </html>

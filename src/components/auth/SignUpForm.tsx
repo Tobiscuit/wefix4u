@@ -6,11 +6,10 @@ import { signUp } from 'aws-amplify/auth';
 
 export default function SignUpForm() {
   const [formData, setFormData] = useState({
+    fullName: '',
     email: '',
     password: '',
     confirmPassword: '',
-    firstName: '',
-    lastName: '',
     phoneNumber: '',
   });
   const [isLoading, setIsLoading] = useState(false);
@@ -43,8 +42,8 @@ export default function SignUpForm() {
         options: {
           userAttributes: {
             email: formData.email,
-            given_name: formData.firstName,
-            family_name: formData.lastName,
+            given_name: formData.fullName.split(' ')[0] || '',
+            family_name: formData.fullName.split(' ').slice(1).join(' ') || '',
             phone_number: formData.phoneNumber,
           },
         },
