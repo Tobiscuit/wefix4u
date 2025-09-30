@@ -15,7 +15,8 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
   const deviceType = params.device;
   const serviceType = params.service;
 
-  const content = serviceContent[deviceType]?.[serviceType];
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const content = (serviceContent as any)[deviceType]?.[serviceType];
 
   if (!content) {
     return {};
@@ -41,7 +42,8 @@ export default function IndividualServicePage({ params }: ServicePageProps) {
   const deviceType = params.device;
   const serviceType = params.service;
 
-  const content = serviceContent[deviceType]?.[serviceType];
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const content = (serviceContent as any)[deviceType]?.[serviceType];
 
   if (!content) {
     notFound();
@@ -80,7 +82,7 @@ export default function IndividualServicePage({ params }: ServicePageProps) {
                 <div className="max-w-[960px] mx-auto">
                   <h2 className="text-[#111218] text-[22px] font-bold leading-tight tracking-[-0.015em] mb-6 font-montserrat text-center">Our {content.title} Process</h2>
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    {content.process.map((step, index) => (
+                    {content.process.map((step: string, index: number) => (
                       <div key={index} className="flex flex-col items-center text-center p-6 bg-white rounded-xl shadow-sm">
                         <div className="flex items-center justify-center w-12 h-12 bg-[#3D5AFE] text-white text-xl font-bold rounded-full mb-4">
                           {index + 1}
@@ -97,7 +99,7 @@ export default function IndividualServicePage({ params }: ServicePageProps) {
                 <div className="max-w-[960px] mx-auto">
                   <h2 className="text-[#111218] text-[22px] font-bold leading-tight tracking-[-0.015em] mb-6 font-montserrat text-center">Why Choose Us for {content.title}?</h2>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    {content.benefits.map((benefit, index) => (
+                    {content.benefits.map((benefit: string, index: number) => (
                       <div key={index} className="flex items-center p-4 bg-[#F5F5F5] rounded-xl">
                         <span className="material-icons text-2xl text-[#3D5AFE] mr-3">check_circle</span>
                         <p className="text-[#111218] font-medium">{benefit}</p>
@@ -128,7 +130,7 @@ export default function IndividualServicePage({ params }: ServicePageProps) {
                 <div className="max-w-[960px] mx-auto">
                   <h2 className="text-center text-[#111218] text-[22px] font-bold leading-tight tracking-[-0.015em] mb-6 font-montserrat">Frequently Asked Questions</h2>
                   <div className="space-y-4 max-w-2xl mx-auto">
-                    {content.faq.map((item, index) => (
+                    {content.faq.map((item: { question: string; answer: string }, index: number) => (
                       <details key={index} className="group bg-white p-4 rounded-xl shadow-sm">
                         <summary className="flex cursor-pointer items-center justify-between">
                           <h3 className="text-[#111218] font-medium">{item.question}</h3>
