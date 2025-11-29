@@ -1,0 +1,79 @@
+type Customer @model @auth(rules: [{allow: owner, ownerField: "owner"}])
+{
+  email: String!
+  phoneNumber: String
+  firstName: String!
+  lastName: String!
+  address: String
+  repairs: [Repair] @hasMany(references: ["customerId"])
+}
+
+type Repair @model @auth(rules: [{allow: owner, ownerField: "owner"}])
+{
+  customerId: ID!
+  customer: Customer @belongsTo(references: ["customerId"])
+  deviceType: String!
+  deviceModel: String!
+  serviceType: String!
+  status: RepairStatus
+  description: String
+  estimatedCost: Float
+  actualCost: Float
+  estimatedCompletion: AWSDateTime
+  completedAt: AWSDateTime
+  notes: String
+  photos: [RepairPhoto] @hasMany(references: ["repairId"])
+  appointments: [Appointment] @hasMany(references: ["repairId"])
+}
+
+type RepairPhoto @model @auth(rules: [{allow: owner, ownerField: "owner"}])
+{
+  repairId: ID!
+  repair: Repair @belongsTo(references: ["repairId"])
+  photoUrl: String!
+  description: String
+  uploadedAt: AWSDateTime!
+}
+
+type Appointment @model @auth(rules: [{allow: owner, ownerField: "owner"}])
+{
+  repairId: ID!
+  repair: Repair @belongsTo(references: ["repairId"])
+  scheduledAt: AWSDateTime!
+  type: AppointmentType
+  status: AppointmentStatus
+  notes: String
+}
+
+type Inventory @model @auth(rules: [{allow: owner, ownerField: "owner"}])
+{
+  partName: String!
+  partNumber: String
+  deviceType: String!
+  deviceModel: String
+  quantity: Int!
+  cost: Float!
+  supplier: String
+  lastRestocked: AWSDateTime
+}
+
+enum RepairStatus {
+  pending
+  diagnosed
+  inProgress
+  completed
+  readyForPickup
+  pickedUp
+}
+
+enum AppointmentType {
+  dropOff
+  pickup
+  consultation
+}
+
+enum AppointmentStatus {
+  scheduled
+  completed
+  cancelled
+}

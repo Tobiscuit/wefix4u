@@ -42,9 +42,9 @@ export default function SignUpForm() {
         options: {
           userAttributes: {
             email: formData.email,
-            given_name: formData.fullName.split(' ')[0] || '',
-            family_name: formData.fullName.split(' ').slice(1).join(' ') || '',
-            phone_number: formData.phoneNumber,
+            givenName: formData.fullName.split(' ')[0] || '',
+            familyName: formData.fullName.split(' ').slice(1).join(' ') || '',
+            phoneNumber: formData.phoneNumber,
           },
         },
       });
