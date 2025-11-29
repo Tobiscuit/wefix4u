@@ -1,0 +1,973 @@
+type Customer @aws_iam @aws_cognito_user_pools {
+  email: String!
+  phoneNumber: String
+  firstName: String!
+  lastName: String!
+  address: String
+  notes: String
+  repairs(filter: ModelRepairFilterInput, sortDirection: ModelSortDirection, limit: Int, nextToken: String): ModelRepairConnection
+  id: ID!
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+  owner: String
+}
+
+type Repair @aws_iam @aws_cognito_user_pools {
+  customerId: ID!
+  customer: Customer
+  deviceType: String!
+  deviceModel: String!
+  serialNumber: String
+  devicePassword: String
+  devicePattern: String
+  serviceType: String!
+  description: String
+  warrantyStatus: RepairWarrantyStatus
+  status: RepairStatus
+  estimatedCost: Float
+  actualCost: Float
+  isMailIn: Boolean
+  shippingLabelUrl: String
+  trackingNumber: String
+  estimatedCompletion: AWSDateTime
+  completedAt: AWSDateTime
+  notes: String
+  photos(filter: ModelRepairPhotoFilterInput, sortDirection: ModelSortDirection, limit: Int, nextToken: String): ModelRepairPhotoConnection
+  appointments(filter: ModelAppointmentFilterInput, sortDirection: ModelSortDirection, limit: Int, nextToken: String): ModelAppointmentConnection
+  payments(filter: ModelPaymentFilterInput, sortDirection: ModelSortDirection, limit: Int, nextToken: String): ModelPaymentConnection
+  statusLogs(filter: ModelStatusLogFilterInput, sortDirection: ModelSortDirection, limit: Int, nextToken: String): ModelStatusLogConnection
+  id: ID!
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+  owner: String
+}
+
+type Payment @aws_iam @aws_cognito_user_pools {
+  repairId: ID!
+  repair: Repair
+  amount: Float!
+  method: PaymentMethod
+  status: PaymentStatus
+  date: AWSDateTime!
+  referenceId: String
+  notes: String
+  id: ID!
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+  owner: String
+}
+
+type StatusLog @aws_iam @aws_cognito_user_pools {
+  repairId: ID!
+  repair: Repair
+  status: String!
+  timestamp: AWSDateTime!
+  notes: String
+  id: ID!
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+  owner: String
+}
+
+type RepairPhoto @aws_iam @aws_cognito_user_pools {
+  repairId: ID!
+  repair: Repair
+  photoUrl: String!
+  description: String
+  uploadedAt: AWSDateTime!
+  id: ID!
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+  owner: String
+}
+
+type Appointment @aws_iam @aws_cognito_user_pools {
+  repairId: ID!
+  repair: Repair
+  scheduledAt: AWSDateTime!
+  type: AppointmentType
+  status: AppointmentStatus
+  notes: String
+  id: ID!
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+  owner: String
+}
+
+type Inventory @aws_iam @aws_cognito_user_pools {
+  partName: String!
+  partNumber: String
+  deviceType: String!
+  deviceModel: String
+  quantity: Int!
+  cost: Float!
+  supplier: String
+  lastRestocked: AWSDateTime
+  id: ID!
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+}
+
+enum RepairWarrantyStatus {
+  none
+  limited
+  lifetime
+}
+
+enum RepairStatus {
+  pending
+  diagnosed
+  inProgress
+  completed
+  readyForPickup
+  pickedUp
+  cancelled
+}
+
+enum PaymentMethod {
+  cash
+  card_square
+  card_stripe
+  transfer
+}
+
+enum PaymentStatus {
+  pending
+  completed
+  refunded
+  failed
+}
+
+enum AppointmentType {
+  dropOff
+  pickup
+  consultation
+}
+
+enum AppointmentStatus {
+  scheduled
+  completed
+  cancelled
+}
+
+input AmplifyAIConversationTurnErrorInput {
+  errorType: String!
+  message: String!
+}
+
+input ModelStringInput {
+  ne: String
+  eq: String
+  le: String
+  lt: String
+  ge: String
+  gt: String
+  contains: String
+  notContains: String
+  between: [String]
+  beginsWith: String
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+  size: ModelSizeInput
+}
+
+input ModelIntInput {
+  ne: Int
+  eq: Int
+  le: Int
+  lt: Int
+  ge: Int
+  gt: Int
+  between: [Int]
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+}
+
+input ModelFloatInput {
+  ne: Float
+  eq: Float
+  le: Float
+  lt: Float
+  ge: Float
+  gt: Float
+  between: [Float]
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+}
+
+input ModelBooleanInput {
+  ne: Boolean
+  eq: Boolean
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+}
+
+input ModelIDInput {
+  ne: ID
+  eq: ID
+  le: ID
+  lt: ID
+  ge: ID
+  gt: ID
+  contains: ID
+  notContains: ID
+  between: [ID]
+  beginsWith: ID
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+  size: ModelSizeInput
+}
+
+input ModelSubscriptionStringInput {
+  ne: String
+  eq: String
+  le: String
+  lt: String
+  ge: String
+  gt: String
+  contains: String
+  notContains: String
+  between: [String]
+  beginsWith: String
+  in: [String]
+  notIn: [String]
+}
+
+input ModelSubscriptionIntInput {
+  ne: Int
+  eq: Int
+  le: Int
+  lt: Int
+  ge: Int
+  gt: Int
+  between: [Int]
+  in: [Int]
+  notIn: [Int]
+}
+
+input ModelSubscriptionFloatInput {
+  ne: Float
+  eq: Float
+  le: Float
+  lt: Float
+  ge: Float
+  gt: Float
+  between: [Float]
+  in: [Float]
+  notIn: [Float]
+}
+
+input ModelSubscriptionBooleanInput {
+  ne: Boolean
+  eq: Boolean
+}
+
+input ModelSubscriptionIDInput {
+  ne: ID
+  eq: ID
+  le: ID
+  lt: ID
+  ge: ID
+  gt: ID
+  contains: ID
+  notContains: ID
+  between: [ID]
+  beginsWith: ID
+  in: [ID]
+  notIn: [ID]
+}
+
+enum ModelAttributeTypes {
+  binary
+  binarySet
+  bool
+  list
+  map
+  number
+  numberSet
+  string
+  stringSet
+  _null
+}
+
+input ModelSizeInput {
+  ne: Int
+  eq: Int
+  le: Int
+  lt: Int
+  ge: Int
+  gt: Int
+  between: [Int]
+}
+
+enum ModelSortDirection {
+  ASC
+  DESC
+}
+
+type ModelCustomerConnection @aws_iam @aws_cognito_user_pools {
+  items: [Customer]!
+  nextToken: String
+}
+
+input ModelCustomerFilterInput {
+  email: ModelStringInput
+  phoneNumber: ModelStringInput
+  firstName: ModelStringInput
+  lastName: ModelStringInput
+  address: ModelStringInput
+  notes: ModelStringInput
+  id: ModelIDInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  and: [ModelCustomerFilterInput]
+  or: [ModelCustomerFilterInput]
+  not: ModelCustomerFilterInput
+  owner: ModelStringInput
+}
+
+type Query {
+  getCustomer(id: ID!): Customer @aws_iam @aws_cognito_user_pools
+  listCustomers(filter: ModelCustomerFilterInput, limit: Int, nextToken: String): ModelCustomerConnection @aws_iam @aws_cognito_user_pools
+  getRepair(id: ID!): Repair @aws_iam @aws_cognito_user_pools
+  listRepairs(filter: ModelRepairFilterInput, limit: Int, nextToken: String): ModelRepairConnection @aws_iam @aws_cognito_user_pools
+  getPayment(id: ID!): Payment @aws_iam @aws_cognito_user_pools
+  listPayments(filter: ModelPaymentFilterInput, limit: Int, nextToken: String): ModelPaymentConnection @aws_iam @aws_cognito_user_pools
+  getStatusLog(id: ID!): StatusLog @aws_iam @aws_cognito_user_pools
+  listStatusLogs(filter: ModelStatusLogFilterInput, limit: Int, nextToken: String): ModelStatusLogConnection @aws_iam @aws_cognito_user_pools
+  getRepairPhoto(id: ID!): RepairPhoto @aws_iam @aws_cognito_user_pools
+  listRepairPhotos(filter: ModelRepairPhotoFilterInput, limit: Int, nextToken: String): ModelRepairPhotoConnection @aws_iam @aws_cognito_user_pools
+  getAppointment(id: ID!): Appointment @aws_iam @aws_cognito_user_pools
+  listAppointments(filter: ModelAppointmentFilterInput, limit: Int, nextToken: String): ModelAppointmentConnection @aws_iam @aws_cognito_user_pools
+  getInventory(id: ID!): Inventory @aws_iam @aws_cognito_user_pools
+  listInventories(filter: ModelInventoryFilterInput, limit: Int, nextToken: String): ModelInventoryConnection @aws_iam @aws_cognito_user_pools
+}
+
+input ModelCustomerConditionInput {
+  email: ModelStringInput
+  phoneNumber: ModelStringInput
+  firstName: ModelStringInput
+  lastName: ModelStringInput
+  address: ModelStringInput
+  notes: ModelStringInput
+  and: [ModelCustomerConditionInput]
+  or: [ModelCustomerConditionInput]
+  not: ModelCustomerConditionInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  owner: ModelStringInput
+}
+
+input CreateCustomerInput {
+  email: String!
+  phoneNumber: String
+  firstName: String!
+  lastName: String!
+  address: String
+  notes: String
+  id: ID
+}
+
+input UpdateCustomerInput {
+  email: String
+  phoneNumber: String
+  firstName: String
+  lastName: String
+  address: String
+  notes: String
+  id: ID!
+}
+
+input DeleteCustomerInput {
+  id: ID!
+}
+
+type Mutation {
+  createCustomer(input: CreateCustomerInput!, condition: ModelCustomerConditionInput): Customer @aws_iam @aws_cognito_user_pools
+  updateCustomer(input: UpdateCustomerInput!, condition: ModelCustomerConditionInput): Customer @aws_iam @aws_cognito_user_pools
+  deleteCustomer(input: DeleteCustomerInput!, condition: ModelCustomerConditionInput): Customer @aws_iam @aws_cognito_user_pools
+  createRepair(input: CreateRepairInput!, condition: ModelRepairConditionInput): Repair @aws_iam @aws_cognito_user_pools
+  updateRepair(input: UpdateRepairInput!, condition: ModelRepairConditionInput): Repair @aws_iam @aws_cognito_user_pools
+  deleteRepair(input: DeleteRepairInput!, condition: ModelRepairConditionInput): Repair @aws_iam @aws_cognito_user_pools
+  createPayment(input: CreatePaymentInput!, condition: ModelPaymentConditionInput): Payment @aws_iam @aws_cognito_user_pools
+  updatePayment(input: UpdatePaymentInput!, condition: ModelPaymentConditionInput): Payment @aws_iam @aws_cognito_user_pools
+  deletePayment(input: DeletePaymentInput!, condition: ModelPaymentConditionInput): Payment @aws_iam @aws_cognito_user_pools
+  createStatusLog(input: CreateStatusLogInput!, condition: ModelStatusLogConditionInput): StatusLog @aws_iam @aws_cognito_user_pools
+  updateStatusLog(input: UpdateStatusLogInput!, condition: ModelStatusLogConditionInput): StatusLog @aws_iam @aws_cognito_user_pools
+  deleteStatusLog(input: DeleteStatusLogInput!, condition: ModelStatusLogConditionInput): StatusLog @aws_iam @aws_cognito_user_pools
+  createRepairPhoto(input: CreateRepairPhotoInput!, condition: ModelRepairPhotoConditionInput): RepairPhoto @aws_iam @aws_cognito_user_pools
+  updateRepairPhoto(input: UpdateRepairPhotoInput!, condition: ModelRepairPhotoConditionInput): RepairPhoto @aws_iam @aws_cognito_user_pools
+  deleteRepairPhoto(input: DeleteRepairPhotoInput!, condition: ModelRepairPhotoConditionInput): RepairPhoto @aws_iam @aws_cognito_user_pools
+  createAppointment(input: CreateAppointmentInput!, condition: ModelAppointmentConditionInput): Appointment @aws_iam @aws_cognito_user_pools
+  updateAppointment(input: UpdateAppointmentInput!, condition: ModelAppointmentConditionInput): Appointment @aws_iam @aws_cognito_user_pools
+  deleteAppointment(input: DeleteAppointmentInput!, condition: ModelAppointmentConditionInput): Appointment @aws_iam @aws_cognito_user_pools
+  createInventory(input: CreateInventoryInput!, condition: ModelInventoryConditionInput): Inventory @aws_iam @aws_cognito_user_pools
+  updateInventory(input: UpdateInventoryInput!, condition: ModelInventoryConditionInput): Inventory @aws_iam @aws_cognito_user_pools
+  deleteInventory(input: DeleteInventoryInput!, condition: ModelInventoryConditionInput): Inventory @aws_iam @aws_cognito_user_pools
+}
+
+input ModelSubscriptionCustomerFilterInput {
+  email: ModelSubscriptionStringInput
+  phoneNumber: ModelSubscriptionStringInput
+  firstName: ModelSubscriptionStringInput
+  lastName: ModelSubscriptionStringInput
+  address: ModelSubscriptionStringInput
+  notes: ModelSubscriptionStringInput
+  id: ModelSubscriptionIDInput
+  createdAt: ModelSubscriptionStringInput
+  updatedAt: ModelSubscriptionStringInput
+  and: [ModelSubscriptionCustomerFilterInput]
+  or: [ModelSubscriptionCustomerFilterInput]
+  owner: ModelStringInput
+}
+
+type Subscription {
+  onCreateCustomer(filter: ModelSubscriptionCustomerFilterInput, owner: String): Customer @aws_subscribe(mutations: ["createCustomer"]) @aws_iam @aws_cognito_user_pools
+  onUpdateCustomer(filter: ModelSubscriptionCustomerFilterInput, owner: String): Customer @aws_subscribe(mutations: ["updateCustomer"]) @aws_iam @aws_cognito_user_pools
+  onDeleteCustomer(filter: ModelSubscriptionCustomerFilterInput, owner: String): Customer @aws_subscribe(mutations: ["deleteCustomer"]) @aws_iam @aws_cognito_user_pools
+  onCreateRepair(filter: ModelSubscriptionRepairFilterInput, owner: String): Repair @aws_subscribe(mutations: ["createRepair"]) @aws_iam @aws_cognito_user_pools
+  onUpdateRepair(filter: ModelSubscriptionRepairFilterInput, owner: String): Repair @aws_subscribe(mutations: ["updateRepair"]) @aws_iam @aws_cognito_user_pools
+  onDeleteRepair(filter: ModelSubscriptionRepairFilterInput, owner: String): Repair @aws_subscribe(mutations: ["deleteRepair"]) @aws_iam @aws_cognito_user_pools
+  onCreatePayment(filter: ModelSubscriptionPaymentFilterInput, owner: String): Payment @aws_subscribe(mutations: ["createPayment"]) @aws_iam @aws_cognito_user_pools
+  onUpdatePayment(filter: ModelSubscriptionPaymentFilterInput, owner: String): Payment @aws_subscribe(mutations: ["updatePayment"]) @aws_iam @aws_cognito_user_pools
+  onDeletePayment(filter: ModelSubscriptionPaymentFilterInput, owner: String): Payment @aws_subscribe(mutations: ["deletePayment"]) @aws_iam @aws_cognito_user_pools
+  onCreateStatusLog(filter: ModelSubscriptionStatusLogFilterInput, owner: String): StatusLog @aws_subscribe(mutations: ["createStatusLog"]) @aws_iam @aws_cognito_user_pools
+  onUpdateStatusLog(filter: ModelSubscriptionStatusLogFilterInput, owner: String): StatusLog @aws_subscribe(mutations: ["updateStatusLog"]) @aws_iam @aws_cognito_user_pools
+  onDeleteStatusLog(filter: ModelSubscriptionStatusLogFilterInput, owner: String): StatusLog @aws_subscribe(mutations: ["deleteStatusLog"]) @aws_iam @aws_cognito_user_pools
+  onCreateRepairPhoto(filter: ModelSubscriptionRepairPhotoFilterInput, owner: String): RepairPhoto @aws_subscribe(mutations: ["createRepairPhoto"]) @aws_iam @aws_cognito_user_pools
+  onUpdateRepairPhoto(filter: ModelSubscriptionRepairPhotoFilterInput, owner: String): RepairPhoto @aws_subscribe(mutations: ["updateRepairPhoto"]) @aws_iam @aws_cognito_user_pools
+  onDeleteRepairPhoto(filter: ModelSubscriptionRepairPhotoFilterInput, owner: String): RepairPhoto @aws_subscribe(mutations: ["deleteRepairPhoto"]) @aws_iam @aws_cognito_user_pools
+  onCreateAppointment(filter: ModelSubscriptionAppointmentFilterInput, owner: String): Appointment @aws_subscribe(mutations: ["createAppointment"]) @aws_iam @aws_cognito_user_pools
+  onUpdateAppointment(filter: ModelSubscriptionAppointmentFilterInput, owner: String): Appointment @aws_subscribe(mutations: ["updateAppointment"]) @aws_iam @aws_cognito_user_pools
+  onDeleteAppointment(filter: ModelSubscriptionAppointmentFilterInput, owner: String): Appointment @aws_subscribe(mutations: ["deleteAppointment"]) @aws_iam @aws_cognito_user_pools
+  onCreateInventory(filter: ModelSubscriptionInventoryFilterInput): Inventory @aws_subscribe(mutations: ["createInventory"]) @aws_iam @aws_cognito_user_pools
+  onUpdateInventory(filter: ModelSubscriptionInventoryFilterInput): Inventory @aws_subscribe(mutations: ["updateInventory"]) @aws_iam @aws_cognito_user_pools
+  onDeleteInventory(filter: ModelSubscriptionInventoryFilterInput): Inventory @aws_subscribe(mutations: ["deleteInventory"]) @aws_iam @aws_cognito_user_pools
+}
+
+type ModelRepairConnection @aws_iam @aws_cognito_user_pools {
+  items: [Repair]!
+  nextToken: String
+}
+
+input ModelRepairWarrantyStatusInput {
+  eq: RepairWarrantyStatus
+  ne: RepairWarrantyStatus
+}
+
+input ModelRepairStatusInput {
+  eq: RepairStatus
+  ne: RepairStatus
+}
+
+input ModelRepairFilterInput {
+  customerId: ModelIDInput
+  deviceType: ModelStringInput
+  deviceModel: ModelStringInput
+  serialNumber: ModelStringInput
+  devicePassword: ModelStringInput
+  devicePattern: ModelStringInput
+  serviceType: ModelStringInput
+  description: ModelStringInput
+  warrantyStatus: ModelRepairWarrantyStatusInput
+  status: ModelRepairStatusInput
+  estimatedCost: ModelFloatInput
+  actualCost: ModelFloatInput
+  isMailIn: ModelBooleanInput
+  shippingLabelUrl: ModelStringInput
+  trackingNumber: ModelStringInput
+  estimatedCompletion: ModelStringInput
+  completedAt: ModelStringInput
+  notes: ModelStringInput
+  id: ModelIDInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  and: [ModelRepairFilterInput]
+  or: [ModelRepairFilterInput]
+  not: ModelRepairFilterInput
+  owner: ModelStringInput
+}
+
+input ModelRepairConditionInput {
+  customerId: ModelIDInput
+  deviceType: ModelStringInput
+  deviceModel: ModelStringInput
+  serialNumber: ModelStringInput
+  devicePassword: ModelStringInput
+  devicePattern: ModelStringInput
+  serviceType: ModelStringInput
+  description: ModelStringInput
+  warrantyStatus: ModelRepairWarrantyStatusInput
+  status: ModelRepairStatusInput
+  estimatedCost: ModelFloatInput
+  actualCost: ModelFloatInput
+  isMailIn: ModelBooleanInput
+  shippingLabelUrl: ModelStringInput
+  trackingNumber: ModelStringInput
+  estimatedCompletion: ModelStringInput
+  completedAt: ModelStringInput
+  notes: ModelStringInput
+  and: [ModelRepairConditionInput]
+  or: [ModelRepairConditionInput]
+  not: ModelRepairConditionInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  owner: ModelStringInput
+}
+
+input CreateRepairInput {
+  customerId: ID!
+  deviceType: String!
+  deviceModel: String!
+  serialNumber: String
+  devicePassword: String
+  devicePattern: String
+  serviceType: String!
+  description: String
+  warrantyStatus: RepairWarrantyStatus
+  status: RepairStatus
+  estimatedCost: Float
+  actualCost: Float
+  isMailIn: Boolean
+  shippingLabelUrl: String
+  trackingNumber: String
+  estimatedCompletion: AWSDateTime
+  completedAt: AWSDateTime
+  notes: String
+  id: ID
+}
+
+input UpdateRepairInput {
+  customerId: ID
+  deviceType: String
+  deviceModel: String
+  serialNumber: String
+  devicePassword: String
+  devicePattern: String
+  serviceType: String
+  description: String
+  warrantyStatus: RepairWarrantyStatus
+  status: RepairStatus
+  estimatedCost: Float
+  actualCost: Float
+  isMailIn: Boolean
+  shippingLabelUrl: String
+  trackingNumber: String
+  estimatedCompletion: AWSDateTime
+  completedAt: AWSDateTime
+  notes: String
+  id: ID!
+}
+
+input DeleteRepairInput {
+  id: ID!
+}
+
+input ModelSubscriptionRepairFilterInput {
+  customerId: ModelSubscriptionIDInput
+  deviceType: ModelSubscriptionStringInput
+  deviceModel: ModelSubscriptionStringInput
+  serialNumber: ModelSubscriptionStringInput
+  devicePassword: ModelSubscriptionStringInput
+  devicePattern: ModelSubscriptionStringInput
+  serviceType: ModelSubscriptionStringInput
+  description: ModelSubscriptionStringInput
+  warrantyStatus: ModelSubscriptionStringInput
+  status: ModelSubscriptionStringInput
+  estimatedCost: ModelSubscriptionFloatInput
+  actualCost: ModelSubscriptionFloatInput
+  isMailIn: ModelSubscriptionBooleanInput
+  shippingLabelUrl: ModelSubscriptionStringInput
+  trackingNumber: ModelSubscriptionStringInput
+  estimatedCompletion: ModelSubscriptionStringInput
+  completedAt: ModelSubscriptionStringInput
+  notes: ModelSubscriptionStringInput
+  id: ModelSubscriptionIDInput
+  createdAt: ModelSubscriptionStringInput
+  updatedAt: ModelSubscriptionStringInput
+  and: [ModelSubscriptionRepairFilterInput]
+  or: [ModelSubscriptionRepairFilterInput]
+  owner: ModelStringInput
+}
+
+type ModelPaymentConnection @aws_iam @aws_cognito_user_pools {
+  items: [Payment]!
+  nextToken: String
+}
+
+input ModelPaymentMethodInput {
+  eq: PaymentMethod
+  ne: PaymentMethod
+}
+
+input ModelPaymentStatusInput {
+  eq: PaymentStatus
+  ne: PaymentStatus
+}
+
+input ModelPaymentFilterInput {
+  repairId: ModelIDInput
+  amount: ModelFloatInput
+  method: ModelPaymentMethodInput
+  status: ModelPaymentStatusInput
+  date: ModelStringInput
+  referenceId: ModelStringInput
+  notes: ModelStringInput
+  id: ModelIDInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  and: [ModelPaymentFilterInput]
+  or: [ModelPaymentFilterInput]
+  not: ModelPaymentFilterInput
+  owner: ModelStringInput
+}
+
+input ModelPaymentConditionInput {
+  repairId: ModelIDInput
+  amount: ModelFloatInput
+  method: ModelPaymentMethodInput
+  status: ModelPaymentStatusInput
+  date: ModelStringInput
+  referenceId: ModelStringInput
+  notes: ModelStringInput
+  and: [ModelPaymentConditionInput]
+  or: [ModelPaymentConditionInput]
+  not: ModelPaymentConditionInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  owner: ModelStringInput
+}
+
+input CreatePaymentInput {
+  repairId: ID!
+  amount: Float!
+  method: PaymentMethod
+  status: PaymentStatus
+  date: AWSDateTime!
+  referenceId: String
+  notes: String
+  id: ID
+}
+
+input UpdatePaymentInput {
+  repairId: ID
+  amount: Float
+  method: PaymentMethod
+  status: PaymentStatus
+  date: AWSDateTime
+  referenceId: String
+  notes: String
+  id: ID!
+}
+
+input DeletePaymentInput {
+  id: ID!
+}
+
+input ModelSubscriptionPaymentFilterInput {
+  repairId: ModelSubscriptionIDInput
+  amount: ModelSubscriptionFloatInput
+  method: ModelSubscriptionStringInput
+  status: ModelSubscriptionStringInput
+  date: ModelSubscriptionStringInput
+  referenceId: ModelSubscriptionStringInput
+  notes: ModelSubscriptionStringInput
+  id: ModelSubscriptionIDInput
+  createdAt: ModelSubscriptionStringInput
+  updatedAt: ModelSubscriptionStringInput
+  and: [ModelSubscriptionPaymentFilterInput]
+  or: [ModelSubscriptionPaymentFilterInput]
+  owner: ModelStringInput
+}
+
+type ModelStatusLogConnection @aws_iam @aws_cognito_user_pools {
+  items: [StatusLog]!
+  nextToken: String
+}
+
+input ModelStatusLogFilterInput {
+  repairId: ModelIDInput
+  status: ModelStringInput
+  timestamp: ModelStringInput
+  notes: ModelStringInput
+  id: ModelIDInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  and: [ModelStatusLogFilterInput]
+  or: [ModelStatusLogFilterInput]
+  not: ModelStatusLogFilterInput
+  owner: ModelStringInput
+}
+
+input ModelStatusLogConditionInput {
+  repairId: ModelIDInput
+  status: ModelStringInput
+  timestamp: ModelStringInput
+  notes: ModelStringInput
+  and: [ModelStatusLogConditionInput]
+  or: [ModelStatusLogConditionInput]
+  not: ModelStatusLogConditionInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  owner: ModelStringInput
+}
+
+input CreateStatusLogInput {
+  repairId: ID!
+  status: String!
+  timestamp: AWSDateTime!
+  notes: String
+  id: ID
+}
+
+input UpdateStatusLogInput {
+  repairId: ID
+  status: String
+  timestamp: AWSDateTime
+  notes: String
+  id: ID!
+}
+
+input DeleteStatusLogInput {
+  id: ID!
+}
+
+input ModelSubscriptionStatusLogFilterInput {
+  repairId: ModelSubscriptionIDInput
+  status: ModelSubscriptionStringInput
+  timestamp: ModelSubscriptionStringInput
+  notes: ModelSubscriptionStringInput
+  id: ModelSubscriptionIDInput
+  createdAt: ModelSubscriptionStringInput
+  updatedAt: ModelSubscriptionStringInput
+  and: [ModelSubscriptionStatusLogFilterInput]
+  or: [ModelSubscriptionStatusLogFilterInput]
+  owner: ModelStringInput
+}
+
+type ModelRepairPhotoConnection @aws_iam @aws_cognito_user_pools {
+  items: [RepairPhoto]!
+  nextToken: String
+}
+
+input ModelRepairPhotoFilterInput {
+  repairId: ModelIDInput
+  photoUrl: ModelStringInput
+  description: ModelStringInput
+  uploadedAt: ModelStringInput
+  id: ModelIDInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  and: [ModelRepairPhotoFilterInput]
+  or: [ModelRepairPhotoFilterInput]
+  not: ModelRepairPhotoFilterInput
+  owner: ModelStringInput
+}
+
+input ModelRepairPhotoConditionInput {
+  repairId: ModelIDInput
+  photoUrl: ModelStringInput
+  description: ModelStringInput
+  uploadedAt: ModelStringInput
+  and: [ModelRepairPhotoConditionInput]
+  or: [ModelRepairPhotoConditionInput]
+  not: ModelRepairPhotoConditionInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  owner: ModelStringInput
+}
+
+input CreateRepairPhotoInput {
+  repairId: ID!
+  photoUrl: String!
+  description: String
+  uploadedAt: AWSDateTime!
+  id: ID
+}
+
+input UpdateRepairPhotoInput {
+  repairId: ID
+  photoUrl: String
+  description: String
+  uploadedAt: AWSDateTime
+  id: ID!
+}
+
+input DeleteRepairPhotoInput {
+  id: ID!
+}
+
+input ModelSubscriptionRepairPhotoFilterInput {
+  repairId: ModelSubscriptionIDInput
+  photoUrl: ModelSubscriptionStringInput
+  description: ModelSubscriptionStringInput
+  uploadedAt: ModelSubscriptionStringInput
+  id: ModelSubscriptionIDInput
+  createdAt: ModelSubscriptionStringInput
+  updatedAt: ModelSubscriptionStringInput
+  and: [ModelSubscriptionRepairPhotoFilterInput]
+  or: [ModelSubscriptionRepairPhotoFilterInput]
+  owner: ModelStringInput
+}
+
+type ModelAppointmentConnection @aws_iam @aws_cognito_user_pools {
+  items: [Appointment]!
+  nextToken: String
+}
+
+input ModelAppointmentTypeInput {
+  eq: AppointmentType
+  ne: AppointmentType
+}
+
+input ModelAppointmentStatusInput {
+  eq: AppointmentStatus
+  ne: AppointmentStatus
+}
+
+input ModelAppointmentFilterInput {
+  repairId: ModelIDInput
+  scheduledAt: ModelStringInput
+  type: ModelAppointmentTypeInput
+  status: ModelAppointmentStatusInput
+  notes: ModelStringInput
+  id: ModelIDInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  and: [ModelAppointmentFilterInput]
+  or: [ModelAppointmentFilterInput]
+  not: ModelAppointmentFilterInput
+  owner: ModelStringInput
+}
+
+input ModelAppointmentConditionInput {
+  repairId: ModelIDInput
+  scheduledAt: ModelStringInput
+  type: ModelAppointmentTypeInput
+  status: ModelAppointmentStatusInput
+  notes: ModelStringInput
+  and: [ModelAppointmentConditionInput]
+  or: [ModelAppointmentConditionInput]
+  not: ModelAppointmentConditionInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  owner: ModelStringInput
+}
+
+input CreateAppointmentInput {
+  repairId: ID!
+  scheduledAt: AWSDateTime!
+  type: AppointmentType
+  status: AppointmentStatus
+  notes: String
+  id: ID
+}
+
+input UpdateAppointmentInput {
+  repairId: ID
+  scheduledAt: AWSDateTime
+  type: AppointmentType
+  status: AppointmentStatus
+  notes: String
+  id: ID!
+}
+
+input DeleteAppointmentInput {
+  id: ID!
+}
+
+input ModelSubscriptionAppointmentFilterInput {
+  repairId: ModelSubscriptionIDInput
+  scheduledAt: ModelSubscriptionStringInput
+  type: ModelSubscriptionStringInput
+  status: ModelSubscriptionStringInput
+  notes: ModelSubscriptionStringInput
+  id: ModelSubscriptionIDInput
+  createdAt: ModelSubscriptionStringInput
+  updatedAt: ModelSubscriptionStringInput
+  and: [ModelSubscriptionAppointmentFilterInput]
+  or: [ModelSubscriptionAppointmentFilterInput]
+  owner: ModelStringInput
+}
+
+type ModelInventoryConnection @aws_iam @aws_cognito_user_pools {
+  items: [Inventory]!
+  nextToken: String
+}
+
+input ModelInventoryFilterInput {
+  partName: ModelStringInput
+  partNumber: ModelStringInput
+  deviceType: ModelStringInput
+  deviceModel: ModelStringInput
+  quantity: ModelIntInput
+  cost: ModelFloatInput
+  supplier: ModelStringInput
+  lastRestocked: ModelStringInput
+  id: ModelIDInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  and: [ModelInventoryFilterInput]
+  or: [ModelInventoryFilterInput]
+  not: ModelInventoryFilterInput
+}
+
+input ModelInventoryConditionInput {
+  partName: ModelStringInput
+  partNumber: ModelStringInput
+  deviceType: ModelStringInput
+  deviceModel: ModelStringInput
+  quantity: ModelIntInput
+  cost: ModelFloatInput
+  supplier: ModelStringInput
+  lastRestocked: ModelStringInput
+  and: [ModelInventoryConditionInput]
+  or: [ModelInventoryConditionInput]
+  not: ModelInventoryConditionInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+}
+
+input CreateInventoryInput {
+  partName: String!
+  partNumber: String
+  deviceType: String!
+  deviceModel: String
+  quantity: Int!
+  cost: Float!
+  supplier: String
+  lastRestocked: AWSDateTime
+  id: ID
+}
+
+input UpdateInventoryInput {
+  partName: String
+  partNumber: String
+  deviceType: String
+  deviceModel: String
+  quantity: Int
+  cost: Float
+  supplier: String
+  lastRestocked: AWSDateTime
+  id: ID!
+}
+
+input DeleteInventoryInput {
+  id: ID!
+}
+
+input ModelSubscriptionInventoryFilterInput {
+  partName: ModelSubscriptionStringInput
+  partNumber: ModelSubscriptionStringInput
+  deviceType: ModelSubscriptionStringInput
+  deviceModel: ModelSubscriptionStringInput
+  quantity: ModelSubscriptionIntInput
+  cost: ModelSubscriptionFloatInput
+  supplier: ModelSubscriptionStringInput
+  lastRestocked: ModelSubscriptionStringInput
+  id: ModelSubscriptionIDInput
+  createdAt: ModelSubscriptionStringInput
+  updatedAt: ModelSubscriptionStringInput
+  and: [ModelSubscriptionInventoryFilterInput]
+  or: [ModelSubscriptionInventoryFilterInput]
+}

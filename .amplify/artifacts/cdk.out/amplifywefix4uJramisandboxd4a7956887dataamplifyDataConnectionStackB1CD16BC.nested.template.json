@@ -12,7 +12,7 @@
     "FunctionVersion": "2018-05-29",
     "Name": "Customerrepairsauth0Function",
     "RequestMappingTemplateS3Location": {
-     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/d93611dca70c178d77b1a4c37d837804654d130af6ed41494edf2a38dd838ce6.vtl"
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/098f37d801ad3658e8e984eef7fa44b30d0782f65399f62f197bbcc2c7305bed.vtl"
     },
     "ResponseMappingTemplate": "$util.toJson({})"
    },
@@ -155,7 +155,7 @@
     "FunctionVersion": "2018-05-29",
     "Name": "Repairphotosauth0Function",
     "RequestMappingTemplateS3Location": {
-     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/d93611dca70c178d77b1a4c37d837804654d130af6ed41494edf2a38dd838ce6.vtl"
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/098f37d801ad3658e8e984eef7fa44b30d0782f65399f62f197bbcc2c7305bed.vtl"
     },
     "ResponseMappingTemplate": "$util.toJson({})"
    },
@@ -298,7 +298,7 @@
     "FunctionVersion": "2018-05-29",
     "Name": "Repairappointmentsauth0Function",
     "RequestMappingTemplateS3Location": {
-     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/d93611dca70c178d77b1a4c37d837804654d130af6ed41494edf2a38dd838ce6.vtl"
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/098f37d801ad3658e8e984eef7fa44b30d0782f65399f62f197bbcc2c7305bed.vtl"
     },
     "ResponseMappingTemplate": "$util.toJson({})"
    },
@@ -429,6 +429,292 @@
     "aws:cdk:path": "amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/ConnectionStack/repairAppointmentsResolver"
    }
   },
+  "Repairpaymentsauth0FunctionRepairpaymentsauth0FunctionAppSyncFunction954EFD8D": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifywefix4uJramisandboxd4a7956887dataamplifyDataGraphQLAPI007FDE3BApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifywefix4uJramisandboxd4a7956887dataamplifyDataGraphQLAPINONEDS1FD993A4Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "Repairpaymentsauth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/098f37d801ad3658e8e984eef7fa44b30d0782f65399f62f197bbcc2c7305bed.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/ConnectionStack/Repairpaymentsauth0Function/Repairpaymentsauth0Function.AppSyncFunction"
+   }
+  },
+  "RepairPaymentsDataResolverFnRepairPaymentsDataResolverFnAppSyncFunction418E5B59": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifywefix4uJramisandboxd4a7956887dataamplifyDataGraphQLAPI007FDE3BApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifywefix4uJramisandboxd4a7956887dataamplifyDataPaymentNestedStackPaymentNestedStackResourceBC3D8635Outputsamplifywefix4uJramisandboxd4a7956887dataamplifyDataPaymentPaymentDataSource7472893BName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "RepairPaymentsDataResolverFn",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/70067df7c9257a898a79c425ddfc6ae6e22bbafa5b2f05a73c8d2181c76aff88.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/49e7a1f2fb4c809b82bed6b0242a2a3bcfa2c5276ebd2539ff330fee36f8fe18.vtl"
+    }
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/ConnectionStack/RepairPaymentsDataResolverFn/RepairPaymentsDataResolverFn.AppSyncFunction"
+   }
+  },
+  "RepairpaymentsResolver": {
+   "Type": "AWS::AppSync::Resolver",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifywefix4uJramisandboxd4a7956887dataamplifyDataGraphQLAPI007FDE3BApiId"
+    },
+    "FieldName": "payments",
+    "Kind": "PIPELINE",
+    "PipelineConfig": {
+     "Functions": [
+      {
+       "Fn::GetAtt": [
+        "Repairpaymentsauth0FunctionRepairpaymentsauth0FunctionAppSyncFunction954EFD8D",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "RepairPaymentsDataResolverFnRepairPaymentsDataResolverFnAppSyncFunction418E5B59",
+        "FunctionId"
+       ]
+      }
+     ]
+    },
+    "RequestMappingTemplate": {
+     "Fn::Join": [
+      "",
+      [
+       "$util.qr($ctx.stash.put(\"typeName\", \"Repair\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"payments\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"AMAZON_DYNAMODB\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       {
+        "Ref": "referencetoamplifywefix4uJramisandboxd4a7956887dataamplifyDataGraphQLAPI007FDE3BApiId"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n$util.qr($ctx.stash.put(\"tableName\", \"",
+       {
+        "Fn::Select": [
+         1,
+         {
+          "Fn::Split": [
+           "/",
+           {
+            "Fn::Select": [
+             5,
+             {
+              "Fn::Split": [
+               ":",
+               {
+                "Ref": "referencetoamplifywefix4uJramisandboxd4a7956887dataamplifyDataPaymentNestedStackPaymentNestedStackResourceBC3D8635Outputsamplifywefix4uJramisandboxd4a7956887dataamplifyDataPaymentPaymentTable70C44B3ETableArn"
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"authRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifywefix4uJramisandboxd4a7956887authNestedStackauthNestedStackResource0ECD366DOutputsamplifywefix4uJramisandboxd4a7956887authamplifyAuthauthenticatedUserRole98998280Ref"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"unauthRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifywefix4uJramisandboxd4a7956887authNestedStackauthNestedStackResource0ECD366DOutputsamplifywefix4uJramisandboxd4a7956887authamplifyAuthunauthenticatedUserRole921E82E5Ref"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"identityPoolId\", \"",
+       {
+        "Ref": "referencetoamplifywefix4uJramisandboxd4a7956887authNestedStackauthNestedStackResource0ECD366DOutputsamplifywefix4uJramisandboxd4a7956887authamplifyAuthIdentityPool9C52C8BBRef"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+      ]
+     ]
+    },
+    "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
+    "TypeName": "Repair"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/ConnectionStack/repairPaymentsResolver"
+   }
+  },
+  "RepairstatusLogsauth0FunctionRepairstatusLogsauth0FunctionAppSyncFunction8162835D": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifywefix4uJramisandboxd4a7956887dataamplifyDataGraphQLAPI007FDE3BApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifywefix4uJramisandboxd4a7956887dataamplifyDataGraphQLAPINONEDS1FD993A4Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "RepairstatusLogsauth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/098f37d801ad3658e8e984eef7fa44b30d0782f65399f62f197bbcc2c7305bed.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/ConnectionStack/RepairstatusLogsauth0Function/RepairstatusLogsauth0Function.AppSyncFunction"
+   }
+  },
+  "RepairStatusLogsDataResolverFnRepairStatusLogsDataResolverFnAppSyncFunctionFE74FFFA": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifywefix4uJramisandboxd4a7956887dataamplifyDataGraphQLAPI007FDE3BApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifywefix4uJramisandboxd4a7956887dataamplifyDataStatusLogNestedStackStatusLogNestedStackResource11350D3EOutputsamplifywefix4uJramisandboxd4a7956887dataamplifyDataStatusLogStatusLogDataSourceB6D5703FName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "RepairStatusLogsDataResolverFn",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/34c6eb4789cbb172154ea9806109996950668cdf1b4b9144fb3c96a35efe0b7d.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/49e7a1f2fb4c809b82bed6b0242a2a3bcfa2c5276ebd2539ff330fee36f8fe18.vtl"
+    }
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/ConnectionStack/RepairStatusLogsDataResolverFn/RepairStatusLogsDataResolverFn.AppSyncFunction"
+   }
+  },
+  "RepairstatusLogsResolver": {
+   "Type": "AWS::AppSync::Resolver",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifywefix4uJramisandboxd4a7956887dataamplifyDataGraphQLAPI007FDE3BApiId"
+    },
+    "FieldName": "statusLogs",
+    "Kind": "PIPELINE",
+    "PipelineConfig": {
+     "Functions": [
+      {
+       "Fn::GetAtt": [
+        "RepairstatusLogsauth0FunctionRepairstatusLogsauth0FunctionAppSyncFunction8162835D",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "RepairStatusLogsDataResolverFnRepairStatusLogsDataResolverFnAppSyncFunctionFE74FFFA",
+        "FunctionId"
+       ]
+      }
+     ]
+    },
+    "RequestMappingTemplate": {
+     "Fn::Join": [
+      "",
+      [
+       "$util.qr($ctx.stash.put(\"typeName\", \"Repair\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"statusLogs\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"AMAZON_DYNAMODB\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       {
+        "Ref": "referencetoamplifywefix4uJramisandboxd4a7956887dataamplifyDataGraphQLAPI007FDE3BApiId"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n$util.qr($ctx.stash.put(\"tableName\", \"",
+       {
+        "Fn::Select": [
+         1,
+         {
+          "Fn::Split": [
+           "/",
+           {
+            "Fn::Select": [
+             5,
+             {
+              "Fn::Split": [
+               ":",
+               {
+                "Ref": "referencetoamplifywefix4uJramisandboxd4a7956887dataamplifyDataStatusLogNestedStackStatusLogNestedStackResource11350D3EOutputsamplifywefix4uJramisandboxd4a7956887dataamplifyDataStatusLogStatusLogTable557DF5AATableArn"
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"authRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifywefix4uJramisandboxd4a7956887authNestedStackauthNestedStackResource0ECD366DOutputsamplifywefix4uJramisandboxd4a7956887authamplifyAuthauthenticatedUserRole98998280Ref"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"unauthRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifywefix4uJramisandboxd4a7956887authNestedStackauthNestedStackResource0ECD366DOutputsamplifywefix4uJramisandboxd4a7956887authamplifyAuthunauthenticatedUserRole921E82E5Ref"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"identityPoolId\", \"",
+       {
+        "Ref": "referencetoamplifywefix4uJramisandboxd4a7956887authNestedStackauthNestedStackResource0ECD366DOutputsamplifywefix4uJramisandboxd4a7956887authamplifyAuthIdentityPool9C52C8BBRef"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+      ]
+     ]
+    },
+    "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
+    "TypeName": "Repair"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/ConnectionStack/repairStatusLogsResolver"
+   }
+  },
   "Repaircustomerauth0FunctionRepaircustomerauth0FunctionAppSyncFunction51D75BE1": {
    "Type": "AWS::AppSync::FunctionConfiguration",
    "Properties": {
@@ -441,7 +727,7 @@
     "FunctionVersion": "2018-05-29",
     "Name": "Repaircustomerauth0Function",
     "RequestMappingTemplateS3Location": {
-     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/d93611dca70c178d77b1a4c37d837804654d130af6ed41494edf2a38dd838ce6.vtl"
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/098f37d801ad3658e8e984eef7fa44b30d0782f65399f62f197bbcc2c7305bed.vtl"
     },
     "ResponseMappingTemplate": "$util.toJson({})"
    },
@@ -572,6 +858,292 @@
     "aws:cdk:path": "amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/ConnectionStack/repairCustomerResolver"
    }
   },
+  "Paymentrepairauth0FunctionPaymentrepairauth0FunctionAppSyncFunction038C9DD5": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifywefix4uJramisandboxd4a7956887dataamplifyDataGraphQLAPI007FDE3BApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifywefix4uJramisandboxd4a7956887dataamplifyDataGraphQLAPINONEDS1FD993A4Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "Paymentrepairauth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/098f37d801ad3658e8e984eef7fa44b30d0782f65399f62f197bbcc2c7305bed.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/ConnectionStack/Paymentrepairauth0Function/Paymentrepairauth0Function.AppSyncFunction"
+   }
+  },
+  "PaymentRepairDataResolverFnPaymentRepairDataResolverFnAppSyncFunction0A6AB1A2": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifywefix4uJramisandboxd4a7956887dataamplifyDataGraphQLAPI007FDE3BApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifywefix4uJramisandboxd4a7956887dataamplifyDataRepairNestedStackRepairNestedStackResourceA675A421Outputsamplifywefix4uJramisandboxd4a7956887dataamplifyDataRepairRepairDataSource4822F52EName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "PaymentRepairDataResolverFn",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/69ea46a82e65a53caa1cf3c6703da6cf98f92868dc86cb9aa32ee0c06c625e37.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/dcb70e4856bc9a423e02b8b9e9c2ab3f71479784572d4c04a02d1f5b61a9f9ac.vtl"
+    }
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/ConnectionStack/PaymentRepairDataResolverFn/PaymentRepairDataResolverFn.AppSyncFunction"
+   }
+  },
+  "PaymentrepairResolver": {
+   "Type": "AWS::AppSync::Resolver",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifywefix4uJramisandboxd4a7956887dataamplifyDataGraphQLAPI007FDE3BApiId"
+    },
+    "FieldName": "repair",
+    "Kind": "PIPELINE",
+    "PipelineConfig": {
+     "Functions": [
+      {
+       "Fn::GetAtt": [
+        "Paymentrepairauth0FunctionPaymentrepairauth0FunctionAppSyncFunction038C9DD5",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "PaymentRepairDataResolverFnPaymentRepairDataResolverFnAppSyncFunction0A6AB1A2",
+        "FunctionId"
+       ]
+      }
+     ]
+    },
+    "RequestMappingTemplate": {
+     "Fn::Join": [
+      "",
+      [
+       "$util.qr($ctx.stash.put(\"typeName\", \"Payment\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"repair\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"AMAZON_DYNAMODB\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       {
+        "Ref": "referencetoamplifywefix4uJramisandboxd4a7956887dataamplifyDataGraphQLAPI007FDE3BApiId"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n$util.qr($ctx.stash.put(\"tableName\", \"",
+       {
+        "Fn::Select": [
+         1,
+         {
+          "Fn::Split": [
+           "/",
+           {
+            "Fn::Select": [
+             5,
+             {
+              "Fn::Split": [
+               ":",
+               {
+                "Ref": "referencetoamplifywefix4uJramisandboxd4a7956887dataamplifyDataRepairNestedStackRepairNestedStackResourceA675A421Outputsamplifywefix4uJramisandboxd4a7956887dataamplifyDataRepairRepairTable2C7AA594TableArn"
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"authRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifywefix4uJramisandboxd4a7956887authNestedStackauthNestedStackResource0ECD366DOutputsamplifywefix4uJramisandboxd4a7956887authamplifyAuthauthenticatedUserRole98998280Ref"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"unauthRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifywefix4uJramisandboxd4a7956887authNestedStackauthNestedStackResource0ECD366DOutputsamplifywefix4uJramisandboxd4a7956887authamplifyAuthunauthenticatedUserRole921E82E5Ref"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"identityPoolId\", \"",
+       {
+        "Ref": "referencetoamplifywefix4uJramisandboxd4a7956887authNestedStackauthNestedStackResource0ECD366DOutputsamplifywefix4uJramisandboxd4a7956887authamplifyAuthIdentityPool9C52C8BBRef"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+      ]
+     ]
+    },
+    "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
+    "TypeName": "Payment"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/ConnectionStack/paymentRepairResolver"
+   }
+  },
+  "StatusLogrepairauth0FunctionStatusLogrepairauth0FunctionAppSyncFunctionB5E82E79": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifywefix4uJramisandboxd4a7956887dataamplifyDataGraphQLAPI007FDE3BApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifywefix4uJramisandboxd4a7956887dataamplifyDataGraphQLAPINONEDS1FD993A4Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "StatusLogrepairauth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/098f37d801ad3658e8e984eef7fa44b30d0782f65399f62f197bbcc2c7305bed.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/ConnectionStack/StatusLogrepairauth0Function/StatusLogrepairauth0Function.AppSyncFunction"
+   }
+  },
+  "StatusLogRepairDataResolverFnStatusLogRepairDataResolverFnAppSyncFunctionECD7CCDF": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifywefix4uJramisandboxd4a7956887dataamplifyDataGraphQLAPI007FDE3BApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifywefix4uJramisandboxd4a7956887dataamplifyDataRepairNestedStackRepairNestedStackResourceA675A421Outputsamplifywefix4uJramisandboxd4a7956887dataamplifyDataRepairRepairDataSource4822F52EName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "StatusLogRepairDataResolverFn",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/69ea46a82e65a53caa1cf3c6703da6cf98f92868dc86cb9aa32ee0c06c625e37.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/dcb70e4856bc9a423e02b8b9e9c2ab3f71479784572d4c04a02d1f5b61a9f9ac.vtl"
+    }
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/ConnectionStack/StatusLogRepairDataResolverFn/StatusLogRepairDataResolverFn.AppSyncFunction"
+   }
+  },
+  "StatusLogrepairResolver": {
+   "Type": "AWS::AppSync::Resolver",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifywefix4uJramisandboxd4a7956887dataamplifyDataGraphQLAPI007FDE3BApiId"
+    },
+    "FieldName": "repair",
+    "Kind": "PIPELINE",
+    "PipelineConfig": {
+     "Functions": [
+      {
+       "Fn::GetAtt": [
+        "StatusLogrepairauth0FunctionStatusLogrepairauth0FunctionAppSyncFunctionB5E82E79",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "StatusLogRepairDataResolverFnStatusLogRepairDataResolverFnAppSyncFunctionECD7CCDF",
+        "FunctionId"
+       ]
+      }
+     ]
+    },
+    "RequestMappingTemplate": {
+     "Fn::Join": [
+      "",
+      [
+       "$util.qr($ctx.stash.put(\"typeName\", \"StatusLog\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"repair\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"AMAZON_DYNAMODB\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       {
+        "Ref": "referencetoamplifywefix4uJramisandboxd4a7956887dataamplifyDataGraphQLAPI007FDE3BApiId"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n$util.qr($ctx.stash.put(\"tableName\", \"",
+       {
+        "Fn::Select": [
+         1,
+         {
+          "Fn::Split": [
+           "/",
+           {
+            "Fn::Select": [
+             5,
+             {
+              "Fn::Split": [
+               ":",
+               {
+                "Ref": "referencetoamplifywefix4uJramisandboxd4a7956887dataamplifyDataRepairNestedStackRepairNestedStackResourceA675A421Outputsamplifywefix4uJramisandboxd4a7956887dataamplifyDataRepairRepairTable2C7AA594TableArn"
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"authRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifywefix4uJramisandboxd4a7956887authNestedStackauthNestedStackResource0ECD366DOutputsamplifywefix4uJramisandboxd4a7956887authamplifyAuthauthenticatedUserRole98998280Ref"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"unauthRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifywefix4uJramisandboxd4a7956887authNestedStackauthNestedStackResource0ECD366DOutputsamplifywefix4uJramisandboxd4a7956887authamplifyAuthunauthenticatedUserRole921E82E5Ref"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"identityPoolId\", \"",
+       {
+        "Ref": "referencetoamplifywefix4uJramisandboxd4a7956887authNestedStackauthNestedStackResource0ECD366DOutputsamplifywefix4uJramisandboxd4a7956887authamplifyAuthIdentityPool9C52C8BBRef"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+      ]
+     ]
+    },
+    "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
+    "TypeName": "StatusLog"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/ConnectionStack/statusLogRepairResolver"
+   }
+  },
   "RepairPhotorepairauth0FunctionRepairPhotorepairauth0FunctionAppSyncFunction65724273": {
    "Type": "AWS::AppSync::FunctionConfiguration",
    "Properties": {
@@ -584,7 +1156,7 @@
     "FunctionVersion": "2018-05-29",
     "Name": "RepairPhotorepairauth0Function",
     "RequestMappingTemplateS3Location": {
-     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/d93611dca70c178d77b1a4c37d837804654d130af6ed41494edf2a38dd838ce6.vtl"
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/098f37d801ad3658e8e984eef7fa44b30d0782f65399f62f197bbcc2c7305bed.vtl"
     },
     "ResponseMappingTemplate": "$util.toJson({})"
    },
@@ -727,7 +1299,7 @@
     "FunctionVersion": "2018-05-29",
     "Name": "Appointmentrepairauth0Function",
     "RequestMappingTemplateS3Location": {
-     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/d93611dca70c178d77b1a4c37d837804654d130af6ed41494edf2a38dd838ce6.vtl"
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/098f37d801ad3658e8e984eef7fa44b30d0782f65399f62f197bbcc2c7305bed.vtl"
     },
     "ResponseMappingTemplate": "$util.toJson({})"
    },
@@ -861,7 +1433,7 @@
   "CDKMetadata": {
    "Type": "AWS::CDK::Metadata",
    "Properties": {
-    "Analytics": "v2:deflate64:H4sIAAAAAAAA/yWOMQ6DMAwA39I9uBSWrgWpYwd4AHKDQQbqoDgBVYi/V9DpdMvpMshud0gvuGpi2zGZ+A3bizRQWwe0o8FVm03zBlUpKDwOGM2hiHakUKCSwXnWr1jYyk6eUWxgJ6WTjvvo8RBTdlKRumkhv+/mbNQBe5Z+N+JagkGvS5bCuTIoc+KjBP4QVH/+ACSpTOinAAAA"
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/yXMMQ6DMAxA0bOwBzeFpWtB6tgBDoDcYJCBOggnoApx94p2evrLzyDLLdgEN01dO6YTv2B/kgZq64BuNLhps2veoCoFhfuJ0RyK6EYKBSoZnGf9iIO97OQRxQX2UnrpuI8LnmHKTipSP620HIf5PeqAPUt/GPEtwaCXNbNwvYFNBmVOlyiB3wTV3y8mJRd8pwAAAA=="
    },
    "Metadata": {
     "aws:cdk:path": "amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/ConnectionStack/CDKMetadata/Default"
@@ -1167,6 +1739,18 @@
    "Type": "String"
   },
   "referencetoamplifywefix4uJramisandboxd4a7956887dataamplifyDataAppointmentNestedStackAppointmentNestedStackResource231E1CA2Outputsamplifywefix4uJramisandboxd4a7956887dataamplifyDataAppointmentAppointmentTableF3C898DCTableArn": {
+   "Type": "String"
+  },
+  "referencetoamplifywefix4uJramisandboxd4a7956887dataamplifyDataPaymentNestedStackPaymentNestedStackResourceBC3D8635Outputsamplifywefix4uJramisandboxd4a7956887dataamplifyDataPaymentPaymentDataSource7472893BName": {
+   "Type": "String"
+  },
+  "referencetoamplifywefix4uJramisandboxd4a7956887dataamplifyDataPaymentNestedStackPaymentNestedStackResourceBC3D8635Outputsamplifywefix4uJramisandboxd4a7956887dataamplifyDataPaymentPaymentTable70C44B3ETableArn": {
+   "Type": "String"
+  },
+  "referencetoamplifywefix4uJramisandboxd4a7956887dataamplifyDataStatusLogNestedStackStatusLogNestedStackResource11350D3EOutputsamplifywefix4uJramisandboxd4a7956887dataamplifyDataStatusLogStatusLogDataSourceB6D5703FName": {
+   "Type": "String"
+  },
+  "referencetoamplifywefix4uJramisandboxd4a7956887dataamplifyDataStatusLogNestedStackStatusLogNestedStackResource11350D3EOutputsamplifywefix4uJramisandboxd4a7956887dataamplifyDataStatusLogStatusLogTable557DF5AATableArn": {
    "Type": "String"
   },
   "referencetoamplifywefix4uJramisandboxd4a7956887dataamplifyDataCustomerNestedStackCustomerNestedStackResourceFA056B36Outputsamplifywefix4uJramisandboxd4a7956887dataamplifyDataCustomerCustomerDataSource66D3D40BName": {

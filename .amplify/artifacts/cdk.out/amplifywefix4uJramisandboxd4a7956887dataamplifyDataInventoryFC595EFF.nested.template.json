@@ -613,7 +613,7 @@
     "FunctionVersion": "2018-05-29",
     "Name": "QuerygetInventoryauth0Function",
     "RequestMappingTemplateS3Location": {
-     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/6b25c9b572c67e0f7ad41cb8019a90825f3db4b02a0a15b837c7a82dcb302060.vtl"
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/671d9f4cf90cfe93c4569877c124765a95b1adce864676f016106c0672acb9d7.vtl"
     },
     "ResponseMappingTemplate": "$util.toJson({})"
    },
@@ -793,7 +793,7 @@
     "FunctionVersion": "2018-05-29",
     "Name": "QuerylistInventoriesauth0Function",
     "RequestMappingTemplateS3Location": {
-     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/6b25c9b572c67e0f7ad41cb8019a90825f3db4b02a0a15b837c7a82dcb302060.vtl"
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/671d9f4cf90cfe93c4569877c124765a95b1adce864676f016106c0672acb9d7.vtl"
     },
     "ResponseMappingTemplate": "$util.toJson({})"
    },
@@ -995,7 +995,7 @@
     "FunctionVersion": "2018-05-29",
     "Name": "MutationcreateInventoryauth0Function",
     "RequestMappingTemplateS3Location": {
-     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/0a84c7024d37c36d3a2221ffbe51ebe4457b71844b4ca4470186cc9f827512c1.vtl"
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/c5e4f9f105823326423c44d5f51f7c01a4d0305411eb66adfa956048669f2277.vtl"
     },
     "ResponseMappingTemplate": "$util.toJson({})"
    },
@@ -1209,7 +1209,7 @@
      "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/1f5fed297da9c32ae3af922bf3a38ccf23b956078887d16891ec06c20c64722c.vtl"
     },
     "ResponseMappingTemplateS3Location": {
-     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/f70b4f263d416dd02a02e984733c7c828892079148e1328ad99762f70c69e610.vtl"
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/da41aa265dcebeb1390be5bea0821ca5a87b2bae29fc436351b538f689905377.vtl"
     }
    },
    "DependsOn": [
@@ -1403,7 +1403,7 @@
      "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/1f5fed297da9c32ae3af922bf3a38ccf23b956078887d16891ec06c20c64722c.vtl"
     },
     "ResponseMappingTemplateS3Location": {
-     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/867fb7d7eb8e4127b6d0136b82c5c3f74a52eb410297086859986f8e7e4b02aa.vtl"
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/ffec3f86fac55a35757da3d6b6c858608323b87ea3f110eff97b5fc2a0167a97.vtl"
     }
    },
    "DependsOn": [
@@ -1585,7 +1585,7 @@
     "FunctionVersion": "2018-05-29",
     "Name": "SubscriptiononCreateInventoryauth0Function",
     "RequestMappingTemplateS3Location": {
-     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/3b6d810ef43cdbd93ef462c40b0df0328b89e04f1473a4f82f1178da1f1d5aa0.vtl"
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/9ec05bee6e5ff645b5649d716e45e37026f3c642ecd26fce8606d4e4a1b897b3.vtl"
     },
     "ResponseMappingTemplate": "$util.toJson({})"
    },
@@ -1732,7 +1732,7 @@
     "FunctionVersion": "2018-05-29",
     "Name": "SubscriptiononUpdateInventoryauth0Function",
     "RequestMappingTemplateS3Location": {
-     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/3b6d810ef43cdbd93ef462c40b0df0328b89e04f1473a4f82f1178da1f1d5aa0.vtl"
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/9ec05bee6e5ff645b5649d716e45e37026f3c642ecd26fce8606d4e4a1b897b3.vtl"
     },
     "ResponseMappingTemplate": "$util.toJson({})"
    },
@@ -1879,7 +1879,7 @@
     "FunctionVersion": "2018-05-29",
     "Name": "SubscriptiononDeleteInventoryauth0Function",
     "RequestMappingTemplateS3Location": {
-     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/3b6d810ef43cdbd93ef462c40b0df0328b89e04f1473a4f82f1178da1f1d5aa0.vtl"
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/9ec05bee6e5ff645b5649d716e45e37026f3c642ecd26fce8606d4e4a1b897b3.vtl"
     },
     "ResponseMappingTemplate": "$util.toJson({})"
    },
@@ -2014,101 +2014,10 @@
     "aws:cdk:path": "amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/Inventory/subscriptionOnDeleteInventoryResolver"
    }
   },
-  "InventoryOwnerDataResolverFnInventoryOwnerDataResolverFnAppSyncFunctionE46841B0": {
-   "Type": "AWS::AppSync::FunctionConfiguration",
-   "Properties": {
-    "ApiId": {
-     "Ref": "referencetoamplifywefix4uJramisandboxd4a7956887dataamplifyDataGraphQLAPI007FDE3BApiId"
-    },
-    "DataSourceName": {
-     "Ref": "referencetoamplifywefix4uJramisandboxd4a7956887dataamplifyDataGraphQLAPINONEDS1FD993A4Name"
-    },
-    "FunctionVersion": "2018-05-29",
-    "Name": "InventoryOwnerDataResolverFn",
-    "RequestMappingTemplateS3Location": {
-     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/041534e5fd916595f752318f161512d7c7f83b9f2cf32d0f0be381c12253ff68.vtl"
-    },
-    "ResponseMappingTemplateS3Location": {
-     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/064303962e481067b44300212516363b99aaee539b6bafaf756fdd83ff0b60f0.vtl"
-    }
-   },
-   "UpdateReplacePolicy": "Delete",
-   "DeletionPolicy": "Delete",
-   "Metadata": {
-    "aws:cdk:path": "amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/Inventory/InventoryOwnerDataResolverFn/InventoryOwnerDataResolverFn.AppSyncFunction"
-   }
-  },
-  "InventoryownerResolver": {
-   "Type": "AWS::AppSync::Resolver",
-   "Properties": {
-    "ApiId": {
-     "Ref": "referencetoamplifywefix4uJramisandboxd4a7956887dataamplifyDataGraphQLAPI007FDE3BApiId"
-    },
-    "FieldName": "owner",
-    "Kind": "PIPELINE",
-    "PipelineConfig": {
-     "Functions": [
-      {
-       "Fn::GetAtt": [
-        "InventoryOwnerDataResolverFnInventoryOwnerDataResolverFnAppSyncFunctionE46841B0",
-        "FunctionId"
-       ]
-      }
-     ]
-    },
-    "RequestMappingTemplate": {
-     "Fn::Join": [
-      "",
-      [
-       "$util.qr($ctx.stash.put(\"typeName\", \"Inventory\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"owner\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"NONE\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
-       {
-        "Ref": "referencetoamplifywefix4uJramisandboxd4a7956887dataamplifyDataGraphQLAPI007FDE3BApiId"
-       },
-       "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n\n$util.qr($ctx.stash.put(\"authRole\", \"arn:",
-       {
-        "Ref": "AWS::Partition"
-       },
-       ":sts::",
-       {
-        "Ref": "AWS::AccountId"
-       },
-       ":assumed-role/",
-       {
-        "Ref": "referencetoamplifywefix4uJramisandboxd4a7956887authNestedStackauthNestedStackResource0ECD366DOutputsamplifywefix4uJramisandboxd4a7956887authamplifyAuthauthenticatedUserRole98998280Ref"
-       },
-       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"unauthRole\", \"arn:",
-       {
-        "Ref": "AWS::Partition"
-       },
-       ":sts::",
-       {
-        "Ref": "AWS::AccountId"
-       },
-       ":assumed-role/",
-       {
-        "Ref": "referencetoamplifywefix4uJramisandboxd4a7956887authNestedStackauthNestedStackResource0ECD366DOutputsamplifywefix4uJramisandboxd4a7956887authamplifyAuthunauthenticatedUserRole921E82E5Ref"
-       },
-       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"identityPoolId\", \"",
-       {
-        "Ref": "referencetoamplifywefix4uJramisandboxd4a7956887authNestedStackauthNestedStackResource0ECD366DOutputsamplifywefix4uJramisandboxd4a7956887authamplifyAuthIdentityPool9C52C8BBRef"
-       },
-       "\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
-      ]
-     ]
-    },
-    "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
-    "TypeName": "Inventory"
-   },
-   "UpdateReplacePolicy": "Delete",
-   "DeletionPolicy": "Delete",
-   "Metadata": {
-    "aws:cdk:path": "amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/Inventory/inventoryOwnerResolver"
-   }
-  },
   "CDKMetadata": {
    "Type": "AWS::CDK::Metadata",
    "Properties": {
-    "Analytics": "v2:deflate64:H4sIAAAAAAAA/1WQwW6DQAxEv6X3xU3JJdcG1GNbQe+R2TVoA3jR2psoQvx7BKlS9TQezch+cg752wF2L3iVzLo+G3wD8yeJkqsVbW+Klr8x4khKcTVFYOfVBzYVSUjRkimSaBj/bMvPGa9ymt2NcQyugR9sBjqikPE4wlyF4dEOAy0Gp0lubGEut3rZlKhYP1f+dx+J7QpRBG59lyJuRL+XhwvFxcj+hCKkAu+rGNnDMdmedAVY1u5X0imp2eJasfPcLYaDIzjL6yXfwfaZs3ifxcTqR4LqoXe98H0LNgEAAA=="
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/1WOwW6DMAyGn6X34DG47LqCduwm2L0yiUEpIUGx06pCvPsEnTrt9PuTP9l/AUWZQ37AG2fajJmzHSwnYiHTCupRVb3/wogTCcUNquCNFRu8aohDippUlVjC9Ie9f8544/Ni7h6nYDr4xs7REZmUxQmWJriHHRytCueZ717DUu963dUo2D5P/qeP5PVWogq+t0OKuDf6/eyuFFfF5RmZSRjet1BcwjHpkWQrsG7uZ5I5idrXreBg/bAqHwzBhV+uRQ6vb5AfLmxtFpMXOxE0j/wBjbGlwzYBAAA="
    },
    "Metadata": {
     "aws:cdk:path": "amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/Inventory/CDKMetadata/Default"

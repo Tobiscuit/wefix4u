@@ -84,6 +84,13 @@
               "isRequired": false,
               "attributes": []
             },
+            "notes": {
+              "name": "notes",
+              "isArray": false,
+              "type": "String",
+              "isRequired": false,
+              "attributes": []
+            },
             "repairs": {
               "name": "repairs",
               "isArray": true,
@@ -133,6 +140,20 @@
                     "ownerField": "owner",
                     "allow": "owner",
                     "identityClaim": "cognito:username",
+                    "operations": [
+                      "create",
+                      "update",
+                      "delete",
+                      "read"
+                    ]
+                  },
+                  {
+                    "groupClaim": "cognito:groups",
+                    "provider": "userPools",
+                    "allow": "groups",
+                    "groups": [
+                      "Admins"
+                    ],
                     "operations": [
                       "create",
                       "update",
@@ -196,11 +217,48 @@
               "isRequired": true,
               "attributes": []
             },
+            "serialNumber": {
+              "name": "serialNumber",
+              "isArray": false,
+              "type": "String",
+              "isRequired": false,
+              "attributes": []
+            },
+            "devicePassword": {
+              "name": "devicePassword",
+              "isArray": false,
+              "type": "String",
+              "isRequired": false,
+              "attributes": []
+            },
+            "devicePattern": {
+              "name": "devicePattern",
+              "isArray": false,
+              "type": "String",
+              "isRequired": false,
+              "attributes": []
+            },
             "serviceType": {
               "name": "serviceType",
               "isArray": false,
               "type": "String",
               "isRequired": true,
+              "attributes": []
+            },
+            "description": {
+              "name": "description",
+              "isArray": false,
+              "type": "String",
+              "isRequired": false,
+              "attributes": []
+            },
+            "warrantyStatus": {
+              "name": "warrantyStatus",
+              "isArray": false,
+              "type": {
+                "enum": "RepairWarrantyStatus"
+              },
+              "isRequired": false,
               "attributes": []
             },
             "status": {
@@ -209,13 +267,6 @@
               "type": {
                 "enum": "RepairStatus"
               },
-              "isRequired": false,
-              "attributes": []
-            },
-            "description": {
-              "name": "description",
-              "isArray": false,
-              "type": "String",
               "isRequired": false,
               "attributes": []
             },
@@ -230,6 +281,27 @@
               "name": "actualCost",
               "isArray": false,
               "type": "Float",
+              "isRequired": false,
+              "attributes": []
+            },
+            "isMailIn": {
+              "name": "isMailIn",
+              "isArray": false,
+              "type": "Boolean",
+              "isRequired": false,
+              "attributes": []
+            },
+            "shippingLabelUrl": {
+              "name": "shippingLabelUrl",
+              "isArray": false,
+              "type": "String",
+              "isRequired": false,
+              "attributes": []
+            },
+            "trackingNumber": {
+              "name": "trackingNumber",
+              "isArray": false,
+              "type": "String",
               "isRequired": false,
               "attributes": []
             },
@@ -286,6 +358,38 @@
                 ]
               }
             },
+            "payments": {
+              "name": "payments",
+              "isArray": true,
+              "type": {
+                "model": "Payment"
+              },
+              "isRequired": false,
+              "attributes": [],
+              "isArrayNullable": true,
+              "association": {
+                "connectionType": "HAS_MANY",
+                "associatedWith": [
+                  "repairId"
+                ]
+              }
+            },
+            "statusLogs": {
+              "name": "statusLogs",
+              "isArray": true,
+              "type": {
+                "model": "StatusLog"
+              },
+              "isRequired": false,
+              "attributes": [],
+              "isArrayNullable": true,
+              "association": {
+                "connectionType": "HAS_MANY",
+                "associatedWith": [
+                  "repairId"
+                ]
+              }
+            },
             "createdAt": {
               "name": "createdAt",
               "isArray": false,
@@ -318,7 +422,272 @@
                     "provider": "userPools",
                     "ownerField": "owner",
                     "allow": "owner",
-                    "identityClaim": "cognito:username",
+                    "operations": [
+                      "read"
+                    ],
+                    "identityClaim": "cognito:username"
+                  },
+                  {
+                    "groupClaim": "cognito:groups",
+                    "provider": "userPools",
+                    "allow": "groups",
+                    "groups": [
+                      "Admins"
+                    ],
+                    "operations": [
+                      "create",
+                      "update",
+                      "delete",
+                      "read"
+                    ]
+                  }
+                ]
+              }
+            }
+          ],
+          "primaryKeyInfo": {
+            "isCustomPrimaryKey": false,
+            "primaryKeyFieldName": "id",
+            "sortKeyFieldNames": []
+          }
+        },
+        "Payment": {
+          "name": "Payment",
+          "fields": {
+            "id": {
+              "name": "id",
+              "isArray": false,
+              "type": "ID",
+              "isRequired": true,
+              "attributes": []
+            },
+            "repairId": {
+              "name": "repairId",
+              "isArray": false,
+              "type": "ID",
+              "isRequired": true,
+              "attributes": []
+            },
+            "repair": {
+              "name": "repair",
+              "isArray": false,
+              "type": {
+                "model": "Repair"
+              },
+              "isRequired": false,
+              "attributes": [],
+              "association": {
+                "connectionType": "BELONGS_TO",
+                "targetNames": [
+                  "repairId"
+                ]
+              }
+            },
+            "amount": {
+              "name": "amount",
+              "isArray": false,
+              "type": "Float",
+              "isRequired": true,
+              "attributes": []
+            },
+            "method": {
+              "name": "method",
+              "isArray": false,
+              "type": {
+                "enum": "PaymentMethod"
+              },
+              "isRequired": false,
+              "attributes": []
+            },
+            "status": {
+              "name": "status",
+              "isArray": false,
+              "type": {
+                "enum": "PaymentStatus"
+              },
+              "isRequired": false,
+              "attributes": []
+            },
+            "date": {
+              "name": "date",
+              "isArray": false,
+              "type": "AWSDateTime",
+              "isRequired": true,
+              "attributes": []
+            },
+            "referenceId": {
+              "name": "referenceId",
+              "isArray": false,
+              "type": "String",
+              "isRequired": false,
+              "attributes": []
+            },
+            "notes": {
+              "name": "notes",
+              "isArray": false,
+              "type": "String",
+              "isRequired": false,
+              "attributes": []
+            },
+            "createdAt": {
+              "name": "createdAt",
+              "isArray": false,
+              "type": "AWSDateTime",
+              "isRequired": false,
+              "attributes": [],
+              "isReadOnly": true
+            },
+            "updatedAt": {
+              "name": "updatedAt",
+              "isArray": false,
+              "type": "AWSDateTime",
+              "isRequired": false,
+              "attributes": [],
+              "isReadOnly": true
+            }
+          },
+          "syncable": true,
+          "pluralName": "Payments",
+          "attributes": [
+            {
+              "type": "model",
+              "properties": {}
+            },
+            {
+              "type": "auth",
+              "properties": {
+                "rules": [
+                  {
+                    "provider": "userPools",
+                    "ownerField": "owner",
+                    "allow": "owner",
+                    "operations": [
+                      "read",
+                      "create"
+                    ],
+                    "identityClaim": "cognito:username"
+                  },
+                  {
+                    "groupClaim": "cognito:groups",
+                    "provider": "userPools",
+                    "allow": "groups",
+                    "groups": [
+                      "Admins"
+                    ],
+                    "operations": [
+                      "create",
+                      "update",
+                      "delete",
+                      "read"
+                    ]
+                  }
+                ]
+              }
+            }
+          ],
+          "primaryKeyInfo": {
+            "isCustomPrimaryKey": false,
+            "primaryKeyFieldName": "id",
+            "sortKeyFieldNames": []
+          }
+        },
+        "StatusLog": {
+          "name": "StatusLog",
+          "fields": {
+            "id": {
+              "name": "id",
+              "isArray": false,
+              "type": "ID",
+              "isRequired": true,
+              "attributes": []
+            },
+            "repairId": {
+              "name": "repairId",
+              "isArray": false,
+              "type": "ID",
+              "isRequired": true,
+              "attributes": []
+            },
+            "repair": {
+              "name": "repair",
+              "isArray": false,
+              "type": {
+                "model": "Repair"
+              },
+              "isRequired": false,
+              "attributes": [],
+              "association": {
+                "connectionType": "BELONGS_TO",
+                "targetNames": [
+                  "repairId"
+                ]
+              }
+            },
+            "status": {
+              "name": "status",
+              "isArray": false,
+              "type": "String",
+              "isRequired": true,
+              "attributes": []
+            },
+            "timestamp": {
+              "name": "timestamp",
+              "isArray": false,
+              "type": "AWSDateTime",
+              "isRequired": true,
+              "attributes": []
+            },
+            "notes": {
+              "name": "notes",
+              "isArray": false,
+              "type": "String",
+              "isRequired": false,
+              "attributes": []
+            },
+            "createdAt": {
+              "name": "createdAt",
+              "isArray": false,
+              "type": "AWSDateTime",
+              "isRequired": false,
+              "attributes": [],
+              "isReadOnly": true
+            },
+            "updatedAt": {
+              "name": "updatedAt",
+              "isArray": false,
+              "type": "AWSDateTime",
+              "isRequired": false,
+              "attributes": [],
+              "isReadOnly": true
+            }
+          },
+          "syncable": true,
+          "pluralName": "StatusLogs",
+          "attributes": [
+            {
+              "type": "model",
+              "properties": {}
+            },
+            {
+              "type": "auth",
+              "properties": {
+                "rules": [
+                  {
+                    "provider": "userPools",
+                    "ownerField": "owner",
+                    "allow": "owner",
+                    "operations": [
+                      "read"
+                    ],
+                    "identityClaim": "cognito:username"
+                  },
+                  {
+                    "groupClaim": "cognito:groups",
+                    "provider": "userPools",
+                    "allow": "groups",
+                    "groups": [
+                      "Admins"
+                    ],
                     "operations": [
                       "create",
                       "update",
@@ -421,7 +790,18 @@
                     "provider": "userPools",
                     "ownerField": "owner",
                     "allow": "owner",
-                    "identityClaim": "cognito:username",
+                    "operations": [
+                      "read"
+                    ],
+                    "identityClaim": "cognito:username"
+                  },
+                  {
+                    "groupClaim": "cognito:groups",
+                    "provider": "userPools",
+                    "allow": "groups",
+                    "groups": [
+                      "Admins"
+                    ],
                     "operations": [
                       "create",
                       "update",
@@ -542,6 +922,20 @@
                       "delete",
                       "read"
                     ]
+                  },
+                  {
+                    "groupClaim": "cognito:groups",
+                    "provider": "userPools",
+                    "allow": "groups",
+                    "groups": [
+                      "Admins"
+                    ],
+                    "operations": [
+                      "create",
+                      "update",
+                      "delete",
+                      "read"
+                    ]
                   }
                 ]
               }
@@ -648,10 +1042,12 @@
               "properties": {
                 "rules": [
                   {
+                    "groupClaim": "cognito:groups",
                     "provider": "userPools",
-                    "ownerField": "owner",
-                    "allow": "owner",
-                    "identityClaim": "cognito:username",
+                    "allow": "groups",
+                    "groups": [
+                      "Admins"
+                    ],
                     "operations": [
                       "create",
                       "update",
@@ -671,6 +1067,14 @@
         }
       },
       "enums": {
+        "RepairWarrantyStatus": {
+          "name": "RepairWarrantyStatus",
+          "values": [
+            "none",
+            "limited",
+            "lifetime"
+          ]
+        },
         "RepairStatus": {
           "name": "RepairStatus",
           "values": [
@@ -679,7 +1083,26 @@
             "inProgress",
             "completed",
             "readyForPickup",
-            "pickedUp"
+            "pickedUp",
+            "cancelled"
+          ]
+        },
+        "PaymentMethod": {
+          "name": "PaymentMethod",
+          "values": [
+            "cash",
+            "card_square",
+            "card_stripe",
+            "transfer"
+          ]
+        },
+        "PaymentStatus": {
+          "name": "PaymentStatus",
+          "values": [
+            "pending",
+            "completed",
+            "refunded",
+            "failed"
           ]
         },
         "AppointmentType": {

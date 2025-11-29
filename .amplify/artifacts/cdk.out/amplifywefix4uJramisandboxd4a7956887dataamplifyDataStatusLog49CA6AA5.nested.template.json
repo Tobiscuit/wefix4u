@@ -349,7 +349,7 @@
   }
  },
  "Resources": {
-  "AppointmentTable": {
+  "StatusLogTable": {
    "Type": "Custom::AmplifyDynamoDBTable",
    "Properties": {
     "ServiceToken": {
@@ -359,7 +359,7 @@
      "Fn::Join": [
       "",
       [
-       "Appointment-",
+       "StatusLog-",
        {
         "Ref": "referencetoamplifywefix4uJramisandboxd4a7956887dataamplifyDataGraphQLAPI007FDE3BApiId"
        },
@@ -385,7 +385,7 @@
     ],
     "globalSecondaryIndexes": [
      {
-      "indexName": "gsi-Repair.appointments",
+      "indexName": "gsi-Repair.statusLogs",
       "keySchema": [
        {
         "attributeName": "repairId",
@@ -462,10 +462,10 @@
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/Appointment/AppointmentTable/Default/Default"
+    "aws:cdk:path": "amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/StatusLog/StatusLogTable/Default/Default"
    }
   },
-  "AppointmentIAMRoleC35F7722": {
+  "StatusLogIAMRoleC53DB496": {
    "Type": "AWS::IAM::Role",
    "Properties": {
     "AssumeRolePolicyDocument": {
@@ -509,7 +509,7 @@
               "Fn::Join": [
                "",
                [
-                "Appointment-",
+                "StatusLog-",
                 {
                  "Ref": "referencetoamplifywefix4uJramisandboxd4a7956887dataamplifyDataGraphQLAPI007FDE3BApiId"
                 },
@@ -528,7 +528,7 @@
               "Fn::Join": [
                "",
                [
-                "Appointment-",
+                "StatusLog-",
                 {
                  "Ref": "referencetoamplifywefix4uJramisandboxd4a7956887dataamplifyDataGraphQLAPI007FDE3BApiId"
                 },
@@ -551,7 +551,7 @@
      "Fn::Join": [
       "",
       [
-       "AppointmentIAMRole92524a-",
+       "StatusLogIAMRole957775-",
        {
         "Ref": "referencetoamplifywefix4uJramisandboxd4a7956887dataamplifyDataGraphQLAPI007FDE3BApiId"
        },
@@ -577,10 +577,10 @@
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/Appointment/AppointmentIAMRole/Resource"
+    "aws:cdk:path": "amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/StatusLog/StatusLogIAMRole/Resource"
    }
   },
-  "AppointmentDataSource": {
+  "StatusLogDataSource": {
    "Type": "AWS::AppSync::DataSource",
    "Properties": {
     "ApiId": {
@@ -604,7 +604,7 @@
              ":",
              {
               "Fn::GetAtt": [
-               "AppointmentTable",
+               "StatusLogTable",
                "TableArn"
               ]
              }
@@ -617,25 +617,25 @@
       ]
      }
     },
-    "Name": "AppointmentTable",
+    "Name": "StatusLogTable",
     "ServiceRoleArn": {
      "Fn::GetAtt": [
-      "AppointmentIAMRoleC35F7722",
+      "StatusLogIAMRoleC53DB496",
       "Arn"
      ]
     },
     "Type": "AMAZON_DYNAMODB"
    },
    "DependsOn": [
-    "AppointmentIAMRoleC35F7722"
+    "StatusLogIAMRoleC53DB496"
    ],
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/Appointment/AppointmentDataSource/Resource"
+    "aws:cdk:path": "amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/StatusLog/StatusLogDataSource/Resource"
    }
   },
-  "QuerygetAppointmentauth0FunctionQuerygetAppointmentauth0FunctionAppSyncFunctionCA69404A": {
+  "QuerygetStatusLogauth0FunctionQuerygetStatusLogauth0FunctionAppSyncFunctionA0ECB14A": {
    "Type": "AWS::AppSync::FunctionConfiguration",
    "Properties": {
     "ApiId": {
@@ -645,7 +645,7 @@
      "Ref": "referencetoamplifywefix4uJramisandboxd4a7956887dataamplifyDataGraphQLAPINONEDS1FD993A4Name"
     },
     "FunctionVersion": "2018-05-29",
-    "Name": "QuerygetAppointmentauth0Function",
+    "Name": "QuerygetStatusLogauth0Function",
     "RequestMappingTemplateS3Location": {
      "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/37fb4bc432d048ef18d0836314a78fd7b64f7aabd1fe8f8efd7c3c43cd1cce54.vtl"
     },
@@ -654,10 +654,10 @@
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/Appointment/QuerygetAppointmentauth0Function/QuerygetAppointmentauth0Function.AppSyncFunction"
+    "aws:cdk:path": "amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/StatusLog/QuerygetStatusLogauth0Function/QuerygetStatusLogauth0Function.AppSyncFunction"
    }
   },
-  "QuerygetAppointmentpostAuth0FunctionQuerygetAppointmentpostAuth0FunctionAppSyncFunction9DE766A3": {
+  "QuerygetStatusLogpostAuth0FunctionQuerygetStatusLogpostAuth0FunctionAppSyncFunctionED4A4DD8": {
    "Type": "AWS::AppSync::FunctionConfiguration",
    "Properties": {
     "ApiId": {
@@ -667,7 +667,7 @@
      "Ref": "referencetoamplifywefix4uJramisandboxd4a7956887dataamplifyDataGraphQLAPINONEDS1FD993A4Name"
     },
     "FunctionVersion": "2018-05-29",
-    "Name": "QuerygetAppointmentpostAuth0Function",
+    "Name": "QuerygetStatusLogpostAuth0Function",
     "RequestMappingTemplateS3Location": {
      "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/c1721bcd774e27c514d3454b5be4f9bdd094c0161b57ddf053d618e3b0086a77.vtl"
     },
@@ -676,10 +676,10 @@
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/Appointment/QuerygetAppointmentpostAuth0Function/QuerygetAppointmentpostAuth0Function.AppSyncFunction"
+    "aws:cdk:path": "amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/StatusLog/QuerygetStatusLogpostAuth0Function/QuerygetStatusLogpostAuth0Function.AppSyncFunction"
    }
   },
-  "QueryGetAppointmentDataResolverFnQueryGetAppointmentDataResolverFnAppSyncFunction0BA0960B": {
+  "QueryGetStatusLogDataResolverFnQueryGetStatusLogDataResolverFnAppSyncFunctionF9C7EEE2": {
    "Type": "AWS::AppSync::FunctionConfiguration",
    "Properties": {
     "ApiId": {
@@ -687,12 +687,12 @@
     },
     "DataSourceName": {
      "Fn::GetAtt": [
-      "AppointmentDataSource",
+      "StatusLogDataSource",
       "Name"
      ]
     },
     "FunctionVersion": "2018-05-29",
-    "Name": "QueryGetAppointmentDataResolverFn",
+    "Name": "QueryGetStatusLogDataResolverFn",
     "RequestMappingTemplateS3Location": {
      "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/08f4d557693d96c1a4efba0f9dc91330e4b19772fd5477c156468843e3d9cb5e.vtl"
     },
@@ -701,39 +701,39 @@
     }
    },
    "DependsOn": [
-    "AppointmentDataSource"
+    "StatusLogDataSource"
    ],
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/Appointment/QueryGetAppointmentDataResolverFn/QueryGetAppointmentDataResolverFn.AppSyncFunction"
+    "aws:cdk:path": "amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/StatusLog/QueryGetStatusLogDataResolverFn/QueryGetStatusLogDataResolverFn.AppSyncFunction"
    }
   },
-  "GetAppointmentResolver": {
+  "GetStatusLogResolver": {
    "Type": "AWS::AppSync::Resolver",
    "Properties": {
     "ApiId": {
      "Ref": "referencetoamplifywefix4uJramisandboxd4a7956887dataamplifyDataGraphQLAPI007FDE3BApiId"
     },
-    "FieldName": "getAppointment",
+    "FieldName": "getStatusLog",
     "Kind": "PIPELINE",
     "PipelineConfig": {
      "Functions": [
       {
        "Fn::GetAtt": [
-        "QuerygetAppointmentauth0FunctionQuerygetAppointmentauth0FunctionAppSyncFunctionCA69404A",
+        "QuerygetStatusLogauth0FunctionQuerygetStatusLogauth0FunctionAppSyncFunctionA0ECB14A",
         "FunctionId"
        ]
       },
       {
        "Fn::GetAtt": [
-        "QuerygetAppointmentpostAuth0FunctionQuerygetAppointmentpostAuth0FunctionAppSyncFunction9DE766A3",
+        "QuerygetStatusLogpostAuth0FunctionQuerygetStatusLogpostAuth0FunctionAppSyncFunctionED4A4DD8",
         "FunctionId"
        ]
       },
       {
        "Fn::GetAtt": [
-        "QueryGetAppointmentDataResolverFnQueryGetAppointmentDataResolverFnAppSyncFunction0BA0960B",
+        "QueryGetStatusLogDataResolverFnQueryGetStatusLogDataResolverFnAppSyncFunctionF9C7EEE2",
         "FunctionId"
        ]
       }
@@ -743,7 +743,7 @@
      "Fn::Join": [
       "",
       [
-       "$util.qr($ctx.stash.put(\"typeName\", \"Query\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"getAppointment\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"AMAZON_DYNAMODB\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       "$util.qr($ctx.stash.put(\"typeName\", \"Query\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"getStatusLog\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"AMAZON_DYNAMODB\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
        {
         "Ref": "referencetoamplifywefix4uJramisandboxd4a7956887dataamplifyDataGraphQLAPI007FDE3BApiId"
        },
@@ -762,7 +762,7 @@
                ":",
                {
                 "Fn::GetAtt": [
-                 "AppointmentTable",
+                 "StatusLogTable",
                  "TableArn"
                 ]
                }
@@ -812,10 +812,10 @@
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/Appointment/queryGetAppointmentResolver"
+    "aws:cdk:path": "amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/StatusLog/queryGetStatusLogResolver"
    }
   },
-  "QuerylistAppointmentsauth0FunctionQuerylistAppointmentsauth0FunctionAppSyncFunction75A441EF": {
+  "QuerylistStatusLogsauth0FunctionQuerylistStatusLogsauth0FunctionAppSyncFunctionF90DC56E": {
    "Type": "AWS::AppSync::FunctionConfiguration",
    "Properties": {
     "ApiId": {
@@ -825,7 +825,7 @@
      "Ref": "referencetoamplifywefix4uJramisandboxd4a7956887dataamplifyDataGraphQLAPINONEDS1FD993A4Name"
     },
     "FunctionVersion": "2018-05-29",
-    "Name": "QuerylistAppointmentsauth0Function",
+    "Name": "QuerylistStatusLogsauth0Function",
     "RequestMappingTemplateS3Location": {
      "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/37fb4bc432d048ef18d0836314a78fd7b64f7aabd1fe8f8efd7c3c43cd1cce54.vtl"
     },
@@ -834,10 +834,10 @@
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/Appointment/QuerylistAppointmentsauth0Function/QuerylistAppointmentsauth0Function.AppSyncFunction"
+    "aws:cdk:path": "amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/StatusLog/QuerylistStatusLogsauth0Function/QuerylistStatusLogsauth0Function.AppSyncFunction"
    }
   },
-  "QuerylistAppointmentspostAuth0FunctionQuerylistAppointmentspostAuth0FunctionAppSyncFunction38D90138": {
+  "QuerylistStatusLogspostAuth0FunctionQuerylistStatusLogspostAuth0FunctionAppSyncFunction4ACAE0B5": {
    "Type": "AWS::AppSync::FunctionConfiguration",
    "Properties": {
     "ApiId": {
@@ -847,7 +847,7 @@
      "Ref": "referencetoamplifywefix4uJramisandboxd4a7956887dataamplifyDataGraphQLAPINONEDS1FD993A4Name"
     },
     "FunctionVersion": "2018-05-29",
-    "Name": "QuerylistAppointmentspostAuth0Function",
+    "Name": "QuerylistStatusLogspostAuth0Function",
     "RequestMappingTemplateS3Location": {
      "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/c1721bcd774e27c514d3454b5be4f9bdd094c0161b57ddf053d618e3b0086a77.vtl"
     },
@@ -856,10 +856,10 @@
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/Appointment/QuerylistAppointmentspostAuth0Function/QuerylistAppointmentspostAuth0Function.AppSyncFunction"
+    "aws:cdk:path": "amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/StatusLog/QuerylistStatusLogspostAuth0Function/QuerylistStatusLogspostAuth0Function.AppSyncFunction"
    }
   },
-  "QueryListAppointmentsDataResolverFnQueryListAppointmentsDataResolverFnAppSyncFunction1CD1AD63": {
+  "QueryListStatusLogsDataResolverFnQueryListStatusLogsDataResolverFnAppSyncFunction75AD0140": {
    "Type": "AWS::AppSync::FunctionConfiguration",
    "Properties": {
     "ApiId": {
@@ -867,12 +867,12 @@
     },
     "DataSourceName": {
      "Fn::GetAtt": [
-      "AppointmentDataSource",
+      "StatusLogDataSource",
       "Name"
      ]
     },
     "FunctionVersion": "2018-05-29",
-    "Name": "QueryListAppointmentsDataResolverFn",
+    "Name": "QueryListStatusLogsDataResolverFn",
     "RequestMappingTemplateS3Location": {
      "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/9fcbe070ecd3023c5bf5b966fa9584757db9762eef123bad0820bd87591b2174.vtl"
     },
@@ -881,39 +881,39 @@
     }
    },
    "DependsOn": [
-    "AppointmentDataSource"
+    "StatusLogDataSource"
    ],
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/Appointment/QueryListAppointmentsDataResolverFn/QueryListAppointmentsDataResolverFn.AppSyncFunction"
+    "aws:cdk:path": "amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/StatusLog/QueryListStatusLogsDataResolverFn/QueryListStatusLogsDataResolverFn.AppSyncFunction"
    }
   },
-  "ListAppointmentResolver": {
+  "ListStatusLogResolver": {
    "Type": "AWS::AppSync::Resolver",
    "Properties": {
     "ApiId": {
      "Ref": "referencetoamplifywefix4uJramisandboxd4a7956887dataamplifyDataGraphQLAPI007FDE3BApiId"
     },
-    "FieldName": "listAppointments",
+    "FieldName": "listStatusLogs",
     "Kind": "PIPELINE",
     "PipelineConfig": {
      "Functions": [
       {
        "Fn::GetAtt": [
-        "QuerylistAppointmentsauth0FunctionQuerylistAppointmentsauth0FunctionAppSyncFunction75A441EF",
+        "QuerylistStatusLogsauth0FunctionQuerylistStatusLogsauth0FunctionAppSyncFunctionF90DC56E",
         "FunctionId"
        ]
       },
       {
        "Fn::GetAtt": [
-        "QuerylistAppointmentspostAuth0FunctionQuerylistAppointmentspostAuth0FunctionAppSyncFunction38D90138",
+        "QuerylistStatusLogspostAuth0FunctionQuerylistStatusLogspostAuth0FunctionAppSyncFunction4ACAE0B5",
         "FunctionId"
        ]
       },
       {
        "Fn::GetAtt": [
-        "QueryListAppointmentsDataResolverFnQueryListAppointmentsDataResolverFnAppSyncFunction1CD1AD63",
+        "QueryListStatusLogsDataResolverFnQueryListStatusLogsDataResolverFnAppSyncFunction75AD0140",
         "FunctionId"
        ]
       }
@@ -923,7 +923,7 @@
      "Fn::Join": [
       "",
       [
-       "$util.qr($ctx.stash.put(\"typeName\", \"Query\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"listAppointments\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"AMAZON_DYNAMODB\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       "$util.qr($ctx.stash.put(\"typeName\", \"Query\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"listStatusLogs\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"AMAZON_DYNAMODB\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
        {
         "Ref": "referencetoamplifywefix4uJramisandboxd4a7956887dataamplifyDataGraphQLAPI007FDE3BApiId"
        },
@@ -942,7 +942,7 @@
                ":",
                {
                 "Fn::GetAtt": [
-                 "AppointmentTable",
+                 "StatusLogTable",
                  "TableArn"
                 ]
                }
@@ -992,10 +992,10 @@
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/Appointment/queryListAppointmentsResolver"
+    "aws:cdk:path": "amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/StatusLog/queryListStatusLogsResolver"
    }
   },
-  "MutationcreateAppointmentinit0FunctionMutationcreateAppointmentinit0FunctionAppSyncFunction06CD0EE6": {
+  "MutationcreateStatusLoginit0FunctionMutationcreateStatusLoginit0FunctionAppSyncFunction2CAEFC4E": {
    "Type": "AWS::AppSync::FunctionConfiguration",
    "Properties": {
     "ApiId": {
@@ -1005,7 +1005,7 @@
      "Ref": "referencetoamplifywefix4uJramisandboxd4a7956887dataamplifyDataGraphQLAPINONEDS1FD993A4Name"
     },
     "FunctionVersion": "2018-05-29",
-    "Name": "MutationcreateAppointmentinit0Function",
+    "Name": "MutationcreateStatusLoginit0Function",
     "RequestMappingTemplateS3Location": {
      "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/a183ddccbd956316c38ef97177b8f088ef0826f62023323f5ae6053d348ccffc.vtl"
     },
@@ -1014,10 +1014,10 @@
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/Appointment/MutationcreateAppointmentinit0Function/MutationcreateAppointmentinit0Function.AppSyncFunction"
+    "aws:cdk:path": "amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/StatusLog/MutationcreateStatusLoginit0Function/MutationcreateStatusLoginit0Function.AppSyncFunction"
    }
   },
-  "MutationcreateAppointmentauth0FunctionMutationcreateAppointmentauth0FunctionAppSyncFunction7EE07719": {
+  "MutationcreateStatusLogauth0FunctionMutationcreateStatusLogauth0FunctionAppSyncFunctionAD8CADDD": {
    "Type": "AWS::AppSync::FunctionConfiguration",
    "Properties": {
     "ApiId": {
@@ -1027,19 +1027,19 @@
      "Ref": "referencetoamplifywefix4uJramisandboxd4a7956887dataamplifyDataGraphQLAPINONEDS1FD993A4Name"
     },
     "FunctionVersion": "2018-05-29",
-    "Name": "MutationcreateAppointmentauth0Function",
+    "Name": "MutationcreateStatusLogauth0Function",
     "RequestMappingTemplateS3Location": {
-     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/3658dc690b33e330726321877190070a36130c06d62e61ed42f2cecbbb008559.vtl"
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/40a03aa74374c8febddb450c06928dac891eece4aabad813708e929d64638abe.vtl"
     },
     "ResponseMappingTemplate": "$util.toJson({})"
    },
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/Appointment/MutationcreateAppointmentauth0Function/MutationcreateAppointmentauth0Function.AppSyncFunction"
+    "aws:cdk:path": "amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/StatusLog/MutationcreateStatusLogauth0Function/MutationcreateStatusLogauth0Function.AppSyncFunction"
    }
   },
-  "MutationcreateAppointmentpostAuth0FunctionMutationcreateAppointmentpostAuth0FunctionAppSyncFunction098FBE24": {
+  "MutationcreateStatusLogpostAuth0FunctionMutationcreateStatusLogpostAuth0FunctionAppSyncFunction386BEB17": {
    "Type": "AWS::AppSync::FunctionConfiguration",
    "Properties": {
     "ApiId": {
@@ -1049,7 +1049,7 @@
      "Ref": "referencetoamplifywefix4uJramisandboxd4a7956887dataamplifyDataGraphQLAPINONEDS1FD993A4Name"
     },
     "FunctionVersion": "2018-05-29",
-    "Name": "MutationcreateAppointmentpostAuth0Function",
+    "Name": "MutationcreateStatusLogpostAuth0Function",
     "RequestMappingTemplateS3Location": {
      "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/c1721bcd774e27c514d3454b5be4f9bdd094c0161b57ddf053d618e3b0086a77.vtl"
     },
@@ -1058,10 +1058,10 @@
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/Appointment/MutationcreateAppointmentpostAuth0Function/MutationcreateAppointmentpostAuth0Function.AppSyncFunction"
+    "aws:cdk:path": "amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/StatusLog/MutationcreateStatusLogpostAuth0Function/MutationcreateStatusLogpostAuth0Function.AppSyncFunction"
    }
   },
-  "MutationCreateAppointmentDataResolverFnMutationCreateAppointmentDataResolverFnAppSyncFunction2E414CFD": {
+  "MutationCreateStatusLogDataResolverFnMutationCreateStatusLogDataResolverFnAppSyncFunctionD4D4C2DE": {
    "Type": "AWS::AppSync::FunctionConfiguration",
    "Properties": {
     "ApiId": {
@@ -1069,59 +1069,59 @@
     },
     "DataSourceName": {
      "Fn::GetAtt": [
-      "AppointmentDataSource",
+      "StatusLogDataSource",
       "Name"
      ]
     },
     "FunctionVersion": "2018-05-29",
-    "Name": "MutationCreateAppointmentDataResolverFn",
+    "Name": "MutationCreateStatusLogDataResolverFn",
     "RequestMappingTemplateS3Location": {
-     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/d1bde1df373eb40ef0707ce2d8b911785652501a9cae27624044976012752fe3.vtl"
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/120033f238afca7211c3f88008fd034c89f9ca884ce344cc8e119938ca4ee52f.vtl"
     },
     "ResponseMappingTemplateS3Location": {
      "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/f4a52b72209a9dfa197b5e7367a5c378c5bb86de6e29ddd9e48b49a3fe54b249.vtl"
     }
    },
    "DependsOn": [
-    "AppointmentDataSource"
+    "StatusLogDataSource"
    ],
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/Appointment/MutationCreateAppointmentDataResolverFn/MutationCreateAppointmentDataResolverFn.AppSyncFunction"
+    "aws:cdk:path": "amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/StatusLog/MutationCreateStatusLogDataResolverFn/MutationCreateStatusLogDataResolverFn.AppSyncFunction"
    }
   },
-  "CreateAppointmentResolver": {
+  "CreateStatusLogResolver": {
    "Type": "AWS::AppSync::Resolver",
    "Properties": {
     "ApiId": {
      "Ref": "referencetoamplifywefix4uJramisandboxd4a7956887dataamplifyDataGraphQLAPI007FDE3BApiId"
     },
-    "FieldName": "createAppointment",
+    "FieldName": "createStatusLog",
     "Kind": "PIPELINE",
     "PipelineConfig": {
      "Functions": [
       {
        "Fn::GetAtt": [
-        "MutationcreateAppointmentinit0FunctionMutationcreateAppointmentinit0FunctionAppSyncFunction06CD0EE6",
+        "MutationcreateStatusLoginit0FunctionMutationcreateStatusLoginit0FunctionAppSyncFunction2CAEFC4E",
         "FunctionId"
        ]
       },
       {
        "Fn::GetAtt": [
-        "MutationcreateAppointmentauth0FunctionMutationcreateAppointmentauth0FunctionAppSyncFunction7EE07719",
+        "MutationcreateStatusLogauth0FunctionMutationcreateStatusLogauth0FunctionAppSyncFunctionAD8CADDD",
         "FunctionId"
        ]
       },
       {
        "Fn::GetAtt": [
-        "MutationcreateAppointmentpostAuth0FunctionMutationcreateAppointmentpostAuth0FunctionAppSyncFunction098FBE24",
+        "MutationcreateStatusLogpostAuth0FunctionMutationcreateStatusLogpostAuth0FunctionAppSyncFunction386BEB17",
         "FunctionId"
        ]
       },
       {
        "Fn::GetAtt": [
-        "MutationCreateAppointmentDataResolverFnMutationCreateAppointmentDataResolverFnAppSyncFunction2E414CFD",
+        "MutationCreateStatusLogDataResolverFnMutationCreateStatusLogDataResolverFnAppSyncFunctionD4D4C2DE",
         "FunctionId"
        ]
       }
@@ -1131,7 +1131,7 @@
      "Fn::Join": [
       "",
       [
-       "$util.qr($ctx.stash.put(\"typeName\", \"Mutation\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"createAppointment\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"AMAZON_DYNAMODB\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       "$util.qr($ctx.stash.put(\"typeName\", \"Mutation\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"createStatusLog\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"AMAZON_DYNAMODB\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
        {
         "Ref": "referencetoamplifywefix4uJramisandboxd4a7956887dataamplifyDataGraphQLAPI007FDE3BApiId"
        },
@@ -1150,7 +1150,7 @@
                ":",
                {
                 "Fn::GetAtt": [
-                 "AppointmentTable",
+                 "StatusLogTable",
                  "TableArn"
                 ]
                }
@@ -1200,10 +1200,10 @@
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/Appointment/mutationCreateAppointmentResolver"
+    "aws:cdk:path": "amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/StatusLog/mutationCreateStatusLogResolver"
    }
   },
-  "MutationupdateAppointmentinit0FunctionMutationupdateAppointmentinit0FunctionAppSyncFunctionEFD32C5C": {
+  "MutationupdateStatusLoginit0FunctionMutationupdateStatusLoginit0FunctionAppSyncFunction49273FF6": {
    "Type": "AWS::AppSync::FunctionConfiguration",
    "Properties": {
     "ApiId": {
@@ -1213,7 +1213,7 @@
      "Ref": "referencetoamplifywefix4uJramisandboxd4a7956887dataamplifyDataGraphQLAPINONEDS1FD993A4Name"
     },
     "FunctionVersion": "2018-05-29",
-    "Name": "MutationupdateAppointmentinit0Function",
+    "Name": "MutationupdateStatusLoginit0Function",
     "RequestMappingTemplateS3Location": {
      "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/06db846fd14e6fc371f22b12b5545ba8e2dbfeda85d8c8d586c71c282166657b.vtl"
     },
@@ -1222,10 +1222,10 @@
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/Appointment/MutationupdateAppointmentinit0Function/MutationupdateAppointmentinit0Function.AppSyncFunction"
+    "aws:cdk:path": "amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/StatusLog/MutationupdateStatusLoginit0Function/MutationupdateStatusLoginit0Function.AppSyncFunction"
    }
   },
-  "MutationupdateAppointmentauth0FunctionMutationupdateAppointmentauth0FunctionAppSyncFunctionE8A8A715": {
+  "MutationupdateStatusLogauth0FunctionMutationupdateStatusLogauth0FunctionAppSyncFunction8A4765E7": {
    "Type": "AWS::AppSync::FunctionConfiguration",
    "Properties": {
     "ApiId": {
@@ -1233,29 +1233,29 @@
     },
     "DataSourceName": {
      "Fn::GetAtt": [
-      "AppointmentDataSource",
+      "StatusLogDataSource",
       "Name"
      ]
     },
     "FunctionVersion": "2018-05-29",
-    "Name": "MutationupdateAppointmentauth0Function",
+    "Name": "MutationupdateStatusLogauth0Function",
     "RequestMappingTemplateS3Location": {
      "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/1f5fed297da9c32ae3af922bf3a38ccf23b956078887d16891ec06c20c64722c.vtl"
     },
     "ResponseMappingTemplateS3Location": {
-     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/27a577679d61ccf52675456c78219a94e6e3f35d08909f9e640c33c1ce1ea988.vtl"
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/fb48aa78dceb86e2b93e61402d0ef9d80aa69788a9cf450900b7e427f78a33a9.vtl"
     }
    },
    "DependsOn": [
-    "AppointmentDataSource"
+    "StatusLogDataSource"
    ],
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/Appointment/MutationupdateAppointmentauth0Function/MutationupdateAppointmentauth0Function.AppSyncFunction"
+    "aws:cdk:path": "amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/StatusLog/MutationupdateStatusLogauth0Function/MutationupdateStatusLogauth0Function.AppSyncFunction"
    }
   },
-  "MutationupdateAppointmentpostAuth0FunctionMutationupdateAppointmentpostAuth0FunctionAppSyncFunction5092D70B": {
+  "MutationupdateStatusLogpostAuth0FunctionMutationupdateStatusLogpostAuth0FunctionAppSyncFunction589A1491": {
    "Type": "AWS::AppSync::FunctionConfiguration",
    "Properties": {
     "ApiId": {
@@ -1265,7 +1265,7 @@
      "Ref": "referencetoamplifywefix4uJramisandboxd4a7956887dataamplifyDataGraphQLAPINONEDS1FD993A4Name"
     },
     "FunctionVersion": "2018-05-29",
-    "Name": "MutationupdateAppointmentpostAuth0Function",
+    "Name": "MutationupdateStatusLogpostAuth0Function",
     "RequestMappingTemplateS3Location": {
      "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/c1721bcd774e27c514d3454b5be4f9bdd094c0161b57ddf053d618e3b0086a77.vtl"
     },
@@ -1274,10 +1274,10 @@
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/Appointment/MutationupdateAppointmentpostAuth0Function/MutationupdateAppointmentpostAuth0Function.AppSyncFunction"
+    "aws:cdk:path": "amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/StatusLog/MutationupdateStatusLogpostAuth0Function/MutationupdateStatusLogpostAuth0Function.AppSyncFunction"
    }
   },
-  "MutationUpdateAppointmentDataResolverFnMutationUpdateAppointmentDataResolverFnAppSyncFunction0CC05D8F": {
+  "MutationUpdateStatusLogDataResolverFnMutationUpdateStatusLogDataResolverFnAppSyncFunctionC6A2EDD2": {
    "Type": "AWS::AppSync::FunctionConfiguration",
    "Properties": {
     "ApiId": {
@@ -1285,12 +1285,12 @@
     },
     "DataSourceName": {
      "Fn::GetAtt": [
-      "AppointmentDataSource",
+      "StatusLogDataSource",
       "Name"
      ]
     },
     "FunctionVersion": "2018-05-29",
-    "Name": "MutationUpdateAppointmentDataResolverFn",
+    "Name": "MutationUpdateStatusLogDataResolverFn",
     "RequestMappingTemplateS3Location": {
      "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/474bf0776ec2164a13191d1a0a9e057154931e4918fea5086f49850d02a5371b.vtl"
     },
@@ -1299,45 +1299,45 @@
     }
    },
    "DependsOn": [
-    "AppointmentDataSource"
+    "StatusLogDataSource"
    ],
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/Appointment/MutationUpdateAppointmentDataResolverFn/MutationUpdateAppointmentDataResolverFn.AppSyncFunction"
+    "aws:cdk:path": "amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/StatusLog/MutationUpdateStatusLogDataResolverFn/MutationUpdateStatusLogDataResolverFn.AppSyncFunction"
    }
   },
-  "UpdateAppointmentResolver": {
+  "UpdateStatusLogResolver": {
    "Type": "AWS::AppSync::Resolver",
    "Properties": {
     "ApiId": {
      "Ref": "referencetoamplifywefix4uJramisandboxd4a7956887dataamplifyDataGraphQLAPI007FDE3BApiId"
     },
-    "FieldName": "updateAppointment",
+    "FieldName": "updateStatusLog",
     "Kind": "PIPELINE",
     "PipelineConfig": {
      "Functions": [
       {
        "Fn::GetAtt": [
-        "MutationupdateAppointmentinit0FunctionMutationupdateAppointmentinit0FunctionAppSyncFunctionEFD32C5C",
+        "MutationupdateStatusLoginit0FunctionMutationupdateStatusLoginit0FunctionAppSyncFunction49273FF6",
         "FunctionId"
        ]
       },
       {
        "Fn::GetAtt": [
-        "MutationupdateAppointmentauth0FunctionMutationupdateAppointmentauth0FunctionAppSyncFunctionE8A8A715",
+        "MutationupdateStatusLogauth0FunctionMutationupdateStatusLogauth0FunctionAppSyncFunction8A4765E7",
         "FunctionId"
        ]
       },
       {
        "Fn::GetAtt": [
-        "MutationupdateAppointmentpostAuth0FunctionMutationupdateAppointmentpostAuth0FunctionAppSyncFunction5092D70B",
+        "MutationupdateStatusLogpostAuth0FunctionMutationupdateStatusLogpostAuth0FunctionAppSyncFunction589A1491",
         "FunctionId"
        ]
       },
       {
        "Fn::GetAtt": [
-        "MutationUpdateAppointmentDataResolverFnMutationUpdateAppointmentDataResolverFnAppSyncFunction0CC05D8F",
+        "MutationUpdateStatusLogDataResolverFnMutationUpdateStatusLogDataResolverFnAppSyncFunctionC6A2EDD2",
         "FunctionId"
        ]
       }
@@ -1347,7 +1347,7 @@
      "Fn::Join": [
       "",
       [
-       "$util.qr($ctx.stash.put(\"typeName\", \"Mutation\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"updateAppointment\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"AMAZON_DYNAMODB\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       "$util.qr($ctx.stash.put(\"typeName\", \"Mutation\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"updateStatusLog\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"AMAZON_DYNAMODB\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
        {
         "Ref": "referencetoamplifywefix4uJramisandboxd4a7956887dataamplifyDataGraphQLAPI007FDE3BApiId"
        },
@@ -1366,7 +1366,7 @@
                ":",
                {
                 "Fn::GetAtt": [
-                 "AppointmentTable",
+                 "StatusLogTable",
                  "TableArn"
                 ]
                }
@@ -1416,10 +1416,10 @@
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/Appointment/mutationUpdateAppointmentResolver"
+    "aws:cdk:path": "amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/StatusLog/mutationUpdateStatusLogResolver"
    }
   },
-  "MutationdeleteAppointmentauth0FunctionMutationdeleteAppointmentauth0FunctionAppSyncFunction0C7AB3D3": {
+  "MutationdeleteStatusLogauth0FunctionMutationdeleteStatusLogauth0FunctionAppSyncFunction88A5B5A9": {
    "Type": "AWS::AppSync::FunctionConfiguration",
    "Properties": {
     "ApiId": {
@@ -1427,29 +1427,29 @@
     },
     "DataSourceName": {
      "Fn::GetAtt": [
-      "AppointmentDataSource",
+      "StatusLogDataSource",
       "Name"
      ]
     },
     "FunctionVersion": "2018-05-29",
-    "Name": "MutationdeleteAppointmentauth0Function",
+    "Name": "MutationdeleteStatusLogauth0Function",
     "RequestMappingTemplateS3Location": {
      "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/1f5fed297da9c32ae3af922bf3a38ccf23b956078887d16891ec06c20c64722c.vtl"
     },
     "ResponseMappingTemplateS3Location": {
-     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/381c4a3cfaa9447bc424892e978f3c004cd64af49799b150d9bab81e805396b2.vtl"
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/ffec3f86fac55a35757da3d6b6c858608323b87ea3f110eff97b5fc2a0167a97.vtl"
     }
    },
    "DependsOn": [
-    "AppointmentDataSource"
+    "StatusLogDataSource"
    ],
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/Appointment/MutationdeleteAppointmentauth0Function/MutationdeleteAppointmentauth0Function.AppSyncFunction"
+    "aws:cdk:path": "amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/StatusLog/MutationdeleteStatusLogauth0Function/MutationdeleteStatusLogauth0Function.AppSyncFunction"
    }
   },
-  "MutationdeleteAppointmentpostAuth0FunctionMutationdeleteAppointmentpostAuth0FunctionAppSyncFunctionE85FAACB": {
+  "MutationdeleteStatusLogpostAuth0FunctionMutationdeleteStatusLogpostAuth0FunctionAppSyncFunctionE92BD549": {
    "Type": "AWS::AppSync::FunctionConfiguration",
    "Properties": {
     "ApiId": {
@@ -1459,7 +1459,7 @@
      "Ref": "referencetoamplifywefix4uJramisandboxd4a7956887dataamplifyDataGraphQLAPINONEDS1FD993A4Name"
     },
     "FunctionVersion": "2018-05-29",
-    "Name": "MutationdeleteAppointmentpostAuth0Function",
+    "Name": "MutationdeleteStatusLogpostAuth0Function",
     "RequestMappingTemplateS3Location": {
      "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/c1721bcd774e27c514d3454b5be4f9bdd094c0161b57ddf053d618e3b0086a77.vtl"
     },
@@ -1468,10 +1468,10 @@
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/Appointment/MutationdeleteAppointmentpostAuth0Function/MutationdeleteAppointmentpostAuth0Function.AppSyncFunction"
+    "aws:cdk:path": "amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/StatusLog/MutationdeleteStatusLogpostAuth0Function/MutationdeleteStatusLogpostAuth0Function.AppSyncFunction"
    }
   },
-  "MutationDeleteAppointmentDataResolverFnMutationDeleteAppointmentDataResolverFnAppSyncFunction084DEA51": {
+  "MutationDeleteStatusLogDataResolverFnMutationDeleteStatusLogDataResolverFnAppSyncFunctionFE160E09": {
    "Type": "AWS::AppSync::FunctionConfiguration",
    "Properties": {
     "ApiId": {
@@ -1479,12 +1479,12 @@
     },
     "DataSourceName": {
      "Fn::GetAtt": [
-      "AppointmentDataSource",
+      "StatusLogDataSource",
       "Name"
      ]
     },
     "FunctionVersion": "2018-05-29",
-    "Name": "MutationDeleteAppointmentDataResolverFn",
+    "Name": "MutationDeleteStatusLogDataResolverFn",
     "RequestMappingTemplateS3Location": {
      "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/4f7907d1209a2c9953a0c053df402c634e359546d70c7cc5c2e8e21ea734880f.vtl"
     },
@@ -1493,39 +1493,39 @@
     }
    },
    "DependsOn": [
-    "AppointmentDataSource"
+    "StatusLogDataSource"
    ],
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/Appointment/MutationDeleteAppointmentDataResolverFn/MutationDeleteAppointmentDataResolverFn.AppSyncFunction"
+    "aws:cdk:path": "amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/StatusLog/MutationDeleteStatusLogDataResolverFn/MutationDeleteStatusLogDataResolverFn.AppSyncFunction"
    }
   },
-  "DeleteAppointmentResolver": {
+  "DeleteStatusLogResolver": {
    "Type": "AWS::AppSync::Resolver",
    "Properties": {
     "ApiId": {
      "Ref": "referencetoamplifywefix4uJramisandboxd4a7956887dataamplifyDataGraphQLAPI007FDE3BApiId"
     },
-    "FieldName": "deleteAppointment",
+    "FieldName": "deleteStatusLog",
     "Kind": "PIPELINE",
     "PipelineConfig": {
      "Functions": [
       {
        "Fn::GetAtt": [
-        "MutationdeleteAppointmentauth0FunctionMutationdeleteAppointmentauth0FunctionAppSyncFunction0C7AB3D3",
+        "MutationdeleteStatusLogauth0FunctionMutationdeleteStatusLogauth0FunctionAppSyncFunction88A5B5A9",
         "FunctionId"
        ]
       },
       {
        "Fn::GetAtt": [
-        "MutationdeleteAppointmentpostAuth0FunctionMutationdeleteAppointmentpostAuth0FunctionAppSyncFunctionE85FAACB",
+        "MutationdeleteStatusLogpostAuth0FunctionMutationdeleteStatusLogpostAuth0FunctionAppSyncFunctionE92BD549",
         "FunctionId"
        ]
       },
       {
        "Fn::GetAtt": [
-        "MutationDeleteAppointmentDataResolverFnMutationDeleteAppointmentDataResolverFnAppSyncFunction084DEA51",
+        "MutationDeleteStatusLogDataResolverFnMutationDeleteStatusLogDataResolverFnAppSyncFunctionFE160E09",
         "FunctionId"
        ]
       }
@@ -1535,7 +1535,7 @@
      "Fn::Join": [
       "",
       [
-       "$util.qr($ctx.stash.put(\"typeName\", \"Mutation\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"deleteAppointment\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"AMAZON_DYNAMODB\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       "$util.qr($ctx.stash.put(\"typeName\", \"Mutation\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"deleteStatusLog\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"AMAZON_DYNAMODB\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
        {
         "Ref": "referencetoamplifywefix4uJramisandboxd4a7956887dataamplifyDataGraphQLAPI007FDE3BApiId"
        },
@@ -1554,7 +1554,7 @@
                ":",
                {
                 "Fn::GetAtt": [
-                 "AppointmentTable",
+                 "StatusLogTable",
                  "TableArn"
                 ]
                }
@@ -1604,10 +1604,10 @@
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/Appointment/mutationDeleteAppointmentResolver"
+    "aws:cdk:path": "amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/StatusLog/mutationDeleteStatusLogResolver"
    }
   },
-  "SubscriptiononCreateAppointmentauth0FunctionSubscriptiononCreateAppointmentauth0FunctionAppSyncFunction61B57CBB": {
+  "SubscriptiononCreateStatusLogauth0FunctionSubscriptiononCreateStatusLogauth0FunctionAppSyncFunctionC06DB4BD": {
    "Type": "AWS::AppSync::FunctionConfiguration",
    "Properties": {
     "ApiId": {
@@ -1617,7 +1617,7 @@
      "Ref": "referencetoamplifywefix4uJramisandboxd4a7956887dataamplifyDataGraphQLAPINONEDS1FD993A4Name"
     },
     "FunctionVersion": "2018-05-29",
-    "Name": "SubscriptiononCreateAppointmentauth0Function",
+    "Name": "SubscriptiononCreateStatusLogauth0Function",
     "RequestMappingTemplateS3Location": {
      "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/b7afa060dcb95643f52c3aca63629711e5e6114276a5f2e37fecebdb1b9a34e5.vtl"
     },
@@ -1626,10 +1626,10 @@
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/Appointment/SubscriptiononCreateAppointmentauth0Function/SubscriptiononCreateAppointmentauth0Function.AppSyncFunction"
+    "aws:cdk:path": "amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/StatusLog/SubscriptiononCreateStatusLogauth0Function/SubscriptiononCreateStatusLogauth0Function.AppSyncFunction"
    }
   },
-  "SubscriptiononCreateAppointmentpostAuth0FunctionSubscriptiononCreateAppointmentpostAuth0FunctionAppSyncFunctionE1742C98": {
+  "SubscriptiononCreateStatusLogpostAuth0FunctionSubscriptiononCreateStatusLogpostAuth0FunctionAppSyncFunctionD4E9EF8C": {
    "Type": "AWS::AppSync::FunctionConfiguration",
    "Properties": {
     "ApiId": {
@@ -1639,7 +1639,7 @@
      "Ref": "referencetoamplifywefix4uJramisandboxd4a7956887dataamplifyDataGraphQLAPINONEDS1FD993A4Name"
     },
     "FunctionVersion": "2018-05-29",
-    "Name": "SubscriptiononCreateAppointmentpostAuth0Function",
+    "Name": "SubscriptiononCreateStatusLogpostAuth0Function",
     "RequestMappingTemplateS3Location": {
      "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/c1721bcd774e27c514d3454b5be4f9bdd094c0161b57ddf053d618e3b0086a77.vtl"
     },
@@ -1648,10 +1648,10 @@
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/Appointment/SubscriptiononCreateAppointmentpostAuth0Function/SubscriptiononCreateAppointmentpostAuth0Function.AppSyncFunction"
+    "aws:cdk:path": "amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/StatusLog/SubscriptiononCreateStatusLogpostAuth0Function/SubscriptiononCreateStatusLogpostAuth0Function.AppSyncFunction"
    }
   },
-  "SubscriptionOnCreateAppointmentDataResolverFnSubscriptionOnCreateAppointmentDataResolverFnAppSyncFunction9169F9C4": {
+  "SubscriptionOnCreateStatusLogDataResolverFnSubscriptionOnCreateStatusLogDataResolverFnAppSyncFunction65D469F7": {
    "Type": "AWS::AppSync::FunctionConfiguration",
    "Properties": {
     "ApiId": {
@@ -1661,7 +1661,7 @@
      "Ref": "referencetoamplifywefix4uJramisandboxd4a7956887dataamplifyDataGraphQLAPINONEDS1FD993A4Name"
     },
     "FunctionVersion": "2018-05-29",
-    "Name": "SubscriptionOnCreateAppointmentDataResolverFn",
+    "Name": "SubscriptionOnCreateStatusLogDataResolverFn",
     "RequestMappingTemplateS3Location": {
      "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/fe3c43ada4b9d681a5e2312663ef7a73386424d73b73e51f8e2e9d4b50f7c502.vtl"
     },
@@ -1672,34 +1672,34 @@
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/Appointment/SubscriptionOnCreateAppointmentDataResolverFn/SubscriptionOnCreateAppointmentDataResolverFn.AppSyncFunction"
+    "aws:cdk:path": "amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/StatusLog/SubscriptionOnCreateStatusLogDataResolverFn/SubscriptionOnCreateStatusLogDataResolverFn.AppSyncFunction"
    }
   },
-  "SubscriptiononCreateAppointmentResolver": {
+  "SubscriptiononCreateStatusLogResolver": {
    "Type": "AWS::AppSync::Resolver",
    "Properties": {
     "ApiId": {
      "Ref": "referencetoamplifywefix4uJramisandboxd4a7956887dataamplifyDataGraphQLAPI007FDE3BApiId"
     },
-    "FieldName": "onCreateAppointment",
+    "FieldName": "onCreateStatusLog",
     "Kind": "PIPELINE",
     "PipelineConfig": {
      "Functions": [
       {
        "Fn::GetAtt": [
-        "SubscriptiononCreateAppointmentauth0FunctionSubscriptiononCreateAppointmentauth0FunctionAppSyncFunction61B57CBB",
+        "SubscriptiononCreateStatusLogauth0FunctionSubscriptiononCreateStatusLogauth0FunctionAppSyncFunctionC06DB4BD",
         "FunctionId"
        ]
       },
       {
        "Fn::GetAtt": [
-        "SubscriptiononCreateAppointmentpostAuth0FunctionSubscriptiononCreateAppointmentpostAuth0FunctionAppSyncFunctionE1742C98",
+        "SubscriptiononCreateStatusLogpostAuth0FunctionSubscriptiononCreateStatusLogpostAuth0FunctionAppSyncFunctionD4E9EF8C",
         "FunctionId"
        ]
       },
       {
        "Fn::GetAtt": [
-        "SubscriptionOnCreateAppointmentDataResolverFnSubscriptionOnCreateAppointmentDataResolverFnAppSyncFunction9169F9C4",
+        "SubscriptionOnCreateStatusLogDataResolverFnSubscriptionOnCreateStatusLogDataResolverFnAppSyncFunction65D469F7",
         "FunctionId"
        ]
       }
@@ -1709,7 +1709,7 @@
      "Fn::Join": [
       "",
       [
-       "$util.qr($ctx.stash.put(\"typeName\", \"Subscription\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"onCreateAppointment\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"NONE\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       "$util.qr($ctx.stash.put(\"typeName\", \"Subscription\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"onCreateStatusLog\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"NONE\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
        {
         "Ref": "referencetoamplifywefix4uJramisandboxd4a7956887dataamplifyDataGraphQLAPI007FDE3BApiId"
        },
@@ -1751,10 +1751,10 @@
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/Appointment/subscriptionOnCreateAppointmentResolver"
+    "aws:cdk:path": "amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/StatusLog/subscriptionOnCreateStatusLogResolver"
    }
   },
-  "SubscriptiononUpdateAppointmentauth0FunctionSubscriptiononUpdateAppointmentauth0FunctionAppSyncFunction825576F4": {
+  "SubscriptiononUpdateStatusLogauth0FunctionSubscriptiononUpdateStatusLogauth0FunctionAppSyncFunction5D7148EF": {
    "Type": "AWS::AppSync::FunctionConfiguration",
    "Properties": {
     "ApiId": {
@@ -1764,7 +1764,7 @@
      "Ref": "referencetoamplifywefix4uJramisandboxd4a7956887dataamplifyDataGraphQLAPINONEDS1FD993A4Name"
     },
     "FunctionVersion": "2018-05-29",
-    "Name": "SubscriptiononUpdateAppointmentauth0Function",
+    "Name": "SubscriptiononUpdateStatusLogauth0Function",
     "RequestMappingTemplateS3Location": {
      "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/b7afa060dcb95643f52c3aca63629711e5e6114276a5f2e37fecebdb1b9a34e5.vtl"
     },
@@ -1773,10 +1773,10 @@
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/Appointment/SubscriptiononUpdateAppointmentauth0Function/SubscriptiononUpdateAppointmentauth0Function.AppSyncFunction"
+    "aws:cdk:path": "amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/StatusLog/SubscriptiononUpdateStatusLogauth0Function/SubscriptiononUpdateStatusLogauth0Function.AppSyncFunction"
    }
   },
-  "SubscriptiononUpdateAppointmentpostAuth0FunctionSubscriptiononUpdateAppointmentpostAuth0FunctionAppSyncFunctionF970CC75": {
+  "SubscriptiononUpdateStatusLogpostAuth0FunctionSubscriptiononUpdateStatusLogpostAuth0FunctionAppSyncFunction6200AE3B": {
    "Type": "AWS::AppSync::FunctionConfiguration",
    "Properties": {
     "ApiId": {
@@ -1786,7 +1786,7 @@
      "Ref": "referencetoamplifywefix4uJramisandboxd4a7956887dataamplifyDataGraphQLAPINONEDS1FD993A4Name"
     },
     "FunctionVersion": "2018-05-29",
-    "Name": "SubscriptiononUpdateAppointmentpostAuth0Function",
+    "Name": "SubscriptiononUpdateStatusLogpostAuth0Function",
     "RequestMappingTemplateS3Location": {
      "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/c1721bcd774e27c514d3454b5be4f9bdd094c0161b57ddf053d618e3b0086a77.vtl"
     },
@@ -1795,10 +1795,10 @@
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/Appointment/SubscriptiononUpdateAppointmentpostAuth0Function/SubscriptiononUpdateAppointmentpostAuth0Function.AppSyncFunction"
+    "aws:cdk:path": "amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/StatusLog/SubscriptiononUpdateStatusLogpostAuth0Function/SubscriptiononUpdateStatusLogpostAuth0Function.AppSyncFunction"
    }
   },
-  "SubscriptionOnUpdateAppointmentDataResolverFnSubscriptionOnUpdateAppointmentDataResolverFnAppSyncFunctionE5294A60": {
+  "SubscriptionOnUpdateStatusLogDataResolverFnSubscriptionOnUpdateStatusLogDataResolverFnAppSyncFunction5AC54EF7": {
    "Type": "AWS::AppSync::FunctionConfiguration",
    "Properties": {
     "ApiId": {
@@ -1808,7 +1808,7 @@
      "Ref": "referencetoamplifywefix4uJramisandboxd4a7956887dataamplifyDataGraphQLAPINONEDS1FD993A4Name"
     },
     "FunctionVersion": "2018-05-29",
-    "Name": "SubscriptionOnUpdateAppointmentDataResolverFn",
+    "Name": "SubscriptionOnUpdateStatusLogDataResolverFn",
     "RequestMappingTemplateS3Location": {
      "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/fe3c43ada4b9d681a5e2312663ef7a73386424d73b73e51f8e2e9d4b50f7c502.vtl"
     },
@@ -1819,34 +1819,34 @@
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/Appointment/SubscriptionOnUpdateAppointmentDataResolverFn/SubscriptionOnUpdateAppointmentDataResolverFn.AppSyncFunction"
+    "aws:cdk:path": "amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/StatusLog/SubscriptionOnUpdateStatusLogDataResolverFn/SubscriptionOnUpdateStatusLogDataResolverFn.AppSyncFunction"
    }
   },
-  "SubscriptiononUpdateAppointmentResolver": {
+  "SubscriptiononUpdateStatusLogResolver": {
    "Type": "AWS::AppSync::Resolver",
    "Properties": {
     "ApiId": {
      "Ref": "referencetoamplifywefix4uJramisandboxd4a7956887dataamplifyDataGraphQLAPI007FDE3BApiId"
     },
-    "FieldName": "onUpdateAppointment",
+    "FieldName": "onUpdateStatusLog",
     "Kind": "PIPELINE",
     "PipelineConfig": {
      "Functions": [
       {
        "Fn::GetAtt": [
-        "SubscriptiononUpdateAppointmentauth0FunctionSubscriptiononUpdateAppointmentauth0FunctionAppSyncFunction825576F4",
+        "SubscriptiononUpdateStatusLogauth0FunctionSubscriptiononUpdateStatusLogauth0FunctionAppSyncFunction5D7148EF",
         "FunctionId"
        ]
       },
       {
        "Fn::GetAtt": [
-        "SubscriptiononUpdateAppointmentpostAuth0FunctionSubscriptiononUpdateAppointmentpostAuth0FunctionAppSyncFunctionF970CC75",
+        "SubscriptiononUpdateStatusLogpostAuth0FunctionSubscriptiononUpdateStatusLogpostAuth0FunctionAppSyncFunction6200AE3B",
         "FunctionId"
        ]
       },
       {
        "Fn::GetAtt": [
-        "SubscriptionOnUpdateAppointmentDataResolverFnSubscriptionOnUpdateAppointmentDataResolverFnAppSyncFunctionE5294A60",
+        "SubscriptionOnUpdateStatusLogDataResolverFnSubscriptionOnUpdateStatusLogDataResolverFnAppSyncFunction5AC54EF7",
         "FunctionId"
        ]
       }
@@ -1856,7 +1856,7 @@
      "Fn::Join": [
       "",
       [
-       "$util.qr($ctx.stash.put(\"typeName\", \"Subscription\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"onUpdateAppointment\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"NONE\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       "$util.qr($ctx.stash.put(\"typeName\", \"Subscription\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"onUpdateStatusLog\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"NONE\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
        {
         "Ref": "referencetoamplifywefix4uJramisandboxd4a7956887dataamplifyDataGraphQLAPI007FDE3BApiId"
        },
@@ -1898,10 +1898,10 @@
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/Appointment/subscriptionOnUpdateAppointmentResolver"
+    "aws:cdk:path": "amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/StatusLog/subscriptionOnUpdateStatusLogResolver"
    }
   },
-  "SubscriptiononDeleteAppointmentauth0FunctionSubscriptiononDeleteAppointmentauth0FunctionAppSyncFunctionBFFE9440": {
+  "SubscriptiononDeleteStatusLogauth0FunctionSubscriptiononDeleteStatusLogauth0FunctionAppSyncFunction46CF94F8": {
    "Type": "AWS::AppSync::FunctionConfiguration",
    "Properties": {
     "ApiId": {
@@ -1911,7 +1911,7 @@
      "Ref": "referencetoamplifywefix4uJramisandboxd4a7956887dataamplifyDataGraphQLAPINONEDS1FD993A4Name"
     },
     "FunctionVersion": "2018-05-29",
-    "Name": "SubscriptiononDeleteAppointmentauth0Function",
+    "Name": "SubscriptiononDeleteStatusLogauth0Function",
     "RequestMappingTemplateS3Location": {
      "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/b7afa060dcb95643f52c3aca63629711e5e6114276a5f2e37fecebdb1b9a34e5.vtl"
     },
@@ -1920,10 +1920,10 @@
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/Appointment/SubscriptiononDeleteAppointmentauth0Function/SubscriptiononDeleteAppointmentauth0Function.AppSyncFunction"
+    "aws:cdk:path": "amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/StatusLog/SubscriptiononDeleteStatusLogauth0Function/SubscriptiononDeleteStatusLogauth0Function.AppSyncFunction"
    }
   },
-  "SubscriptiononDeleteAppointmentpostAuth0FunctionSubscriptiononDeleteAppointmentpostAuth0FunctionAppSyncFunction9028B716": {
+  "SubscriptiononDeleteStatusLogpostAuth0FunctionSubscriptiononDeleteStatusLogpostAuth0FunctionAppSyncFunction3544ECA1": {
    "Type": "AWS::AppSync::FunctionConfiguration",
    "Properties": {
     "ApiId": {
@@ -1933,7 +1933,7 @@
      "Ref": "referencetoamplifywefix4uJramisandboxd4a7956887dataamplifyDataGraphQLAPINONEDS1FD993A4Name"
     },
     "FunctionVersion": "2018-05-29",
-    "Name": "SubscriptiononDeleteAppointmentpostAuth0Function",
+    "Name": "SubscriptiononDeleteStatusLogpostAuth0Function",
     "RequestMappingTemplateS3Location": {
      "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/c1721bcd774e27c514d3454b5be4f9bdd094c0161b57ddf053d618e3b0086a77.vtl"
     },
@@ -1942,10 +1942,10 @@
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/Appointment/SubscriptiononDeleteAppointmentpostAuth0Function/SubscriptiononDeleteAppointmentpostAuth0Function.AppSyncFunction"
+    "aws:cdk:path": "amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/StatusLog/SubscriptiononDeleteStatusLogpostAuth0Function/SubscriptiononDeleteStatusLogpostAuth0Function.AppSyncFunction"
    }
   },
-  "SubscriptionOnDeleteAppointmentDataResolverFnSubscriptionOnDeleteAppointmentDataResolverFnAppSyncFunction06000094": {
+  "SubscriptionOnDeleteStatusLogDataResolverFnSubscriptionOnDeleteStatusLogDataResolverFnAppSyncFunctionF8F1AAA9": {
    "Type": "AWS::AppSync::FunctionConfiguration",
    "Properties": {
     "ApiId": {
@@ -1955,7 +1955,7 @@
      "Ref": "referencetoamplifywefix4uJramisandboxd4a7956887dataamplifyDataGraphQLAPINONEDS1FD993A4Name"
     },
     "FunctionVersion": "2018-05-29",
-    "Name": "SubscriptionOnDeleteAppointmentDataResolverFn",
+    "Name": "SubscriptionOnDeleteStatusLogDataResolverFn",
     "RequestMappingTemplateS3Location": {
      "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/fe3c43ada4b9d681a5e2312663ef7a73386424d73b73e51f8e2e9d4b50f7c502.vtl"
     },
@@ -1966,34 +1966,34 @@
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/Appointment/SubscriptionOnDeleteAppointmentDataResolverFn/SubscriptionOnDeleteAppointmentDataResolverFn.AppSyncFunction"
+    "aws:cdk:path": "amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/StatusLog/SubscriptionOnDeleteStatusLogDataResolverFn/SubscriptionOnDeleteStatusLogDataResolverFn.AppSyncFunction"
    }
   },
-  "SubscriptiononDeleteAppointmentResolver": {
+  "SubscriptiononDeleteStatusLogResolver": {
    "Type": "AWS::AppSync::Resolver",
    "Properties": {
     "ApiId": {
      "Ref": "referencetoamplifywefix4uJramisandboxd4a7956887dataamplifyDataGraphQLAPI007FDE3BApiId"
     },
-    "FieldName": "onDeleteAppointment",
+    "FieldName": "onDeleteStatusLog",
     "Kind": "PIPELINE",
     "PipelineConfig": {
      "Functions": [
       {
        "Fn::GetAtt": [
-        "SubscriptiononDeleteAppointmentauth0FunctionSubscriptiononDeleteAppointmentauth0FunctionAppSyncFunctionBFFE9440",
+        "SubscriptiononDeleteStatusLogauth0FunctionSubscriptiononDeleteStatusLogauth0FunctionAppSyncFunction46CF94F8",
         "FunctionId"
        ]
       },
       {
        "Fn::GetAtt": [
-        "SubscriptiononDeleteAppointmentpostAuth0FunctionSubscriptiononDeleteAppointmentpostAuth0FunctionAppSyncFunction9028B716",
+        "SubscriptiononDeleteStatusLogpostAuth0FunctionSubscriptiononDeleteStatusLogpostAuth0FunctionAppSyncFunction3544ECA1",
         "FunctionId"
        ]
       },
       {
        "Fn::GetAtt": [
-        "SubscriptionOnDeleteAppointmentDataResolverFnSubscriptionOnDeleteAppointmentDataResolverFnAppSyncFunction06000094",
+        "SubscriptionOnDeleteStatusLogDataResolverFnSubscriptionOnDeleteStatusLogDataResolverFnAppSyncFunctionF8F1AAA9",
         "FunctionId"
        ]
       }
@@ -2003,7 +2003,7 @@
      "Fn::Join": [
       "",
       [
-       "$util.qr($ctx.stash.put(\"typeName\", \"Subscription\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"onDeleteAppointment\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"NONE\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       "$util.qr($ctx.stash.put(\"typeName\", \"Subscription\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"onDeleteStatusLog\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"NONE\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
        {
         "Ref": "referencetoamplifywefix4uJramisandboxd4a7956887dataamplifyDataGraphQLAPI007FDE3BApiId"
        },
@@ -2045,10 +2045,10 @@
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/Appointment/subscriptionOnDeleteAppointmentResolver"
+    "aws:cdk:path": "amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/StatusLog/subscriptionOnDeleteStatusLogResolver"
    }
   },
-  "AppointmentOwnerDataResolverFnAppointmentOwnerDataResolverFnAppSyncFunction65FD6E05": {
+  "StatusLogOwnerDataResolverFnStatusLogOwnerDataResolverFnAppSyncFunction00301955": {
    "Type": "AWS::AppSync::FunctionConfiguration",
    "Properties": {
     "ApiId": {
@@ -2058,7 +2058,7 @@
      "Ref": "referencetoamplifywefix4uJramisandboxd4a7956887dataamplifyDataGraphQLAPINONEDS1FD993A4Name"
     },
     "FunctionVersion": "2018-05-29",
-    "Name": "AppointmentOwnerDataResolverFn",
+    "Name": "StatusLogOwnerDataResolverFn",
     "RequestMappingTemplateS3Location": {
      "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/041534e5fd916595f752318f161512d7c7f83b9f2cf32d0f0be381c12253ff68.vtl"
     },
@@ -2069,10 +2069,10 @@
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/Appointment/AppointmentOwnerDataResolverFn/AppointmentOwnerDataResolverFn.AppSyncFunction"
+    "aws:cdk:path": "amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/StatusLog/StatusLogOwnerDataResolverFn/StatusLogOwnerDataResolverFn.AppSyncFunction"
    }
   },
-  "AppointmentownerResolver": {
+  "StatusLogownerResolver": {
    "Type": "AWS::AppSync::Resolver",
    "Properties": {
     "ApiId": {
@@ -2084,7 +2084,7 @@
      "Functions": [
       {
        "Fn::GetAtt": [
-        "AppointmentOwnerDataResolverFnAppointmentOwnerDataResolverFnAppSyncFunction65FD6E05",
+        "StatusLogOwnerDataResolverFnStatusLogOwnerDataResolverFnAppSyncFunction00301955",
         "FunctionId"
        ]
       }
@@ -2094,7 +2094,7 @@
      "Fn::Join": [
       "",
       [
-       "$util.qr($ctx.stash.put(\"typeName\", \"Appointment\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"owner\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"NONE\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       "$util.qr($ctx.stash.put(\"typeName\", \"StatusLog\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"owner\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"NONE\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
        {
         "Ref": "referencetoamplifywefix4uJramisandboxd4a7956887dataamplifyDataGraphQLAPI007FDE3BApiId"
        },
@@ -2131,12 +2131,12 @@
      ]
     },
     "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
-    "TypeName": "Appointment"
+    "TypeName": "StatusLog"
    },
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/Appointment/appointmentOwnerResolver"
+    "aws:cdk:path": "amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/StatusLog/statusLogOwnerResolver"
    }
   },
   "CDKMetadata": {
@@ -2145,17 +2145,17 @@
     "Analytics": "v2:deflate64:H4sIAAAAAAAA/1WOwW6DMAyGn6X34DG47LqCduwm2L0yiUEpIUGx06pCvPsEnTrt9PuTP9l/AUWZQ37AG2fajJmzHSwnYiHTCupRVb3/wogTCcUNquCNFRu8aohDippUlVjC9Ie9f8544/Ni7h6nYDr4xs7REZmUxQmWJriHHRytCueZ717DUu963dUo2D5P/qeP5PVWogq+t0OKuDf6/eyuFFfF5RmZSRjet1BcwjHpkWQrsG7uZ5I5idrXreBg/bAqHwzBhV+uRQ6vb5AfLmxtFpMXOxE0j/wBjbGlwzYBAAA="
    },
    "Metadata": {
-    "aws:cdk:path": "amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/Appointment/CDKMetadata/Default"
+    "aws:cdk:path": "amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/StatusLog/CDKMetadata/Default"
    },
    "Condition": "CDKMetadataAvailable"
   }
  },
  "Outputs": {
-  "GetAttAppointmentTableStreamArn": {
+  "GetAttStatusLogTableStreamArn": {
    "Description": "Your DynamoDB table StreamArn.",
    "Value": {
     "Fn::GetAtt": [
-     "AppointmentTable",
+     "StatusLogTable",
      "TableStreamArn"
     ]
    },
@@ -2167,19 +2167,19 @@
        {
         "Ref": "referencetoamplifywefix4uJramisandboxd4a7956887dataamplifyDataGraphQLAPI007FDE3BApiId"
        },
-       "GetAtt:AppointmentTable:StreamArn"
+       "GetAtt:StatusLogTable:StreamArn"
       ]
      ]
     }
    }
   },
-  "GetAttAppointmentTableName": {
+  "GetAttStatusLogTableName": {
    "Description": "Your DynamoDB table name.",
    "Value": {
     "Fn::Join": [
      "",
      [
-      "Appointment-",
+      "StatusLog-",
       {
        "Ref": "referencetoamplifywefix4uJramisandboxd4a7956887dataamplifyDataGraphQLAPI007FDE3BApiId"
       },
@@ -2195,24 +2195,24 @@
        {
         "Ref": "referencetoamplifywefix4uJramisandboxd4a7956887dataamplifyDataGraphQLAPI007FDE3BApiId"
        },
-       "GetAtt:AppointmentTable:Name"
+       "GetAtt:StatusLogTable:Name"
       ]
      ]
     }
    }
   },
-  "amplifywefix4uJramisandboxd4a7956887dataamplifyDataAppointmentAppointmentDataSource7B003CE2Name": {
+  "amplifywefix4uJramisandboxd4a7956887dataamplifyDataStatusLogStatusLogDataSourceB6D5703FName": {
    "Value": {
     "Fn::GetAtt": [
-     "AppointmentDataSource",
+     "StatusLogDataSource",
      "Name"
     ]
    }
   },
-  "amplifywefix4uJramisandboxd4a7956887dataamplifyDataAppointmentAppointmentTableF3C898DCTableArn": {
+  "amplifywefix4uJramisandboxd4a7956887dataamplifyDataStatusLogStatusLogTable557DF5AATableArn": {
    "Value": {
     "Fn::GetAtt": [
-     "AppointmentTable",
+     "StatusLogTable",
      "TableArn"
     ]
    }

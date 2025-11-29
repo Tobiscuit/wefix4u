@@ -22,7 +22,7 @@
         "validateOnSynth": false,
         "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
         "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
-        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/dbd59871790bdda0030d11d6cb59a99ad8b7fccf916b5a4bda0c78896205e7a2.json",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/1988d9000d888883574ce066023e2f1a83ed34bbb6d35b61b6d79b6578335d61.json",
         "requiresBootstrapStackVersion": 6,
         "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
         "additionalDependencies": [
@@ -1459,6 +1459,1086 @@
           {
             "type": "aws:cdk:logicalId",
             "data": "amplifyDataRepairNestedStackRepairNestedStackResourceC35B8852"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/Payment/DynamoDBModelTableReadIOPS": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DynamoDBModelTableReadIOPS"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/Payment/DynamoDBModelTableWriteIOPS": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DynamoDBModelTableWriteIOPS"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/Payment/DynamoDBBillingMode": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DynamoDBBillingMode"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/Payment/DynamoDBEnablePointInTimeRecovery": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DynamoDBEnablePointInTimeRecovery"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/Payment/DynamoDBEnableServerSideEncryption": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DynamoDBEnableServerSideEncryption"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/Payment/HasEnvironmentParameter": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "HasEnvironmentParameter"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/Payment/ShouldUsePayPerRequestBilling": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ShouldUsePayPerRequestBilling"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/Payment/ShouldUsePointInTimeRecovery": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ShouldUsePointInTimeRecovery"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/Payment/PaymentTable": [
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Payment"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/Payment/PaymentTable/Default/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PaymentTable"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Payment"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/Payment/CustomTablePaymentTable": [
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Payment"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/Payment/GetAttPaymentTableStreamArn": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GetAttPaymentTableStreamArn"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/Payment/GetAttPaymentTableName": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GetAttPaymentTableName"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/Payment/PaymentIAMRole": [
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "PaymentIAMRole"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/Payment/PaymentIAMRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PaymentIAMRole2F99C78C"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "PaymentIAMRole"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/Payment/PaymentDataSource": [
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "PaymentTable"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/Payment/PaymentDataSource/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PaymentDataSource"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "PaymentTable"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/Payment/QuerygetPaymentauth0Function/QuerygetPaymentauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerygetPaymentauth0FunctionQuerygetPaymentauth0FunctionAppSyncFunctionA8437F55"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerygetPaymentauth0Function"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/Payment/QuerygetPaymentpostAuth0Function/QuerygetPaymentpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerygetPaymentpostAuth0FunctionQuerygetPaymentpostAuth0FunctionAppSyncFunction68179674"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerygetPaymentpostAuth0Function"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/Payment/QueryGetPaymentDataResolverFn/QueryGetPaymentDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QueryGetPaymentDataResolverFnQueryGetPaymentDataResolverFnAppSyncFunction21C5F2A7"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QueryGetPaymentDataResolverFn"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/Payment/queryGetPaymentResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GetPaymentResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Query.getPayment"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/Payment/QuerylistPaymentsauth0Function/QuerylistPaymentsauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerylistPaymentsauth0FunctionQuerylistPaymentsauth0FunctionAppSyncFunction68A58BD8"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerylistPaymentsauth0Function"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/Payment/QuerylistPaymentspostAuth0Function/QuerylistPaymentspostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerylistPaymentspostAuth0FunctionQuerylistPaymentspostAuth0FunctionAppSyncFunction1B3BABEB"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerylistPaymentspostAuth0Function"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/Payment/QueryListPaymentsDataResolverFn/QueryListPaymentsDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QueryListPaymentsDataResolverFnQueryListPaymentsDataResolverFnAppSyncFunctionF34D2167"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QueryListPaymentsDataResolverFn"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/Payment/queryListPaymentsResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ListPaymentResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Query.listPayments"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/Payment/MutationcreatePaymentinit0Function/MutationcreatePaymentinit0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationcreatePaymentinit0FunctionMutationcreatePaymentinit0FunctionAppSyncFunction25F585C1"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationcreatePaymentinit0Function"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/Payment/MutationcreatePaymentauth0Function/MutationcreatePaymentauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationcreatePaymentauth0FunctionMutationcreatePaymentauth0FunctionAppSyncFunction8BE22054"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationcreatePaymentauth0Function"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/Payment/MutationcreatePaymentpostAuth0Function/MutationcreatePaymentpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationcreatePaymentpostAuth0FunctionMutationcreatePaymentpostAuth0FunctionAppSyncFunctionA63FFC29"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationcreatePaymentpostAuth0Function"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/Payment/MutationCreatePaymentDataResolverFn/MutationCreatePaymentDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationCreatePaymentDataResolverFnMutationCreatePaymentDataResolverFnAppSyncFunctionB0D58985"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationCreatePaymentDataResolverFn"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/Payment/mutationCreatePaymentResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CreatePaymentResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Mutation.createPayment"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/Payment/MutationupdatePaymentinit0Function/MutationupdatePaymentinit0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationupdatePaymentinit0FunctionMutationupdatePaymentinit0FunctionAppSyncFunction603A7F05"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationupdatePaymentinit0Function"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/Payment/MutationupdatePaymentauth0Function/MutationupdatePaymentauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationupdatePaymentauth0FunctionMutationupdatePaymentauth0FunctionAppSyncFunction054F5898"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationupdatePaymentauth0Function"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/Payment/MutationupdatePaymentpostAuth0Function/MutationupdatePaymentpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationupdatePaymentpostAuth0FunctionMutationupdatePaymentpostAuth0FunctionAppSyncFunctionA0FA692E"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationupdatePaymentpostAuth0Function"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/Payment/MutationUpdatePaymentDataResolverFn/MutationUpdatePaymentDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationUpdatePaymentDataResolverFnMutationUpdatePaymentDataResolverFnAppSyncFunction9841256E"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationUpdatePaymentDataResolverFn"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/Payment/mutationUpdatePaymentResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "UpdatePaymentResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Mutation.updatePayment"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/Payment/MutationdeletePaymentauth0Function/MutationdeletePaymentauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationdeletePaymentauth0FunctionMutationdeletePaymentauth0FunctionAppSyncFunction7ADD179B"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationdeletePaymentauth0Function"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/Payment/MutationdeletePaymentpostAuth0Function/MutationdeletePaymentpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationdeletePaymentpostAuth0FunctionMutationdeletePaymentpostAuth0FunctionAppSyncFunction1B3D75FB"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationdeletePaymentpostAuth0Function"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/Payment/MutationDeletePaymentDataResolverFn/MutationDeletePaymentDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationDeletePaymentDataResolverFnMutationDeletePaymentDataResolverFnAppSyncFunction830414F0"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationDeletePaymentDataResolverFn"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/Payment/mutationDeletePaymentResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DeletePaymentResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Mutation.deletePayment"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/Payment/SubscriptiononCreatePaymentauth0Function/SubscriptiononCreatePaymentauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononCreatePaymentauth0FunctionSubscriptiononCreatePaymentauth0FunctionAppSyncFunction76E725F0"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononCreatePaymentauth0Function"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/Payment/SubscriptiononCreatePaymentpostAuth0Function/SubscriptiononCreatePaymentpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononCreatePaymentpostAuth0FunctionSubscriptiononCreatePaymentpostAuth0FunctionAppSyncFunction5C80BC3A"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononCreatePaymentpostAuth0Function"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/Payment/SubscriptionOnCreatePaymentDataResolverFn/SubscriptionOnCreatePaymentDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptionOnCreatePaymentDataResolverFnSubscriptionOnCreatePaymentDataResolverFnAppSyncFunctionC8374435"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptionOnCreatePaymentDataResolverFn"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/Payment/subscriptionOnCreatePaymentResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononCreatePaymentResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Subscription.onCreatePayment"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/Payment/SubscriptiononUpdatePaymentauth0Function/SubscriptiononUpdatePaymentauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononUpdatePaymentauth0FunctionSubscriptiononUpdatePaymentauth0FunctionAppSyncFunctionF4651FE8"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononUpdatePaymentauth0Function"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/Payment/SubscriptiononUpdatePaymentpostAuth0Function/SubscriptiononUpdatePaymentpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononUpdatePaymentpostAuth0FunctionSubscriptiononUpdatePaymentpostAuth0FunctionAppSyncFunction09FE7613"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononUpdatePaymentpostAuth0Function"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/Payment/SubscriptionOnUpdatePaymentDataResolverFn/SubscriptionOnUpdatePaymentDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptionOnUpdatePaymentDataResolverFnSubscriptionOnUpdatePaymentDataResolverFnAppSyncFunction1E58E150"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptionOnUpdatePaymentDataResolverFn"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/Payment/subscriptionOnUpdatePaymentResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononUpdatePaymentResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Subscription.onUpdatePayment"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/Payment/SubscriptiononDeletePaymentauth0Function/SubscriptiononDeletePaymentauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononDeletePaymentauth0FunctionSubscriptiononDeletePaymentauth0FunctionAppSyncFunction81157C72"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononDeletePaymentauth0Function"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/Payment/SubscriptiononDeletePaymentpostAuth0Function/SubscriptiononDeletePaymentpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononDeletePaymentpostAuth0FunctionSubscriptiononDeletePaymentpostAuth0FunctionAppSyncFunction505C3A65"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononDeletePaymentpostAuth0Function"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/Payment/SubscriptionOnDeletePaymentDataResolverFn/SubscriptionOnDeletePaymentDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptionOnDeletePaymentDataResolverFnSubscriptionOnDeletePaymentDataResolverFnAppSyncFunction8E2E8F66"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptionOnDeletePaymentDataResolverFn"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/Payment/subscriptionOnDeletePaymentResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononDeletePaymentResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Subscription.onDeletePayment"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/Payment/PaymentOwnerDataResolverFn/PaymentOwnerDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PaymentOwnerDataResolverFnPaymentOwnerDataResolverFnAppSyncFunction67044D28"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "PaymentOwnerDataResolverFn"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/Payment/paymentOwnerResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PaymentownerResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Payment.owner"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/Payment/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/Payment/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/Payment/reference-to-amplifywefix4uJramisandboxd4a7956887dataamplifyDataAmplifyTableManagerNestedStackAmplifyTableManagerNestedStackResource071E02DFOutputs.amplifywefix4uJramisandboxd4a7956887dataamplifyDataAmplifyTableManagerTableManagerCustomProviderframeworkonEventF1791872Arn": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifywefix4uJramisandboxd4a7956887dataamplifyDataAmplifyTableManagerNestedStackAmplifyTableManagerNestedStackResource071E02DFOutputsamplifywefix4uJramisandboxd4a7956887dataamplifyDataAmplifyTableManagerTableManagerCustomProvideB617E26D"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/Payment/reference-to-amplifywefix4uJramisandboxd4a7956887dataamplifyDataGraphQLAPI007FDE3BApiId": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifywefix4uJramisandboxd4a7956887dataamplifyDataGraphQLAPI007FDE3BApiId"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/Payment/reference-to-amplifywefix4uJramisandboxd4a7956887dataamplifyDataGraphQLAPINONEDS1FD993A4Name": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifywefix4uJramisandboxd4a7956887dataamplifyDataGraphQLAPINONEDS1FD993A4Name"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/Payment/reference-to-amplifywefix4uJramisandboxd4a7956887authNestedStackauthNestedStackResource0ECD366DOutputs.amplifywefix4uJramisandboxd4a7956887authamplifyAuthauthenticatedUserRole98998280Ref": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifywefix4uJramisandboxd4a7956887authNestedStackauthNestedStackResource0ECD366DOutputsamplifywefix4uJramisandboxd4a7956887authamplifyAuthauthenticatedUserRole98998280Ref"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/Payment/reference-to-amplifywefix4uJramisandboxd4a7956887authNestedStackauthNestedStackResource0ECD366DOutputs.amplifywefix4uJramisandboxd4a7956887authamplifyAuthunauthenticatedUserRole921E82E5Ref": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifywefix4uJramisandboxd4a7956887authNestedStackauthNestedStackResource0ECD366DOutputsamplifywefix4uJramisandboxd4a7956887authamplifyAuthunauthenticatedUserRole921E82E5Ref"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/Payment/reference-to-amplifywefix4uJramisandboxd4a7956887authNestedStackauthNestedStackResource0ECD366DOutputs.amplifywefix4uJramisandboxd4a7956887authamplifyAuthIdentityPool9C52C8BBRef": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifywefix4uJramisandboxd4a7956887authNestedStackauthNestedStackResource0ECD366DOutputsamplifywefix4uJramisandboxd4a7956887authamplifyAuthIdentityPool9C52C8BBRef"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/Payment/amplifywefix4uJramisandboxd4a7956887dataamplifyDataPaymentPaymentDataSource7472893BName": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifywefix4uJramisandboxd4a7956887dataamplifyDataPaymentPaymentDataSource7472893BName"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/Payment/amplifywefix4uJramisandboxd4a7956887dataamplifyDataPaymentPaymentTable70C44B3ETableArn": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifywefix4uJramisandboxd4a7956887dataamplifyDataPaymentPaymentTable70C44B3ETableArn"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/Payment.NestedStack/Payment.NestedStackResource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyDataPaymentNestedStackPaymentNestedStackResource519EF20D"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/StatusLog/DynamoDBModelTableReadIOPS": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DynamoDBModelTableReadIOPS"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/StatusLog/DynamoDBModelTableWriteIOPS": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DynamoDBModelTableWriteIOPS"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/StatusLog/DynamoDBBillingMode": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DynamoDBBillingMode"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/StatusLog/DynamoDBEnablePointInTimeRecovery": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DynamoDBEnablePointInTimeRecovery"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/StatusLog/DynamoDBEnableServerSideEncryption": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DynamoDBEnableServerSideEncryption"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/StatusLog/HasEnvironmentParameter": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "HasEnvironmentParameter"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/StatusLog/ShouldUsePayPerRequestBilling": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ShouldUsePayPerRequestBilling"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/StatusLog/ShouldUsePointInTimeRecovery": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ShouldUsePointInTimeRecovery"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/StatusLog/StatusLogTable": [
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "StatusLog"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/StatusLog/StatusLogTable/Default/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "StatusLogTable"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "StatusLog"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/StatusLog/CustomTableStatusLogTable": [
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "StatusLog"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/StatusLog/GetAttStatusLogTableStreamArn": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GetAttStatusLogTableStreamArn"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/StatusLog/GetAttStatusLogTableName": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GetAttStatusLogTableName"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/StatusLog/StatusLogIAMRole": [
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "StatusLogIAMRole"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/StatusLog/StatusLogIAMRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "StatusLogIAMRoleC53DB496"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "StatusLogIAMRole"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/StatusLog/StatusLogDataSource": [
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "StatusLogTable"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/StatusLog/StatusLogDataSource/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "StatusLogDataSource"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "StatusLogTable"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/StatusLog/QuerygetStatusLogauth0Function/QuerygetStatusLogauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerygetStatusLogauth0FunctionQuerygetStatusLogauth0FunctionAppSyncFunctionA0ECB14A"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerygetStatusLogauth0Function"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/StatusLog/QuerygetStatusLogpostAuth0Function/QuerygetStatusLogpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerygetStatusLogpostAuth0FunctionQuerygetStatusLogpostAuth0FunctionAppSyncFunctionED4A4DD8"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerygetStatusLogpostAuth0Function"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/StatusLog/QueryGetStatusLogDataResolverFn/QueryGetStatusLogDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QueryGetStatusLogDataResolverFnQueryGetStatusLogDataResolverFnAppSyncFunctionF9C7EEE2"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QueryGetStatusLogDataResolverFn"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/StatusLog/queryGetStatusLogResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GetStatusLogResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Query.getStatusLog"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/StatusLog/QuerylistStatusLogsauth0Function/QuerylistStatusLogsauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerylistStatusLogsauth0FunctionQuerylistStatusLogsauth0FunctionAppSyncFunctionF90DC56E"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerylistStatusLogsauth0Function"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/StatusLog/QuerylistStatusLogspostAuth0Function/QuerylistStatusLogspostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerylistStatusLogspostAuth0FunctionQuerylistStatusLogspostAuth0FunctionAppSyncFunction4ACAE0B5"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerylistStatusLogspostAuth0Function"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/StatusLog/QueryListStatusLogsDataResolverFn/QueryListStatusLogsDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QueryListStatusLogsDataResolverFnQueryListStatusLogsDataResolverFnAppSyncFunction75AD0140"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QueryListStatusLogsDataResolverFn"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/StatusLog/queryListStatusLogsResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ListStatusLogResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Query.listStatusLogs"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/StatusLog/MutationcreateStatusLoginit0Function/MutationcreateStatusLoginit0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationcreateStatusLoginit0FunctionMutationcreateStatusLoginit0FunctionAppSyncFunction2CAEFC4E"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationcreateStatusLoginit0Function"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/StatusLog/MutationcreateStatusLogauth0Function/MutationcreateStatusLogauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationcreateStatusLogauth0FunctionMutationcreateStatusLogauth0FunctionAppSyncFunctionAD8CADDD"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationcreateStatusLogauth0Function"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/StatusLog/MutationcreateStatusLogpostAuth0Function/MutationcreateStatusLogpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationcreateStatusLogpostAuth0FunctionMutationcreateStatusLogpostAuth0FunctionAppSyncFunction386BEB17"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationcreateStatusLogpostAuth0Function"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/StatusLog/MutationCreateStatusLogDataResolverFn/MutationCreateStatusLogDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationCreateStatusLogDataResolverFnMutationCreateStatusLogDataResolverFnAppSyncFunctionD4D4C2DE"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationCreateStatusLogDataResolverFn"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/StatusLog/mutationCreateStatusLogResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CreateStatusLogResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Mutation.createStatusLog"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/StatusLog/MutationupdateStatusLoginit0Function/MutationupdateStatusLoginit0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationupdateStatusLoginit0FunctionMutationupdateStatusLoginit0FunctionAppSyncFunction49273FF6"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationupdateStatusLoginit0Function"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/StatusLog/MutationupdateStatusLogauth0Function/MutationupdateStatusLogauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationupdateStatusLogauth0FunctionMutationupdateStatusLogauth0FunctionAppSyncFunction8A4765E7"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationupdateStatusLogauth0Function"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/StatusLog/MutationupdateStatusLogpostAuth0Function/MutationupdateStatusLogpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationupdateStatusLogpostAuth0FunctionMutationupdateStatusLogpostAuth0FunctionAppSyncFunction589A1491"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationupdateStatusLogpostAuth0Function"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/StatusLog/MutationUpdateStatusLogDataResolverFn/MutationUpdateStatusLogDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationUpdateStatusLogDataResolverFnMutationUpdateStatusLogDataResolverFnAppSyncFunctionC6A2EDD2"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationUpdateStatusLogDataResolverFn"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/StatusLog/mutationUpdateStatusLogResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "UpdateStatusLogResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Mutation.updateStatusLog"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/StatusLog/MutationdeleteStatusLogauth0Function/MutationdeleteStatusLogauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationdeleteStatusLogauth0FunctionMutationdeleteStatusLogauth0FunctionAppSyncFunction88A5B5A9"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationdeleteStatusLogauth0Function"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/StatusLog/MutationdeleteStatusLogpostAuth0Function/MutationdeleteStatusLogpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationdeleteStatusLogpostAuth0FunctionMutationdeleteStatusLogpostAuth0FunctionAppSyncFunctionE92BD549"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationdeleteStatusLogpostAuth0Function"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/StatusLog/MutationDeleteStatusLogDataResolverFn/MutationDeleteStatusLogDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationDeleteStatusLogDataResolverFnMutationDeleteStatusLogDataResolverFnAppSyncFunctionFE160E09"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationDeleteStatusLogDataResolverFn"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/StatusLog/mutationDeleteStatusLogResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DeleteStatusLogResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Mutation.deleteStatusLog"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/StatusLog/SubscriptiononCreateStatusLogauth0Function/SubscriptiononCreateStatusLogauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononCreateStatusLogauth0FunctionSubscriptiononCreateStatusLogauth0FunctionAppSyncFunctionC06DB4BD"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononCreateStatusLogauth0Function"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/StatusLog/SubscriptiononCreateStatusLogpostAuth0Function/SubscriptiononCreateStatusLogpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononCreateStatusLogpostAuth0FunctionSubscriptiononCreateStatusLogpostAuth0FunctionAppSyncFunctionD4E9EF8C"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononCreateStatusLogpostAuth0Function"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/StatusLog/SubscriptionOnCreateStatusLogDataResolverFn/SubscriptionOnCreateStatusLogDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptionOnCreateStatusLogDataResolverFnSubscriptionOnCreateStatusLogDataResolverFnAppSyncFunction65D469F7"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptionOnCreateStatusLogDataResolverFn"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/StatusLog/subscriptionOnCreateStatusLogResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononCreateStatusLogResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Subscription.onCreateStatusLog"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/StatusLog/SubscriptiononUpdateStatusLogauth0Function/SubscriptiononUpdateStatusLogauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononUpdateStatusLogauth0FunctionSubscriptiononUpdateStatusLogauth0FunctionAppSyncFunction5D7148EF"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononUpdateStatusLogauth0Function"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/StatusLog/SubscriptiononUpdateStatusLogpostAuth0Function/SubscriptiononUpdateStatusLogpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononUpdateStatusLogpostAuth0FunctionSubscriptiononUpdateStatusLogpostAuth0FunctionAppSyncFunction6200AE3B"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononUpdateStatusLogpostAuth0Function"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/StatusLog/SubscriptionOnUpdateStatusLogDataResolverFn/SubscriptionOnUpdateStatusLogDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptionOnUpdateStatusLogDataResolverFnSubscriptionOnUpdateStatusLogDataResolverFnAppSyncFunction5AC54EF7"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptionOnUpdateStatusLogDataResolverFn"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/StatusLog/subscriptionOnUpdateStatusLogResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononUpdateStatusLogResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Subscription.onUpdateStatusLog"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/StatusLog/SubscriptiononDeleteStatusLogauth0Function/SubscriptiononDeleteStatusLogauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononDeleteStatusLogauth0FunctionSubscriptiononDeleteStatusLogauth0FunctionAppSyncFunction46CF94F8"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononDeleteStatusLogauth0Function"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/StatusLog/SubscriptiononDeleteStatusLogpostAuth0Function/SubscriptiononDeleteStatusLogpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononDeleteStatusLogpostAuth0FunctionSubscriptiononDeleteStatusLogpostAuth0FunctionAppSyncFunction3544ECA1"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononDeleteStatusLogpostAuth0Function"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/StatusLog/SubscriptionOnDeleteStatusLogDataResolverFn/SubscriptionOnDeleteStatusLogDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptionOnDeleteStatusLogDataResolverFnSubscriptionOnDeleteStatusLogDataResolverFnAppSyncFunctionF8F1AAA9"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptionOnDeleteStatusLogDataResolverFn"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/StatusLog/subscriptionOnDeleteStatusLogResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononDeleteStatusLogResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Subscription.onDeleteStatusLog"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/StatusLog/StatusLogOwnerDataResolverFn/StatusLogOwnerDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "StatusLogOwnerDataResolverFnStatusLogOwnerDataResolverFnAppSyncFunction00301955"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "StatusLogOwnerDataResolverFn"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/StatusLog/statusLogOwnerResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "StatusLogownerResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "StatusLog.owner"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/StatusLog/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/StatusLog/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/StatusLog/reference-to-amplifywefix4uJramisandboxd4a7956887dataamplifyDataAmplifyTableManagerNestedStackAmplifyTableManagerNestedStackResource071E02DFOutputs.amplifywefix4uJramisandboxd4a7956887dataamplifyDataAmplifyTableManagerTableManagerCustomProviderframeworkonEventF1791872Arn": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifywefix4uJramisandboxd4a7956887dataamplifyDataAmplifyTableManagerNestedStackAmplifyTableManagerNestedStackResource071E02DFOutputsamplifywefix4uJramisandboxd4a7956887dataamplifyDataAmplifyTableManagerTableManagerCustomProvideB617E26D"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/StatusLog/reference-to-amplifywefix4uJramisandboxd4a7956887dataamplifyDataGraphQLAPI007FDE3BApiId": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifywefix4uJramisandboxd4a7956887dataamplifyDataGraphQLAPI007FDE3BApiId"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/StatusLog/reference-to-amplifywefix4uJramisandboxd4a7956887dataamplifyDataGraphQLAPINONEDS1FD993A4Name": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifywefix4uJramisandboxd4a7956887dataamplifyDataGraphQLAPINONEDS1FD993A4Name"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/StatusLog/reference-to-amplifywefix4uJramisandboxd4a7956887authNestedStackauthNestedStackResource0ECD366DOutputs.amplifywefix4uJramisandboxd4a7956887authamplifyAuthauthenticatedUserRole98998280Ref": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifywefix4uJramisandboxd4a7956887authNestedStackauthNestedStackResource0ECD366DOutputsamplifywefix4uJramisandboxd4a7956887authamplifyAuthauthenticatedUserRole98998280Ref"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/StatusLog/reference-to-amplifywefix4uJramisandboxd4a7956887authNestedStackauthNestedStackResource0ECD366DOutputs.amplifywefix4uJramisandboxd4a7956887authamplifyAuthunauthenticatedUserRole921E82E5Ref": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifywefix4uJramisandboxd4a7956887authNestedStackauthNestedStackResource0ECD366DOutputsamplifywefix4uJramisandboxd4a7956887authamplifyAuthunauthenticatedUserRole921E82E5Ref"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/StatusLog/reference-to-amplifywefix4uJramisandboxd4a7956887authNestedStackauthNestedStackResource0ECD366DOutputs.amplifywefix4uJramisandboxd4a7956887authamplifyAuthIdentityPool9C52C8BBRef": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifywefix4uJramisandboxd4a7956887authNestedStackauthNestedStackResource0ECD366DOutputsamplifywefix4uJramisandboxd4a7956887authamplifyAuthIdentityPool9C52C8BBRef"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/StatusLog/amplifywefix4uJramisandboxd4a7956887dataamplifyDataStatusLogStatusLogDataSourceB6D5703FName": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifywefix4uJramisandboxd4a7956887dataamplifyDataStatusLogStatusLogDataSourceB6D5703FName"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/StatusLog/amplifywefix4uJramisandboxd4a7956887dataamplifyDataStatusLogStatusLogTable557DF5AATableArn": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifywefix4uJramisandboxd4a7956887dataamplifyDataStatusLogStatusLogTable557DF5AATableArn"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/StatusLog.NestedStack/StatusLog.NestedStackResource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyDataStatusLogNestedStackStatusLogNestedStackResource8AEF4BEC"
           }
         ],
         "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/RepairPhoto/DynamoDBModelTableReadIOPS": [
@@ -2995,26 +4075,6 @@
             "data": "Subscription.onDeleteInventory"
           }
         ],
-        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/Inventory/InventoryOwnerDataResolverFn/InventoryOwnerDataResolverFn.AppSyncFunction": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "InventoryOwnerDataResolverFnInventoryOwnerDataResolverFnAppSyncFunctionE46841B0"
-          },
-          {
-            "type": "graphqltransformer:resourceName",
-            "data": "InventoryOwnerDataResolverFn"
-          }
-        ],
-        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/Inventory/inventoryOwnerResolver": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "InventoryownerResolver"
-          },
-          {
-            "type": "graphqltransformer:resourceName",
-            "data": "Inventory.owner"
-          }
-        ],
         "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/Inventory/CDKMetadata/Default": [
           {
             "type": "aws:cdk:logicalId",
@@ -3159,6 +4219,66 @@
             "data": "Repair.appointments"
           }
         ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/ConnectionStack/Repairpaymentsauth0Function/Repairpaymentsauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Repairpaymentsauth0FunctionRepairpaymentsauth0FunctionAppSyncFunction954EFD8D"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Repairpaymentsauth0Function"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/ConnectionStack/RepairPaymentsDataResolverFn/RepairPaymentsDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RepairPaymentsDataResolverFnRepairPaymentsDataResolverFnAppSyncFunction418E5B59"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "RepairPaymentsDataResolverFn"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/ConnectionStack/repairPaymentsResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RepairpaymentsResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Repair.payments"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/ConnectionStack/RepairstatusLogsauth0Function/RepairstatusLogsauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RepairstatusLogsauth0FunctionRepairstatusLogsauth0FunctionAppSyncFunction8162835D"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "RepairstatusLogsauth0Function"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/ConnectionStack/RepairStatusLogsDataResolverFn/RepairStatusLogsDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RepairStatusLogsDataResolverFnRepairStatusLogsDataResolverFnAppSyncFunctionFE74FFFA"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "RepairStatusLogsDataResolverFn"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/ConnectionStack/repairStatusLogsResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RepairstatusLogsResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Repair.statusLogs"
+          }
+        ],
         "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/ConnectionStack/Repaircustomerauth0Function/Repaircustomerauth0Function.AppSyncFunction": [
           {
             "type": "aws:cdk:logicalId",
@@ -3187,6 +4307,66 @@
           {
             "type": "graphqltransformer:resourceName",
             "data": "Repair.customer"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/ConnectionStack/Paymentrepairauth0Function/Paymentrepairauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Paymentrepairauth0FunctionPaymentrepairauth0FunctionAppSyncFunction038C9DD5"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Paymentrepairauth0Function"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/ConnectionStack/PaymentRepairDataResolverFn/PaymentRepairDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PaymentRepairDataResolverFnPaymentRepairDataResolverFnAppSyncFunction0A6AB1A2"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "PaymentRepairDataResolverFn"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/ConnectionStack/paymentRepairResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PaymentrepairResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Payment.repair"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/ConnectionStack/StatusLogrepairauth0Function/StatusLogrepairauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "StatusLogrepairauth0FunctionStatusLogrepairauth0FunctionAppSyncFunctionB5E82E79"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "StatusLogrepairauth0Function"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/ConnectionStack/StatusLogRepairDataResolverFn/StatusLogRepairDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "StatusLogRepairDataResolverFnStatusLogRepairDataResolverFnAppSyncFunctionECD7CCDF"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "StatusLogRepairDataResolverFn"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/ConnectionStack/statusLogRepairResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "StatusLogrepairResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "StatusLog.repair"
           }
         ],
         "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/ConnectionStack/RepairPhotorepairauth0Function/RepairPhotorepairauth0Function.AppSyncFunction": [
@@ -3327,6 +4507,30 @@
             "data": "referencetoamplifywefix4uJramisandboxd4a7956887dataamplifyDataAppointmentNestedStackAppointmentNestedStackResource231E1CA2Outputsamplifywefix4uJramisandboxd4a7956887dataamplifyDataAppointmentAppointmentTableF3C898DCTableArn"
           }
         ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/ConnectionStack/reference-to-amplifywefix4uJramisandboxd4a7956887dataamplifyDataPaymentNestedStackPaymentNestedStackResourceBC3D8635Outputs.amplifywefix4uJramisandboxd4a7956887dataamplifyDataPaymentPaymentDataSource7472893BName": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifywefix4uJramisandboxd4a7956887dataamplifyDataPaymentNestedStackPaymentNestedStackResourceBC3D8635Outputsamplifywefix4uJramisandboxd4a7956887dataamplifyDataPaymentPaymentDataSource7472893BName"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/ConnectionStack/reference-to-amplifywefix4uJramisandboxd4a7956887dataamplifyDataPaymentNestedStackPaymentNestedStackResourceBC3D8635Outputs.amplifywefix4uJramisandboxd4a7956887dataamplifyDataPaymentPaymentTable70C44B3ETableArn": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifywefix4uJramisandboxd4a7956887dataamplifyDataPaymentNestedStackPaymentNestedStackResourceBC3D8635Outputsamplifywefix4uJramisandboxd4a7956887dataamplifyDataPaymentPaymentTable70C44B3ETableArn"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/ConnectionStack/reference-to-amplifywefix4uJramisandboxd4a7956887dataamplifyDataStatusLogNestedStackStatusLogNestedStackResource11350D3EOutputs.amplifywefix4uJramisandboxd4a7956887dataamplifyDataStatusLogStatusLogDataSourceB6D5703FName": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifywefix4uJramisandboxd4a7956887dataamplifyDataStatusLogNestedStackStatusLogNestedStackResource11350D3EOutputsamplifywefix4uJramisandboxd4a7956887dataamplifyDataStatusLogStatusLogDataSourceB6D5703FName"
+          }
+        ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/ConnectionStack/reference-to-amplifywefix4uJramisandboxd4a7956887dataamplifyDataStatusLogNestedStackStatusLogNestedStackResource11350D3EOutputs.amplifywefix4uJramisandboxd4a7956887dataamplifyDataStatusLogStatusLogTable557DF5AATableArn": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifywefix4uJramisandboxd4a7956887dataamplifyDataStatusLogNestedStackStatusLogNestedStackResource11350D3EOutputsamplifywefix4uJramisandboxd4a7956887dataamplifyDataStatusLogStatusLogTable557DF5AATableArn"
+          }
+        ],
         "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/amplifyData/ConnectionStack/reference-to-amplifywefix4uJramisandboxd4a7956887dataamplifyDataCustomerNestedStackCustomerNestedStackResourceFA056B36Outputs.amplifywefix4uJramisandboxd4a7956887dataamplifyDataCustomerCustomerDataSource66D3D40BName": [
           {
             "type": "aws:cdk:logicalId",
@@ -3403,12 +4607,6 @@
           {
             "type": "aws:cdk:logicalId",
             "data": "DynamoDBEnableServerSideEncryption"
-          }
-        ],
-        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/LatestNodeRuntimeMap": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "LatestNodeRuntimeMap"
           }
         ],
         "/amplify-wefix4u-Jrami-sandbox-d4a7956887/data/Custom::S3AutoDeleteObjectsCustomResourceProvider": [
@@ -3633,12 +4831,6 @@
             "data": "wefix4ustorageBucketAutoDeleteObjectsCustomResource56BC1E5C"
           }
         ],
-        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/storage/LatestNodeRuntimeMap": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "LatestNodeRuntimeMap"
-          }
-        ],
         "/amplify-wefix4u-Jrami-sandbox-d4a7956887/storage/Custom::S3AutoDeleteObjectsCustomResourceProvider": [
           {
             "type": "aws:cdk:is-custom-resource-handler-customResourceProvider",
@@ -3663,16 +4855,16 @@
             "data": "WEFIX4USTORAGEBUCKETNAMEParameter28964F7B"
           }
         ],
+        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/storage/amplify-wefix4u-Jrami-sandbox-d4a7956887--storageAccess3/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifywefix4uJramisandboxd4a7956887storageAccess33B4E120F"
+          }
+        ],
         "/amplify-wefix4u-Jrami-sandbox-d4a7956887/storage/amplify-wefix4u-Jrami-sandbox-d4a7956887--storageAccess4/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "amplifywefix4uJramisandboxd4a7956887storageAccess443455F42"
-          }
-        ],
-        "/amplify-wefix4u-Jrami-sandbox-d4a7956887/storage/amplify-wefix4u-Jrami-sandbox-d4a7956887--storageAccess5/Resource": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "amplifywefix4uJramisandboxd4a7956887storageAccess5407E3266"
           }
         ],
         "/amplify-wefix4u-Jrami-sandbox-d4a7956887/storage/CDKMetadata/Default": [
@@ -3882,7 +5074,7 @@
           },
           "@aws-cdk/aws-iam:importedRoleStackSafeDefaultPolicyName": {
             "recommendedValue": true,
-            "explanation": "Enable this feature to by default create default policy names for imported roles that depend on the stack the role is in."
+            "explanation": "Enable this feature to create default policy names for imported roles that depend on the stack the role is in."
           },
           "@aws-cdk/aws-s3:serverAccessLogsUseBucketPolicy": {
             "recommendedValue": true,
@@ -4162,10 +5354,25 @@
           "@aws-cdk/aws-lambda:useCdkManagedLogGroup": {
             "recommendedValue": true,
             "explanation": "When enabled, CDK creates and manages loggroup for the lambda function"
+          },
+          "@aws-cdk/aws-elasticloadbalancingv2:networkLoadBalancerWithSecurityGroupByDefault": {
+            "recommendedValue": true,
+            "explanation": "When enabled, Network Load Balancer will be created with a security group by default."
+          },
+          "@aws-cdk/aws-stepfunctions-tasks:httpInvokeDynamicJsonPathEndpoint": {
+            "recommendedValue": true,
+            "explanation": "When enabled, allows using a dynamic apiEndpoint with JSONPath format in HttpInvoke tasks.",
+            "unconfiguredBehavesLike": {
+              "v2": true
+            }
+          },
+          "@aws-cdk/aws-ecs-patterns:uniqueTargetGroupId": {
+            "recommendedValue": true,
+            "explanation": "When enabled, ECS patterns will generate unique target group IDs to prevent conflicts during load balancer replacement"
           }
         }
       }
     }
   },
-  "minimumCliVersion": "2.1029.3"
+  "minimumCliVersion": "2.1033.0"
 }

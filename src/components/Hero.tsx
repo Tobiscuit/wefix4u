@@ -26,7 +26,7 @@ export default function Hero() {
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row gap-4 pt-4">
             <a 
-              className="glass-card px-8 py-4 bg-action-orange text-white font-bold rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 text-center flex items-center justify-center group" 
+              className="px-8 py-4 bg-action-orange-700 text-white font-bold rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 text-center flex items-center justify-center group" 
               href="#contact"
             >
               <span className="material-icons mr-2 group-hover:scale-110 transition-transform">bolt</span>

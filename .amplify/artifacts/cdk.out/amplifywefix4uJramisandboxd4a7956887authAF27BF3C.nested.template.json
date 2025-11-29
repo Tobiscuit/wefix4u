@@ -1,5 +1,5 @@
 {
- "Description": "{\"createdOn\":\"Windows\",\"createdBy\":\"AmplifySandbox\",\"createdWith\":\"1.8.1\",\"stackType\":\"auth-Cognito\",\"metadata\":{}}",
+ "Description": "{\"createdOn\":\"Windows\",\"createdBy\":\"AmplifySandbox\",\"createdWith\":\"1.9.0\",\"stackType\":\"auth-Cognito\",\"metadata\":{}}",
  "Resources": {
   "amplifyAuthUserPoolsmsRole12F9E57B": {
    "Type": "AWS::IAM::Role",
@@ -384,7 +384,7 @@
   "CDKMetadata": {
    "Type": "AWS::CDK::Metadata",
    "Properties": {
-    "Analytics": "v2:deflate64:H4sIAAAAAAAA/01OvQrCMBB+Fvf0rJlcpZOLSMVZYnLqtekFmqtFQt5dqlQ7ff/wadCbLZQrM8bCurbwdIV0wCjoTmJsq8wYL8mGO5MESOeI/TEEr6ob//hMKk/Isoz+zt4hC8lrHi91HTzuRIx9dMiSFZkO0mROxQlzVjXGMPQWs+LgEJq4fuoSPtebSFT0Awt1CPUX39e/TpzXAAAA"
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/02LsQ7CMBBDv6V7eoSysKJOLAgVMaOQHHBtmki9KxWK8u+oQgUm2892BdVGgy7MxKV1XenpCumALOhOYmynzMSXZOM9kERIZ8bhGKNX9S18/WJqTxjkv/qRvcMgJK/l/J+b6HEnYuyjxyBZkekhzXAezpqzapDjOFjMKkSH0PLqWWlYb0EXLROVwxiEeoTmo2/9FpEI1wAAAA=="
    },
    "Metadata": {
     "aws:cdk:path": "amplify-wefix4u-Jrami-sandbox-d4a7956887/auth/CDKMetadata/Default"

@@ -1,0 +1,137 @@
+type Customer @model @auth(rules: [{allow: owner, ownerField: "owner"},
+  {allow: groups, groups: ["Admins"]}])
+{
+  email: String!
+  phoneNumber: String
+  firstName: String!
+  lastName: String!
+  address: String
+  notes: String
+  repairs: [Repair] @hasMany(references: ["customerId"])
+}
+
+type Repair @model @auth(rules: [{allow: owner, operations: [read], ownerField: "owner"},
+  {allow: groups, groups: ["Admins"]}])
+{
+  customerId: ID!
+  customer: Customer @belongsTo(references: ["customerId"])
+  deviceType: String!
+  deviceModel: String!
+  serialNumber: String
+  devicePassword: String
+  devicePattern: String
+  serviceType: String!
+  description: String
+  warrantyStatus: RepairWarrantyStatus
+  status: RepairStatus
+  estimatedCost: Float
+  actualCost: Float
+  isMailIn: Boolean
+  shippingLabelUrl: String
+  trackingNumber: String
+  estimatedCompletion: AWSDateTime
+  completedAt: AWSDateTime
+  notes: String
+  photos: [RepairPhoto] @hasMany(references: ["repairId"])
+  appointments: [Appointment] @hasMany(references: ["repairId"])
+  payments: [Payment] @hasMany(references: ["repairId"])
+  statusLogs: [StatusLog] @hasMany(references: ["repairId"])
+}
+
+type Payment @model @auth(rules: [{allow: owner, operations: [read, create], ownerField: "owner"},
+  {allow: groups, groups: ["Admins"]}])
+{
+  repairId: ID!
+  repair: Repair @belongsTo(references: ["repairId"])
+  amount: Float!
+  method: PaymentMethod
+  status: PaymentStatus
+  date: AWSDateTime!
+  referenceId: String
+  notes: String
+}
+
+type StatusLog @model @auth(rules: [{allow: owner, operations: [read], ownerField: "owner"},
+  {allow: groups, groups: ["Admins"]}])
+{
+  repairId: ID!
+  repair: Repair @belongsTo(references: ["repairId"])
+  status: String!
+  timestamp: AWSDateTime!
+  notes: String
+}
+
+type RepairPhoto @model @auth(rules: [{allow: owner, operations: [read], ownerField: "owner"},
+  {allow: groups, groups: ["Admins"]}])
+{
+  repairId: ID!
+  repair: Repair @belongsTo(references: ["repairId"])
+  photoUrl: String!
+  description: String
+  uploadedAt: AWSDateTime!
+}
+
+type Appointment @model @auth(rules: [{allow: owner, ownerField: "owner"},
+  {allow: groups, groups: ["Admins"]}])
+{
+  repairId: ID!
+  repair: Repair @belongsTo(references: ["repairId"])
+  scheduledAt: AWSDateTime!
+  type: AppointmentType
+  status: AppointmentStatus
+  notes: String
+}
+
+type Inventory @model @auth(rules: [{allow: groups, groups: ["Admins"]}])
+{
+  partName: String!
+  partNumber: String
+  deviceType: String!
+  deviceModel: String
+  quantity: Int!
+  cost: Float!
+  supplier: String
+  lastRestocked: AWSDateTime
+}
+
+enum RepairWarrantyStatus {
+  none
+  limited
+  lifetime
+}
+
+enum RepairStatus {
+  pending
+  diagnosed
+  inProgress
+  completed
+  readyForPickup
+  pickedUp
+  cancelled
+}
+
+enum PaymentMethod {
+  cash
+  card_square
+  card_stripe
+  transfer
+}
+
+enum PaymentStatus {
+  pending
+  completed
+  refunded
+  failed
+}
+
+enum AppointmentType {
+  dropOff
+  pickup
+  consultation
+}
+
+enum AppointmentStatus {
+  scheduled
+  completed
+  cancelled
+}
