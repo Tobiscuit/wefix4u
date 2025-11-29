@@ -15,7 +15,7 @@ export default function Hero() {
           
           <h1 className="text-4xl lg:text-6xl font-bold text-dark-text leading-tight">
             Your Devices,
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-trusted-blue to-action-orange"> Fixed Fast</span>
+            <span className="text-action-orange"> Fixed Fast</span>
           </h1>
           
           <p className="text-lg text-body-text leading-relaxed max-w-xl">
