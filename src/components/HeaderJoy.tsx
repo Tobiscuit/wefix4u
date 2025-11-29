@@ -18,9 +18,13 @@ export default function HeaderJoy() {
       <div className="px-4 md:px-10 lg:px-20 mx-auto">
         <div className="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#f0f1f5] py-4">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 text-[#111218]">
-            <span className="material-symbols-outlined text-2xl text-[#3D5AFE]">construction</span>
-            <h2 className="text-[#111218] text-xl font-bold leading-tight tracking-[-0.015em]">WeFix4U</h2>
+          <Link href="/" className="flex items-center gap-3 text-[#111218] group">
+            <div className="w-10 h-10 bg-gradient-to-br from-trusted-blue to-action-orange rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+              <span className="text-white font-bold text-lg">W4U</span>
+            </div>
+            <h2 className="text-[#111218] text-xl font-bold leading-tight tracking-tight">
+              WE FIX <span className="text-action-orange">4U</span>
+            </h2>
           </Link>
 
           {/* Desktop Navigation */}

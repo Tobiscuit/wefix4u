@@ -2,49 +2,87 @@ import Image from 'next/image'
 
 export default function Hero() {
   return (
-    <section className="bg-white">
-      <div className="container mx-auto px-6 py-20 lg:py-32 grid md:grid-cols-2 gap-12 items-center">
-        <div className="text-center md:text-left">
-          <h1 className="text-4xl lg:text-6xl font-bold text-[var(--dark-text)] leading-tight mb-4">
-            Fast, Reliable Repairs for Your Favorite Devices.
+    <section className="relative bg-gradient-to-br from-light-gray via-white to-trusted-blue-50 overflow-hidden">
+      {/* Background Decoration */}
+      <div className="absolute inset-0 bg-hero-glow opacity-30"></div>
+      
+      <div className="relative container mx-auto px-6 py-16 lg:py-24 grid md:grid-cols-2 gap-12 items-center">
+        {/* Left Column: Text */}
+        <div className="text-center md:text-left space-y-6 z-10">
+          <div className="inline-block px-4 py-2 bg-trusted-blue-50 rounded-full text-trusted-blue-700 text-sm font-semibold mb-2">
+            🔧 Trusted by 500+ Happy Customers
+          </div>
+          
+          <h1 className="text-4xl lg:text-6xl font-bold text-dark-text leading-tight">
+            Your Devices,
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-trusted-blue to-action-orange"> Fixed Fast</span>
           </h1>
-          <p className="text-lg text-[var(--body-text)] mb-8">
-            From cracked screens to slow laptops, our experienced technicians get you back up and running in no time.
+          
+          <p className="text-lg text-body-text leading-relaxed max-w-xl">
+            From cracked screens to battery replacements, our expert technicians bring your devices back to life. 
+            <span className="font-semibold text-dark-text"> Same-day service available.</span>
           </p>
-          <div className="flex flex-col items-center md:items-start gap-y-6">
-            <div className="flex justify-center md:justify-start space-x-4">
-              <a 
-                className="bg-[var(--action-orange)] text-white font-bold py-3 px-8 rounded-lg shadow-md hover:bg-orange-600 transition-all duration-300 transform hover:scale-105" 
-                href="#contact"
-              >
-                Get a Free Quote
-              </a>
-              <a 
-                className="bg-transparent text-[var(--trusted-blue)] font-bold py-3 px-8 rounded-lg border-2 border-[var(--trusted-blue)] hover:bg-[var(--trusted-blue)] hover:text-white transition-all duration-300" 
-                href="#services"
-              >
-                Our Services
-              </a>
+          
+          {/* CTAs */}
+          <div className="flex flex-col sm:flex-row gap-4 pt-4">
+            <a 
+              className="glass-card px-8 py-4 bg-action-orange text-white font-bold rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 text-center flex items-center justify-center group" 
+              href="#contact"
+            >
+              <span className="material-icons mr-2 group-hover:scale-110 transition-transform">bolt</span>
+              Get Instant Quote
+            </a>
+            <a 
+              className="glass-panel px-8 py-4 text-trusted-blue-700 font-semibold rounded-xl hover:shadow-lg transition-all duration-300 text-center flex items-center justify-center" 
+              href="/sign-up"
+            >
+              <span className="material-icons mr-2">account_circle</span>
+              Track My Repair
+            </a>
+          </div>
+
+          {/* Trust Badges */}
+          <div className="flex flex-wrap gap-6 pt-6 text-sm text-gray-600">
+            <div className="flex items-center gap-2">
+              <span className="material-icons text-green-600">verified</span>
+              <span>Certified Techs</span>
             </div>
-            <div className="w-full max-w-sm mt-4">
-              <a 
-                className="w-full inline-block bg-[var(--trusted-blue)] text-white font-bold py-3 px-6 rounded-lg shadow-md hover:bg-blue-700 transition-all duration-300 text-center" 
-                href="#track"
-              >
-                Track Your Repair
-              </a>
+            <div className="flex items-center gap-2">
+              <span className="material-icons text-blue-600">schedule</span>
+              <span>Same-Day Service</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="material-icons text-yellow-600">star</span>
+              <span>4.9★ Rating</span>
             </div>
           </div>
         </div>
-        <div>
-          <Image
-            alt="People with repaired devices"
-            className="w-full h-auto"
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsoVcYPYfCIdBKl-pCRvnm5V8OjfgXM6xaT_G7EoyjizKZ4un4P8L18qh22v1zF5OqP2OlwdsZP75EdyPieDMtOR0uF8ck62i0VLMy4rHX7ZxID4lC0BO72OvrfjbSkNVGZFZ7lxDCyB8t4Vv6D0rk-ZbpiiGHMfibvFEPJGnagqoeqHR00UBykHsJ7YtRZoAD9_bsjKbMDg4CAcdeWJlbbORaBWQmo1wy6sI2RzMdy0JcM6ycaLRaSrusNzfaZnrINWzNY19xM-gi"
-            width={600}
-            height={400}
-            priority
-          />
+
+        {/* Right Column: Image */}
+        <div className="relative">
+          <div className="glass-card rounded-3xl overflow-hidden shadow-2xl hover:shadow-glass-hover transition-all duration-500 transform hover:scale-105">
+            <Image
+              alt="Professional technician repairing device with precision tools"
+              className="w-full h-auto"
+              src="/hero-repair.png"
+              width={600}
+              height={400}
+              priority
+            />
+          </div>
+          
+          {/* Floating Badge */}
+          <div className="absolute -bottom-4 -left-4 glass-panel p-4 rounded-2xl shadow-xl">
+            <div className="flex items-center gap-3">
+              <div className="bg-green-100 p-3 rounded-full">
+                <span className="material-icons text-green-600">check_circle</span>
+              </div>
+              <div>
+                <p className="text-xs text-gray-500">Fast Turnaround</p>
+                <p className="font-bold text-dark-text">1-Hour Repairs</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
