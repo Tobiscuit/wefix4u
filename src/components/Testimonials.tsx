@@ -182,7 +182,7 @@ export default function Testimonials() {
             </div>
           ) : (
             allTestimonials.map((testimonial, index) => (
-              <div key={index} className="glass-card p-8 rounded-3xl hover:shadow-glass-hover transition-all duration-300">
+              <div key={index} className="glass-card p-8 rounded-3xl hover:shadow-glass-hover transition-all duration-300 flex flex-col">
                 <div className="flex items-center justify-between mb-6">
                   <div className="flex items-center gap-4">
                     {testimonial.isGoogle && testimonial.authorAttribution?.photoUri ? (
@@ -229,11 +229,11 @@ export default function Testimonials() {
                   )}
                 </div>
                 
-                <p className="text-body-text leading-relaxed mb-4 italic relative z-10">
+                <p className="text-body-text leading-relaxed mb-4 italic relative z-10 flex-1">
                   &ldquo;{testimonial.text}&rdquo;
                 </p>
                 
-                <div className="text-right">
+                <div className="mt-auto pt-2 text-right">
                   <span className="text-xs text-gray-400 font-medium uppercase tracking-wider">
                     {testimonial.timeAgo}
                   </span>

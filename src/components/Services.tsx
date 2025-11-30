@@ -33,7 +33,7 @@ export default function Services() {
   ]
 
   return (
-    <section className="py-24 bg-gradient-to-b from-white to-light-gray relative overflow-hidden" id="services">
+    <section className="-mt-16 relative z-20 py-24 bg-gradient-to-b from-white to-light-gray overflow-hidden" id="services">
       {/* Background Decoration */}
       <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-96 h-96 bg-trusted-blue-100 rounded-full opacity-20 blur-3xl"></div>
       
@@ -69,10 +69,10 @@ export default function Services() {
                   {service.description}
                 </p>
                 
-                {/* Feature List */}
-                <ul className="space-y-2 mb-6 text-left">
+                {/* Feature List - Centered for consistency */}
+                <ul className="space-y-2 mb-6">
                   {service.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-center gap-2 text-sm text-gray-600">
+                    <li key={idx} className="flex items-center justify-center gap-2 text-sm text-gray-600">
                       <CheckCircle className="w-4 h-4 text-green-500 shrink-0" />
                       {feature}
                     </li>

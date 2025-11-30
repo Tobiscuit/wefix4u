@@ -1,17 +1,17 @@
 import Image from 'next/image'
-import { Zap, CheckCircle, Clock, Star } from 'lucide-react'
+import { Zap, CheckCircle, Clock, Star, ChevronDown } from 'lucide-react'
 
 export default function Hero() {
   return (
-    <section className="relative bg-gradient-to-br from-light-gray via-white to-trusted-blue-50 overflow-hidden">
+    <section className="relative min-h-[90vh] flex items-center bg-gradient-to-br from-light-gray via-white to-trusted-blue-50 overflow-hidden">
       {/* Background Decoration */}
       <div className="absolute inset-0 bg-hero-glow opacity-30"></div>
       
-      <div className="relative container mx-auto px-6 py-16 lg:py-24 grid md:grid-cols-2 gap-12 items-center">
+      <div className="relative container mx-auto px-6 py-16 grid md:grid-cols-2 gap-12 items-center">
         {/* Left Column: Text */}
         <div className="text-center md:text-left space-y-6 z-10">
           <div className="inline-block px-4 py-2 bg-trusted-blue-50 rounded-full text-trusted-blue-700 text-sm font-semibold mb-2">
-            🔧 Trusted by 500+ Happy Customers
+            🔧 Trusted by Locals • 4.9★ Rated
           </div>
           
           <h1 className="text-4xl lg:text-6xl font-bold text-dark-text leading-tight">
@@ -85,6 +85,15 @@ export default function Hero() {
           </div>
         </div>
       </div>
+
+      {/* Scroll Invitation Indicator */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-center animate-bounce hidden md:block">
+        <ChevronDown className="w-6 h-6 text-gray-400 mx-auto" />
+        <p className="text-xs text-gray-500 font-medium mt-1">Scroll to explore</p>
+      </div>
+
+      {/* Gradient Fade for Smooth Transition */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-b from-transparent to-white/80 pointer-events-none"></div>
     </section>
   )
 }
