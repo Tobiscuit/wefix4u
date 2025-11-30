@@ -3,6 +3,7 @@ import { Montserrat, Roboto } from 'next/font/google'
 import './globals.css'
 import '@/lib/amplify'
 import HeaderToggle from '@/components/HeaderToggle'
+import ConfigureAmplify from '@/components/ConfigureAmplify'
 
 const montserrat = Montserrat({
   subsets: ['latin'],
@@ -57,6 +58,7 @@ export default function RootLayout({
     <html lang="en" className={`${montserrat.variable} ${roboto.variable} antialiased`}>
       <body className="bg-[var(--light-gray)]">
         <HeaderToggle useJoyHeader={useJoyHeader} />
+        <ConfigureAmplify />
         {children}
       </body>
     </html>

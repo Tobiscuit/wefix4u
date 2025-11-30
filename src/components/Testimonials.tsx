@@ -1,6 +1,7 @@
 'use client'
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
+import { Star, StarHalf, AlertCircle, ArrowRight } from 'lucide-react'
 
 interface Review {
   id: string
@@ -132,13 +133,13 @@ export default function Testimonials() {
 
     for (let i = 0; i < fullStars; i++) {
       stars.push(
-        <span key={i} className="material-icons text-lg">star</span>
+        <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
       )
     }
 
     if (hasHalfStar) {
       stars.push(
-        <span key="half" className="material-icons text-lg">star_half</span>
+        <StarHalf key="half" className="w-5 h-5 text-yellow-400 fill-current" />
       )
     }
 
@@ -146,132 +147,124 @@ export default function Testimonials() {
   }
 
   return (
-    <section className="py-20 bg-white" id="reviews">
-      <div className="container mx-auto px-6 text-center max-w-4xl">
-        <h2 className="text-4xl font-bold text-center text-[var(--dark-text)] mb-4">
-          What Our Customers Say
-        </h2>
-        <div className="flex justify-center items-center mb-6">
-          <p className="text-lg text-[var(--body-text)] mr-2">{overallRating.toFixed(1)}</p>
-          <div className="flex text-yellow-500">
-            {renderStars(overallRating)}
+    <section className="py-24 bg-white relative overflow-hidden" id="reviews">
+      {/* Decorative Background */}
+      <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-trusted-blue-50/50 via-transparent to-transparent"></div>
+
+      <div className="container mx-auto px-6 relative z-10">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl lg:text-5xl font-bold text-dark-text mb-4">
+            Trusted by Locals
+          </h2>
+          <div className="flex justify-center items-center gap-2 mb-2">
+            <span className="text-2xl font-bold text-dark-text">{overallRating.toFixed(1)}</span>
+            <div className="flex">
+              {renderStars(overallRating)}
+            </div>
           </div>
           {totalRatings > 0 && (
-            <span className="text-sm text-[var(--body-text)] ml-2">
-              ({totalRatings} Google reviews)
-            </span>
+            <p className="text-body-text">
+              Based on {totalRatings} Google reviews
+            </p>
           )}
         </div>
         
-        <div className="h-96 overflow-y-auto border-y border-gray-200 divide-y divide-gray-200 p-4 bg-gray-50 rounded-lg shadow-inner">
+        <div className="grid md:grid-cols-2 gap-8">
           {loading ? (
-            <div className="flex items-center justify-center h-32">
-              <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-[var(--trusted-blue)]"></div>
+            <div className="col-span-2 flex items-center justify-center h-64">
+              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-trusted-blue"></div>
             </div>
           ) : error ? (
-            <div className="text-center text-gray-500 py-8">
-              <span className="material-icons text-4xl mb-2 block">error_outline</span>
+            <div className="col-span-2 text-center text-gray-500 py-12 glass-card rounded-3xl">
+              <AlertCircle className="w-10 h-10 mx-auto mb-2 text-gray-400" />
               <p>Unable to load reviews at this time.</p>
               <p className="text-sm mt-1">Showing static testimonials below.</p>
             </div>
           ) : (
             allTestimonials.map((testimonial, index) => (
-              <div key={index} className="py-4 text-left">
-                <div className="flex items-center mb-2">
-                  {testimonial.isGoogle && testimonial.authorAttribution?.photoUri ? (
-                    <Image
-                      src={testimonial.authorAttribution.photoUri}
-                      alt={testimonial.authorAttribution.displayName || testimonial.name}
-                      width={32}
-                      height={32}
-                      className="w-8 h-8 rounded-full mr-3"
-                    />
-                  ) : (
-                    <div className="w-8 h-8 bg-[var(--trusted-blue)] rounded-full flex items-center justify-center mr-3">
-                      <span className="text-white font-bold text-xs">
-                        {testimonial.name.charAt(0).toUpperCase()}
-                      </span>
-                    </div>
-                  )}
-                  <h4 className="font-bold text-[var(--dark-text)] mr-3">
-                    {testimonial.isGoogle && testimonial.authorAttribution?.uri ? (
-                      <a
-                        href={testimonial.authorAttribution.uri}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="hover:text-[var(--action-orange)] transition-colors"
-                      >
-                        {testimonial.authorAttribution.displayName || testimonial.name}
-                      </a>
+              <div key={index} className="glass-card p-8 rounded-3xl hover:shadow-glass-hover transition-all duration-300">
+                <div className="flex items-center justify-between mb-6">
+                  <div className="flex items-center gap-4">
+                    {testimonial.isGoogle && testimonial.authorAttribution?.photoUri ? (
+                      <Image
+                        src={testimonial.authorAttribution.photoUri}
+                        alt={testimonial.authorAttribution.displayName || testimonial.name}
+                        width={48}
+                        height={48}
+                        className="rounded-full ring-2 ring-white shadow-md"
+                      />
                     ) : (
-                      testimonial.name
+                      <div className="w-12 h-12 bg-gradient-to-br from-trusted-blue to-blue-600 rounded-full flex items-center justify-center shadow-md text-white font-bold text-lg">
+                        {testimonial.name.charAt(0).toUpperCase()}
+                      </div>
                     )}
-                  </h4>
-                  <div className="flex text-yellow-500">
-                    {renderStars(testimonial.rating)}
+                    <div>
+                      <h4 className="font-bold text-dark-text text-lg">
+                        {testimonial.isGoogle && testimonial.authorAttribution?.uri ? (
+                          <a
+                            href={testimonial.authorAttribution.uri}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="hover:text-action-orange transition-colors"
+                          >
+                            {testimonial.authorAttribution.displayName || testimonial.name}
+                          </a>
+                        ) : (
+                          testimonial.name
+                        )}
+                      </h4>
+                      <div className="flex text-yellow-400 text-sm">
+                        {renderStars(testimonial.rating)}
+                      </div>
+                    </div>
                   </div>
                   {testimonial.isGoogle && (
-                    <span className="ml-2 text-xs text-gray-500">Google</span>
+                    <Image 
+                      src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" 
+                      alt="Google" 
+                      width={24} 
+                      height={24} 
+                      className="opacity-80"
+                    />
                   )}
                 </div>
-                <p className="text-[var(--body-text)] text-sm mb-1">
+                
+                <p className="text-body-text leading-relaxed mb-4 italic relative z-10">
                   &ldquo;{testimonial.text}&rdquo;
                 </p>
-                <span className="text-xs text-gray-400">
-                  {testimonial.timeAgo}
-                </span>
+                
+                <div className="text-right">
+                  <span className="text-xs text-gray-400 font-medium uppercase tracking-wider">
+                    {testimonial.timeAgo}
+                  </span>
+                </div>
               </div>
             ))
           )}
         </div>
         
-        <div className="mt-8">
+        <div className="mt-12 text-center">
           {googleReviews?.googleMapsUri ? (
             <a 
-              className="text-sm text-[var(--trusted-blue)] hover:underline" 
+              className="inline-flex items-center gap-2 text-trusted-blue font-semibold hover:text-blue-700 transition-colors group" 
               href={googleReviews.googleMapsUri}
               target="_blank"
               rel="noopener noreferrer"
             >
-              View All Reviews on Google
+              Read All Reviews on Google
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </a>
           ) : (
             <a 
-              className="text-sm text-[var(--trusted-blue)] hover:underline" 
+              className="inline-flex items-center gap-2 text-trusted-blue font-semibold hover:text-blue-700 transition-colors group" 
               href="#" 
               target="_blank"
             >
-              View All Reviews on Google
+              Read All Reviews on Google
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </a>
           )}
         </div>
-
-        {/* Required Google Attribution */}
-        {googleReviews && (
-          <div className="mt-4 pt-4 border-t border-gray-200">
-            <div className="flex items-center justify-center text-xs text-gray-500">
-              <span className="mr-1">Powered by</span>
-              <a
-                href="https://maps.google.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-600 hover:underline"
-              >
-                Google Maps
-              </a>
-            </div>
-            {googleReviews.attributions && googleReviews.attributions.length > 0 && (
-              <div className="mt-2 text-xs text-gray-400 text-center">
-                {googleReviews.attributions.map((attribution, index) => (
-                  <span key={index}>
-                    {attribution}
-                    {index < googleReviews.attributions!.length - 1 && ', '}
-                  </span>
-                ))}
-              </div>
-            )}
-          </div>
-        )}
       </div>
     </section>
   )

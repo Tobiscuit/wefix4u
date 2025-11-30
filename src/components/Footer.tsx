@@ -1,49 +1,101 @@
+import { Facebook, Instagram, Twitter } from 'lucide-react'
+
 export default function Footer() {
   const socialLinks = [
+    { name: 'Facebook', href: '#', icon: <Facebook className="w-5 h-5" /> },
+    { name: 'Instagram', href: '#', icon: <Instagram className="w-5 h-5" /> },
+    { name: 'Twitter', href: '#', icon: <Twitter className="w-5 h-5" /> }
+  ]
+
+  const footerLinks = [
     {
-      name: 'Facebook',
-      href: '#',
-      icon: (
-        <svg className="social-icon" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14c-.326-.043-1.557-.14-2.857-.14C11.928 2 10 3.657 10 6.7v2.8H7v4h3v9.297C10.512 22.78 11.233 23 12 23s1.488-.22 2-.703V13.5z"></path>
-        </svg>
-      )
+      title: 'Company',
+      links: [
+        { name: 'About Us', href: '#about' },
+        { name: 'Careers', href: '#' },
+        { name: 'Blog', href: '#' },
+        { name: 'Contact', href: '#contact' }
+      ]
     },
     {
-      name: 'Instagram',
-      href: '#',
-      icon: (
-        <svg className="social-icon" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 2c2.717 0 3.056.01 4.122.06 1.065.05 1.79.217 2.428.465.66.254 1.216.598 1.772 1.153.556.556.9 1.112 1.153 1.772.248.638.415 1.363.465 2.428.047 1.066.06 1.405.06 4.122s-.013 3.056-.06 4.122c-.05 1.065-.218 1.79-.465 2.428a4.883 4.883 0 0 1-1.153 1.772c-.556.556-1.112.9-1.772 1.153-.638.248-1.363.415-2.428.465-1.066.047-1.405.06-4.122.06s-3.056-.013-4.122-.06c-1.065-.05-1.79-.218-2.428-.465a4.883 4.883 0 0 1-1.772-1.153c-.556-.556-.9-1.112-1.153-1.772-.248-.638-.415-1.363-.465-2.428C2.013 15.056 2 14.717 2 12s.013-3.056.06-4.122c.05-1.065.218-1.79.465-2.428a4.883 4.883 0 0 1 1.153-1.772C4.234 3.1 4.79 2.756 5.45 2.502c.638-.248 1.363-.415 2.428-.465C8.944 2.013 9.283 2 12 2zm0 1.8c-2.68 0-3.006.01-4.064.058-1.034.048-1.63.208-2.096.39-.48.187-.86.43-1.244.814-.385.385-.628.765-.814 1.245-.182.466-.342 1.062-.39 2.096-.048 1.058-.058 1.384-.058 4.064s.01 3.006.058 4.064c.048 1.034.208 1.63.39 2.096.186.48.43.86.814 1.244.385.385.765.628 1.245.814.466.182 1.062.342 2.096.39 1.058.048 1.384.058 4.064.058s3.006-.01 4.064-.058c1.034-.048 1.63-.208 2.096-.39.48-.186.86-.43 1.244-.814.385-.385.628-.765.814-1.245.182-.466.342-1.062-.39-2.096.048-1.058.058-1.384.058-4.064s-.01-3.006-.058-4.064c-.048-1.034-.208-1.63-.39-2.096-.186-.48-.43-.86-.814-1.244-.385-.385-.765-.628-1.245-.814-.466-.182-1.062-.342-2.096-.39-1.058-.048-1.384-.058-4.064-.058zM12 6.86c-2.835 0-5.14 2.305-5.14 5.14s2.305 5.14 5.14 5.14 5.14-2.305 5.14-5.14-2.305-5.14-5.14-5.14zm0 8.48c-1.84 0-3.34-1.5-3.34-3.34s1.5-3.34 3.34-3.34 3.34 1.5 3.34 3.34-1.5 3.34-3.34 3.34zm5.438-8.62c-.66 0-1.2.54-1.2 1.2s.54 1.2 1.2 1.2 1.2-.54 1.2-1.2-.54-1.2-1.2-1.2z"></path>
-        </svg>
-      )
+      title: 'Services',
+      links: [
+        { name: 'iPhone Repair', href: '#' },
+        { name: 'Samsung Repair', href: '#' },
+        { name: 'Laptop Repair', href: '#' },
+        { name: 'Game Console', href: '#' }
+      ]
     },
     {
-      name: 'WhatsApp',
-      href: '#',
-      icon: (
-        <svg className="social-icon" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.38 1.25 4.85L2 22l5.3-1.38c1.41.74 3 .12 4.75 1.12h.01c5.46 0 9.91-4.45 9.91-9.91s-4.45-9.91-9.91-9.91zM17.47 16c-.22-.11-.57-.28-1.3-.6s-1.26-.22-1.45-.11c-.19.11-.47.6-.58.73-.11.13-.22.14-.41.04-.19-.1-.82-.3-1.56-.96-.58-.51-1.03-1.14-1.15-1.33-.12-.19-.01-.3 0-.41.09-.09.2-.24.3-.33.09-.09.13-.15.2-.25.06-.1.03-.18 0-.28-.03-.1-.69-1.65-.94-2.26-.25-.61-.51-.52-.7-.53h-.17c-.19 0-.5.11-.76.35-.26.24-.99.97-1.19 2.37-.2 1.4.26 2.76.38 2.95s1.42 2.18 3.52 2.94c.5.19.89.3.1.48.21.18.66.15 1.3.09.7-.06 1.26-.51 1.44-1 .18-.48.18-.89.13-1z"></path>
-        </svg>
-      )
+      title: 'Legal',
+      links: [
+        { name: 'Privacy Policy', href: '#' },
+        { name: 'Terms of Service', href: '#' },
+        { name: 'Warranty Info', href: '#' },
+        { name: 'Cookie Policy', href: '#' }
+      ]
     }
   ]
 
   return (
-    <footer className="bg-white mt-auto">
-      <div className="container mx-auto px-6 py-6 flex flex-col sm:flex-row items-center justify-between text-center text-[var(--body-text)]">
-        <p className="mb-4 sm:mb-0">© 2025 WeFix4U. All Rights Reserved.</p>
-        <div className="flex items-center space-x-4">
-          {socialLinks.map((social, index) => (
-            <a
-              key={index}
-              className="text-[var(--trusted-blue)] hover:text-blue-800 transition-colors duration-300"
-              href={social.href}
-              aria-label={social.name}
-            >
-              {social.icon}
-            </a>
+    <footer className="bg-dark-text text-white pt-20 pb-10 border-t border-gray-800">
+      <div className="container mx-auto px-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
+          {/* Brand Column */}
+          <div className="lg:col-span-2">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-10 h-10 bg-gradient-to-br from-trusted-blue to-action-orange rounded-xl flex items-center justify-center shadow-lg">
+                <span className="text-white font-bold text-lg">W4U</span>
+              </div>
+              <h2 className="text-2xl font-bold tracking-tight">
+                WE FIX <span className="text-action-orange">4U</span>
+              </h2>
+            </div>
+            <p className="text-gray-400 mb-8 leading-relaxed max-w-sm">
+              Your trusted partner for fast, reliable, and professional tech repairs. We bring your devices back to life with quality parts and expert care.
+            </p>
+            <div className="flex space-x-4">
+              {socialLinks.map((social, index) => (
+                <a
+                  key={index}
+                  href={social.href}
+                  className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-trusted-blue hover:text-white transition-all duration-300"
+                  aria-label={social.name}
+                >
+                  {social.icon}
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {/* Links Columns */}
+          {footerLinks.map((column, index) => (
+            <div key={index}>
+              <h3 className="text-lg font-bold mb-6 text-white">{column.title}</h3>
+              <ul className="space-y-4">
+                {column.links.map((link, idx) => (
+                  <li key={idx}>
+                    <a 
+                      href={link.href} 
+                      className="text-gray-400 hover:text-action-orange transition-colors duration-200 text-sm"
+                    >
+                      {link.name}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
           ))}
+        </div>
+
+        <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm">
+          <p>© {new Date().getFullYear()} WeFix4U. All Rights Reserved.</p>
+          <div className="flex space-x-6 mt-4 md:mt-0">
+            <div className="flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-green-500"></span>
+              <span>Operational Status: Normal</span>
+            </div>
+          </div>
         </div>
       </div>
     </footer>
