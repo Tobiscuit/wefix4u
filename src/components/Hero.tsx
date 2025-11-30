@@ -60,7 +60,7 @@ export default function Hero() {
 
         {/* Right Column: Image */}
         <div className="relative">
-          <div className="glass-card rounded-3xl overflow-hidden shadow-2xl hover:shadow-glass-hover transition-all duration-500 transform hover:scale-105">
+          <div className="glass-card rounded-3xl overflow-hidden shadow-2xl hover:shadow-glass-hover transition-shadow duration-500">
             <Image
               alt="Professional technician repairing device with precision tools"
               className="w-full h-auto"
