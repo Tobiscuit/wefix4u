@@ -49,7 +49,7 @@ export default function Services() {
             >
               {/* Icon with Gradient */}
               <div className={`w-20 h-20 bg-gradient-to-br ${service.color} rounded-2xl flex items-center justify-center shadow-lg mb-6 group-hover:scale-110 transition-transform`}>
-                <span className="material-icons text-4xl text-white">
+                <span className="material-symbols-outlined text-4xl text-white">
                   {service.icon}
                 </span>
               </div>
