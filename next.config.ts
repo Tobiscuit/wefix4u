@@ -11,13 +11,9 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  // Exclude Amplify backend files from Next.js build
-  eslint: {
-    dirs: ['src'], // Only lint the src directory, not amplify/
-  },
-  // Exclude amplify directory from TypeScript compilation
+  // TypeScript checking is still enabled
   typescript: {
-    ignoreBuildErrors: false, // Keep TypeScript checking enabled
+    ignoreBuildErrors: false,
   },
 }
 
