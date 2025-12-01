@@ -1,7 +1,13 @@
 # 🎨 Design Implementation Handoff for Jules
 
 ## Objective
-Implement the professional WeFix4U landing page design from Stitch to match the provided design **exactly**.
+Adapt the existing WeFix4U Next.js application to match the Stitch design reference **exactly**.
+
+## ⚠️ Important Constraints
+- **DO NOT rebuild from scratch** - Modify the existing Next.js codebase
+- **KEEP Next.js** - This must remain a Next.js application (latest version)
+- **Adapt, don't replace** - Review existing components and update them to match the Stitch design
+- **Match the design** - The final result should look identical to the Stitch reference
 
 ## Source Files
 The Stitch design has been extracted to:
@@ -47,6 +53,12 @@ Text Dark Secondary: #9CA3AF
 - Uses glassmorphism effects in certain areas
 
 ## Your Task
-Review the HTML file in `stitch_design/code.html` and implement this design to look **exactly like** the Stitch design. Maintain all styling, spacing, colors, and interactive elements.
+1. **Explore the existing codebase** - Understand the current Next.js structure and components
+2. **Review the reference design** - Study `stitch_design/code.html` to understand the target look and feel
+3. **Adapt incrementally** - Update existing Next.js components, pages, and styles to match the Stitch design
+4. **Maintain Next.js best practices** - Use Next.js App Router, React components, and modern patterns
+5. **Preserve functionality** - Keep any existing features while updating the visual design
+
+The goal is to make the existing Next.js app look **exactly like** the Stitch design while keeping it as a modern Next.js application. Don't rebuild - refine! 🎨
 
 Good luck! 🚀
