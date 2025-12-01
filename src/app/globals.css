@@ -24,6 +24,10 @@
   --radius-DEFAULT: 0.75rem;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .material-icons-outlined {
     font-feature-settings: 'liga';
 }

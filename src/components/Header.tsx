@@ -16,15 +16,15 @@ export default function Header() {
           </div>
           <nav className="hidden md:flex items-center space-x-8 text-sm font-semibold text-text-light-secondary dark:text-text-dark-secondary">
             <Link className="hover:text-primary dark:hover:text-primary transition-colors" href="/#services">Services</Link>
-            <Link className="hover:text-primary dark:hover:text-primary transition-colors" href="#">About Us</Link>
+            <Link className="hover:text-primary dark:hover:text-primary transition-colors" href="#about">About Us</Link>
             <Link className="hover:text-primary dark:hover:text-primary transition-colors" href="#reviews">Reviews</Link>
-            <Link className="hover:text-primary dark:hover:text-primary transition-colors" href="#">Contact</Link>
+            <Link className="hover:text-primary dark:hover:text-primary transition-colors" href="#footer">Contact</Link>
           </nav>
           <a className="hidden md:inline-flex items-center justify-center px-5 py-2.5 text-sm font-semibold text-white bg-primary rounded-lg hover:opacity-90 transition-opacity" href="#">
             <span className="material-icons-outlined mr-2 text-base">sell</span>
             Get Quote
           </a>
-          <button 
+          <button
             className="md:hidden text-text-light-primary dark:text-text-dark-primary"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
@@ -45,7 +45,7 @@ export default function Header() {
               </Link>
               <Link
                 className="hover:text-primary dark:hover:text-primary transition-colors"
-                href="#"
+                href="#about"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 About Us
@@ -59,7 +59,7 @@ export default function Header() {
               </Link>
               <Link
                 className="hover:text-primary dark:hover:text-primary transition-colors"
-                href="#"
+                href="#footer"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Contact

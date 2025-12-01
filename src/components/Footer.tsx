@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="bg-background-off-white dark:bg-container-dark text-text-light-secondary dark:text-gray-300">
+    <footer id="footer" className="bg-background-off-white dark:bg-container-dark text-text-light-secondary dark:text-gray-300">
       <div className="container mx-auto px-6 pt-20 pb-16">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-text-light-primary dark:text-text-dark-primary tracking-tight">Ready to Restore Your Device?</h2>
@@ -12,7 +12,7 @@ export default function Footer() {
             <p className="text-xs text-text-light-secondary dark:text-text-dark-secondary mt-2">No Fix, No Fee Guarantee</p>
           </div>
         </div>
-        <div className="border-t border-gray-200 dark:border-gray-700 pt-16">
+        <div id="about" className="border-t border-gray-200 dark:border-gray-700 pt-16">
           <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
             <div className="col-span-2 md:col-span-2">
               <div className="flex items-center space-x-2 mb-4">

@@ -39,7 +39,7 @@ export default function Services() {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {services.map((service, index) => (
-            <div key={index} className="bg-background-light dark:bg-background-dark p-8 rounded-lg border border-gray-200 dark:border-gray-700 flex flex-col">
+            <div key={index} className="bg-background-light dark:bg-background-dark p-8 rounded-lg border border-gray-200 dark:border-gray-700 flex flex-col transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
               <div className={`flex-shrink-0 flex items-center justify-center h-16 w-16 rounded-full ${service.iconBg} mb-6`}>
                 <span className={`material-icons-outlined text-3xl ${service.iconColor}`}>{service.icon}</span>
               </div>
