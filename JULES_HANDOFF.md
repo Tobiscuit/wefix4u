@@ -8,6 +8,7 @@ Adapt the existing WeFix4U Next.js application to match the Stitch design refere
 - **KEEP Next.js** - This must remain a Next.js application (latest version)
 - **Adapt, don't replace** - Review existing components and update them to match the Stitch design
 - **Match the design** - The final result should look identical to the Stitch reference
+- **Mobile-first responsive** - Ensure the design is fully mobile-friendly and responsive across all screen sizes
 
 ## Source Files
 The Stitch design has been extracted to:
