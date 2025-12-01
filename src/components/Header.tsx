@@ -1,136 +1,77 @@
 'use client'
 
 import { useState } from 'react'
-import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  const pathname = usePathname()
 
   return (
-    <header className="bg-white shadow-md sticky top-0 z-50">
-      <nav className="container mx-auto px-6 py-3 flex justify-between items-center">
-        <Link 
-          className="text-2xl font-bold text-[var(--trusted-blue)] font-montserrat" 
-          href="/"
-        >
-          WE FIX 4U
-        </Link>
-        
-        <div className="hidden md:flex items-center space-x-6">
-          <Link 
-            className={`transition-all duration-300 ${
-              pathname.startsWith('/services/')
-                ? 'text-[var(--action-orange)] font-bold underline' 
-                : 'text-gray-700 hover:text-[var(--action-orange)] hover:underline hover:font-bold'
-            }`}
-            href="/#services"
-          >
-            Services
-          </Link>
-          <a 
-            className="text-gray-700 hover:text-[var(--action-orange)] hover:underline hover:font-bold transition-all duration-300" 
-            href="#shop"
-          >
-            Shop
+    <header className="bg-container-light dark:bg-container-dark/80 sticky top-0 z-50 backdrop-blur-sm border-b border-gray-200 dark:border-gray-800">
+      <div className="container mx-auto px-6 py-4">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center space-x-2">
+            <span className="material-icons-outlined text-primary text-3xl">build</span>
+            <span className="font-bold text-xl text-text-light-primary dark:text-text-dark-primary">WE FIX 4U</span>
+          </div>
+          <nav className="hidden md:flex items-center space-x-8 text-sm font-semibold text-text-light-secondary dark:text-text-dark-secondary">
+            <Link className="hover:text-primary dark:hover:text-primary transition-colors" href="/#services">Services</Link>
+            <Link className="hover:text-primary dark:hover:text-primary transition-colors" href="#">About Us</Link>
+            <Link className="hover:text-primary dark:hover:text-primary transition-colors" href="#reviews">Reviews</Link>
+            <Link className="hover:text-primary dark:hover:text-primary transition-colors" href="#">Contact</Link>
+          </nav>
+          <a className="hidden md:inline-flex items-center justify-center px-5 py-2.5 text-sm font-semibold text-white bg-primary rounded-lg hover:opacity-90 transition-opacity" href="#">
+            <span className="material-icons-outlined mr-2 text-base">sell</span>
+            Get Quote
           </a>
-          <a 
-            className="text-gray-700 hover:text-[var(--action-orange)] hover:underline hover:font-bold transition-all duration-300" 
-            href="#about"
-          >
-            About
-          </a>
-          <a 
-            className="text-gray-700 hover:text-[var(--action-orange)] hover:underline hover:font-bold transition-all duration-300" 
-            href="#contact"
-          >
-            Contact
-          </a>
-        </div>
-        
-        <div className="hidden md:flex items-center space-x-3">
-          <a 
-            className="border-2 border-[var(--trusted-blue)] text-[var(--trusted-blue)] font-bold py-2 px-5 rounded-lg hover:bg-[var(--trusted-blue)] hover:text-white transition-all duration-300" 
-            href="#signin"
-          >
-            Sign In
-          </a>
-          <a 
-            className="bg-[var(--action-orange)] text-white font-bold py-2 px-5 rounded-lg shadow-md hover:bg-orange-600 transition-all duration-300" 
-            href="#signup"
-          >
-            Sign Up
-          </a>
-        </div>
-        
-        <div className="md:hidden">
           <button 
-            className="text-gray-700 focus:outline-none"
+            className="md:hidden text-text-light-primary dark:text-text-dark-primary"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
-            <span className="material-icons">
-              menu
-            </span>
+            <span className="material-icons-outlined text-3xl">menu</span>
           </button>
         </div>
-      </nav>
-      
-      {/* Mobile Menu */}
-      {isMobileMenuOpen && (
-        <div className="md:hidden bg-white border-t border-gray-200 px-6 py-4">
-          <div className="flex flex-col space-y-4">
-            <Link 
-              className={`transition-colors duration-300 ${
-                pathname.startsWith('/services/')
-                  ? 'text-[var(--action-orange)] font-bold' 
-                  : 'text-gray-700 hover:text-[var(--action-orange)]'
-              }`}
-              href="/#services"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              Services
-            </Link>
-            <a 
-              className="text-gray-700 hover:text-[var(--action-orange)] transition-colors duration-300" 
-              href="#shop"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              Shop
-            </a>
-            <a 
-              className="text-gray-700 hover:text-[var(--action-orange)] transition-colors duration-300" 
-              href="#about"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              About
-            </a>
-            <a 
-              className="text-gray-700 hover:text-[var(--action-orange)] transition-colors duration-300" 
-              href="#contact"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              Contact
-            </a>
-            <div className="flex flex-col space-y-2 pt-4 border-t border-gray-200">
-              <a 
-                className="border-2 border-[var(--trusted-blue)] text-[var(--trusted-blue)] font-bold py-2 px-5 rounded-lg hover:bg-[var(--trusted-blue)] hover:text-white transition-all duration-300 text-center" 
-                href="#signin"
+
+        {/* Mobile Menu */}
+        {isMobileMenuOpen && (
+          <div className="md:hidden pt-4 pb-2 border-t border-gray-200 dark:border-gray-800 mt-4">
+            <nav className="flex flex-col space-y-4 text-sm font-semibold text-text-light-secondary dark:text-text-dark-secondary">
+              <Link
+                className="hover:text-primary dark:hover:text-primary transition-colors"
+                href="/#services"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                Sign In
-              </a>
-              <a 
-                className="bg-[var(--action-orange)] text-white font-bold py-2 px-5 rounded-lg shadow-md hover:bg-orange-600 transition-all duration-300 text-center" 
-                href="#signup"
+                Services
+              </Link>
+              <Link
+                className="hover:text-primary dark:hover:text-primary transition-colors"
+                href="#"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                Sign Up
+                About Us
+              </Link>
+              <Link
+                className="hover:text-primary dark:hover:text-primary transition-colors"
+                href="#reviews"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Reviews
+              </Link>
+              <Link
+                className="hover:text-primary dark:hover:text-primary transition-colors"
+                href="#"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Contact
+              </Link>
+              <a className="inline-flex items-center justify-center px-5 py-2.5 text-sm font-semibold text-white bg-primary rounded-lg hover:opacity-90 transition-opacity" href="#">
+                <span className="material-icons-outlined mr-2 text-base">sell</span>
+                Get Quote
               </a>
-            </div>
+            </nav>
           </div>
-        </div>
-      )}
+        )}
+      </div>
     </header>
   )
 }
