@@ -52,7 +52,7 @@ export default function Header() {
           </div>
 
           {/* Mobile Links */}
-          <nav className="flex-grow flex flex-col items-center justify-center space-y-8 p-6">
+          <nav className="grow flex flex-col items-center justify-center space-y-8 p-6">
             <Link
               className="text-3xl font-bold text-text-light-primary dark:text-text-dark-primary hover:text-primary dark:hover:text-primary transition-colors"
               href="/#services"

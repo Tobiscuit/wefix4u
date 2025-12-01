@@ -40,11 +40,11 @@ export default function Services() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {services.map((service, index) => (
             <div key={index} className="bg-background-light dark:bg-background-dark p-8 rounded-lg border border-gray-200 dark:border-gray-700 flex flex-col transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
-              <div className={`flex-shrink-0 flex items-center justify-center h-16 w-16 rounded-full ${service.iconBg} mb-6`}>
+              <div className={`shrink-0 flex items-center justify-center h-16 w-16 rounded-full ${service.iconBg} mb-6`}>
                 <span className={`material-icons-outlined text-3xl ${service.iconColor}`}>{service.icon}</span>
               </div>
               <h3 className="text-xl font-bold mb-3">{service.title}</h3>
-              <ul className="space-y-3 text-text-light-secondary dark:text-text-dark-secondary mb-6 flex-grow">
+              <ul className="space-y-3 text-text-light-secondary dark:text-text-dark-secondary mb-6 grow">
                 {service.features.map((feature, idx) => (
                   <li key={idx} className="flex items-center"><span className="material-icons-outlined text-green-500 mr-3">check_circle</span>{feature}</li>
                 ))}
