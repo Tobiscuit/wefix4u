@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>WeFix4U - Device Repair Service</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#3B82F6", // Blue
+                        accent: "#F97316", // Orange
+                        "background-light": "#FFFFFF",
+                        "background-off-white": "#F9FAFB",
+                        "background-dark": "#111827",
+                        "container-light": "#FFFFFF",
+                        "container-dark": "#1F2937",
+                        "text-light-primary": "#1F2937",
+                        "text-dark-primary": "#F9FAFB",
+                        "text-light-secondary": "#6B7280",
+                        "text-dark-secondary": "#9CA3AF",
+                    },
+                    fontFamily: {
+                        display: ["Inter", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.75rem", // 12px
+                    },
+                },
+            },
+        };
+    </script>
+<style>
+        .material-icons-outlined {
+            font-feature-settings: 'liga';
+        }
+    </style>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark text-text-light-primary dark:text-text-dark-primary antialiased">
+<header class="bg-container-light dark:bg-container-dark/80 sticky top-0 z-50 backdrop-blur-sm border-b border-gray-200 dark:border-gray-800">
+<div class="container mx-auto px-6 py-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center space-x-2">
+<span class="material-icons-outlined text-primary text-3xl">build</span>
+<span class="font-bold text-xl">WE FIX 4U</span>
+</div>
+<nav class="hidden md:flex items-center space-x-8 text-sm font-semibold text-text-light-secondary dark:text-text-dark-secondary">
+<a class="hover:text-primary dark:hover:text-primary transition-colors" href="#">Services</a>
+<a class="hover:text-primary dark:hover:text-primary transition-colors" href="#">About Us</a>
+<a class="hover:text-primary dark:hover:text-primary transition-colors" href="#">Reviews</a>
+<a class="hover:text-primary dark:hover:text-primary transition-colors" href="#">Contact</a>
+</nav>
+<a class="hidden md:inline-flex items-center justify-center px-5 py-2.5 text-sm font-semibold text-white bg-primary rounded-lg hover:opacity-90 transition-opacity" href="#">
+<span class="material-icons-outlined mr-2 text-base">sell</span>
+                Get Quote
+            </a>
+<button class="md:hidden text-text-light-primary dark:text-text-dark-primary">
+<span class="material-icons-outlined text-3xl">menu</span>
+</button>
+</div>
+</div>
+</header>
+<main>
+<section class="py-20 md:py-32 bg-background-light dark:bg-background-dark">
+<div class="container mx-auto px-6">
+<div class="grid md:grid-cols-2 gap-12 items-center">
+<div class="text-center md:text-left">
+<span class="inline-block bg-blue-100 dark:bg-blue-900/30 text-primary text-sm font-semibold px-3 py-1 rounded-full mb-4">Trusted by Locals in Your Neighborhood</span>
+<h1 class="text-4xl md:text-6xl font-extrabold tracking-tighter text-text-light-primary dark:text-text-dark-primary mb-6">Your Devices, <span class="text-accent">Fixed Fast</span></h1>
+<p class="text-lg text-text-light-secondary dark:text-text-dark-secondary max-w-xl mx-auto md:mx-0 mb-8">From phone screens to battery replacements, our expert technicians bring your devices back to life. Same-day service available.</p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start mb-8">
+<a class="flex items-center justify-center bg-accent text-white font-semibold py-3 px-6 rounded-lg hover:bg-orange-600 transition-colors" href="#">
+<span class="material-icons-outlined mr-2">sell</span>
+                            Get Instant Quote
+                        </a>
+<a class="flex items-center justify-center bg-container-light dark:bg-container-dark border border-gray-300 dark:border-gray-600 font-semibold py-3 px-6 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors" href="#">
+<span class="material-icons-outlined mr-2">location_on</span>
+                            Track My Repair
+                        </a>
+</div>
+<div class="flex items-center justify-center md:justify-start space-x-6 text-sm text-text-light-secondary dark:text-text-dark-secondary">
+<div class="flex items-center"><span class="material-icons-outlined text-green-500 mr-2">verified</span>Certified Techs</div>
+<div class="flex items-center"><span class="material-icons-outlined text-green-500 mr-2">event_available</span>Same-Day Service</div>
+<div class="flex items-center"><span class="material-icons-outlined text-yellow-400 mr-1.5">star</span>4.9/5 Rating</div>
+</div>
+</div>
+<div class="relative">
+<img alt="Technician repairing a smartphone" class="rounded-lg shadow-2xl w-full h-auto object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuANKOE5ixQPIVTRQZzlFlzZUD2CBeRTu81S6vMzzcpanqkjwmTMluSL6f3u_QurNt0K5Kb-4vcKrAkPQTNC5cTQC5plMi32VLD5IzBKq4KCEkQJoPl6JLDdSqRDRQDPbDVzcNcRAGRC5qvo17b_mFCQjyUq3NVbeoFqvuX7URgOm4hm2xm9qARDTjMgm4GYKCWS-G7JiqnXhWErP0cmM5fJ1Z4hQkxU9RvJRfmuPolpUrtGnyvABsKzPMf2XkgSbL9XgH5dGS7-chOk"/>
+<div class="absolute bottom-4 left-4 bg-black/60 backdrop-blur-sm text-white px-4 py-2 rounded-lg flex items-center space-x-3">
+<span class="material-icons-outlined text-green-400">timer</span>
+<div>
+<p class="font-bold">Fast Turnaround</p>
+<p class="text-sm text-gray-300">1-Hour Repairs</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20 bg-background-off-white dark:bg-container-dark" id="services">
+<div class="container mx-auto px-6">
+<div class="text-center max-w-2xl mx-auto">
+<h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-4">What We Fix</h2>
+<p class="text-text-light-secondary dark:text-text-dark-secondary mb-12">From smartphones to gaming consoles, our certified technicians handle it all with care and expertise.</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+<div class="bg-background-light dark:bg-background-dark p-8 rounded-lg border border-gray-200 dark:border-gray-700 flex flex-col">
+<div class="flex-shrink-0 flex items-center justify-center h-16 w-16 rounded-full bg-blue-100 dark:bg-blue-900/50 mb-6">
+<span class="material-icons-outlined text-3xl text-primary">phone_iphone</span>
+</div>
+<h3 class="text-xl font-bold mb-3">iPhone Repair</h3>
+<ul class="space-y-3 text-text-light-secondary dark:text-text-dark-secondary mb-6 flex-grow">
+<li class="flex items-center"><span class="material-icons-outlined text-green-500 mr-3">check_circle</span>Screen Replacement</li>
+<li class="flex items-center"><span class="material-icons-outlined text-green-500 mr-3">check_circle</span>Battery Replacement</li>
+<li class="flex items-center"><span class="material-icons-outlined text-green-500 mr-3">check_circle</span>Charging Port Fix</li>
+</ul>
+<a class="mt-auto w-full text-center bg-primary text-white font-semibold py-3 px-6 rounded-lg hover:opacity-90 transition-opacity" href="#">Request Repair</a>
+</div>
+<div class="bg-background-light dark:bg-background-dark p-8 rounded-lg border border-gray-200 dark:border-gray-700 flex flex-col">
+<div class="flex-shrink-0 flex items-center justify-center h-16 w-16 rounded-full bg-purple-100 dark:bg-purple-900/50 mb-6">
+<span class="material-icons-outlined text-3xl text-purple-500">smartphone</span>
+</div>
+<h3 class="text-xl font-bold mb-3">Samsung Repair</h3>
+<ul class="space-y-3 text-text-light-secondary dark:text-text-dark-secondary mb-6 flex-grow">
+<li class="flex items-center"><span class="material-icons-outlined text-green-500 mr-3">check_circle</span>Screen &amp; Back Glass</li>
+<li class="flex items-center"><span class="material-icons-outlined text-green-500 mr-3">check_circle</span>Camera Lens</li>
+<li class="flex items-center"><span class="material-icons-outlined text-green-500 mr-3">check_circle</span>Charging Port Fix</li>
+</ul>
+<a class="mt-auto w-full text-center bg-primary text-white font-semibold py-3 px-6 rounded-lg hover:opacity-90 transition-opacity" href="#">Request Repair</a>
+</div>
+<div class="bg-background-light dark:bg-background-dark p-8 rounded-lg border border-gray-200 dark:border-gray-700 flex flex-col">
+<div class="flex-shrink-0 flex items-center justify-center h-16 w-16 rounded-full bg-orange-100 dark:bg-orange-900/50 mb-6">
+<span class="material-icons-outlined text-3xl text-accent">laptop_mac</span>
+</div>
+<h3 class="text-xl font-bold mb-3">Computer Repair</h3>
+<ul class="space-y-3 text-text-light-secondary dark:text-text-dark-secondary mb-6 flex-grow">
+<li class="flex items-center"><span class="material-icons-outlined text-green-500 mr-3">check_circle</span>Screen Replacement</li>
+<li class="flex items-center"><span class="material-icons-outlined text-green-500 mr-3">check_circle</span>Data Recovery</li>
+<li class="flex items-center"><span class="material-icons-outlined text-green-500 mr-3">check_circle</span>SSD Upgrades</li>
+</ul>
+<a class="mt-auto w-full text-center bg-primary text-white font-semibold py-3 px-6 rounded-lg hover:opacity-90 transition-opacity" href="#">Request Repair</a>
+</div>
+<div class="bg-background-light dark:bg-background-dark p-8 rounded-lg border border-gray-200 dark:border-gray-700 flex flex-col">
+<div class="flex-shrink-0 flex items-center justify-center h-16 w-16 rounded-full bg-green-100 dark:bg-green-900/50 mb-6">
+<span class="material-icons-outlined text-3xl text-green-500">sports_esports</span>
+</div>
+<h3 class="text-xl font-bold mb-3">Game Console</h3>
+<ul class="space-y-3 text-text-light-secondary dark:text-text-dark-secondary mb-6 flex-grow">
+<li class="flex items-center"><span class="material-icons-outlined text-green-500 mr-3">check_circle</span>HDMI Port Repair</li>
+<li class="flex items-center"><span class="material-icons-outlined text-green-500 mr-3">check_circle</span>Overheating Fix</li>
+<li class="flex items-center"><span class="material-icons-outlined text-green-500 mr-3">check_circle</span>Controller Repair</li>
+</ul>
+<a class="mt-auto w-full text-center bg-primary text-white font-semibold py-3 px-6 rounded-lg hover:opacity-90 transition-opacity" href="#">Request Repair</a>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20 bg-background-light dark:bg-background-dark">
+<div class="container mx-auto px-6">
+<div class="text-center max-w-2xl mx-auto">
+<h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-4">Why Choose Us?</h2>
+<p class="text-text-light-secondary dark:text-text-dark-secondary mb-12">We combine technical expertise with customer-first service to deliver the best repair experience in town.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<div class="bg-background-off-white dark:bg-container-dark p-6 rounded-lg text-center">
+<div class="flex items-center justify-center h-16 w-16 rounded-full bg-blue-100 dark:bg-blue-900/50 mx-auto mb-5">
+<span class="material-icons-outlined text-3xl text-primary">engineering</span>
+</div>
+<h3 class="font-bold text-lg mb-2">Skilled Professionals</h3>
+<p class="text-sm text-text-light-secondary dark:text-text-dark-secondary">Our technicians bring years of collective experience with comprehensive training.</p>
+</div>
+<div class="bg-background-off-white dark:bg-container-dark p-6 rounded-lg text-center">
+<div class="flex items-center justify-center h-16 w-16 rounded-full bg-red-100 dark:bg-red-900/50 mx-auto mb-5">
+<span class="material-icons-outlined text-3xl text-red-500">speed</span>
+</div>
+<h3 class="font-bold text-lg mb-2">Fast Turnaround</h3>
+<p class="text-sm text-text-light-secondary dark:text-text-dark-secondary">We understand your device is your life. We get it back in your hands as soon as possible.</p>
+</div>
+<div class="bg-background-off-white dark:bg-container-dark p-6 rounded-lg text-center">
+<div class="flex items-center justify-center h-16 w-16 rounded-full bg-green-100 dark:bg-green-900/50 mx-auto mb-5">
+<span class="material-icons-outlined text-3xl text-green-500">receipt_long</span>
+</div>
+<h3 class="font-bold text-lg mb-2">Transparent Pricing</h3>
+<p class="text-sm text-text-light-secondary dark:text-text-dark-secondary">No hidden fees or surprises. We provide upfront quotes before any work begins.</p>
+</div>
+<div class="bg-background-off-white dark:bg-container-dark p-6 rounded-lg text-center">
+<div class="flex items-center justify-center h-16 w-16 rounded-full bg-purple-100 dark:bg-purple-900/50 mx-auto mb-5">
+<span class="material-icons-outlined text-3xl text-purple-500">thumb_up</span>
+</div>
+<h3 class="font-bold text-lg mb-2">Satisfaction Guaranteed</h3>
+<p class="text-sm text-text-light-secondary dark:text-text-dark-secondary">Your satisfaction is our top priority. We stand by our work with a comprehensive warranty.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20 bg-background-off-white dark:bg-container-dark" id="reviews">
+<div class="container mx-auto px-6">
+<div class="text-center max-w-2xl mx-auto">
+<h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-3">Trusted by Locals</h2>
+<p class="text-text-light-secondary dark:text-text-dark-secondary mb-12">Based on <a class="text-primary font-semibold underline" href="#">233 Google reviews</a></p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+<div class="bg-background-light dark:bg-background-dark p-8 rounded-lg">
+<div class="flex items-start justify-between mb-4">
+<div class="flex items-center space-x-4">
+<img alt="Avatar of Tytianah H" class="w-12 h-12 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOUTRTsct0OOYFzKMySPc6Medmb1YSf09x2QxSwGl1j6r-ZdWV9eC_gd_zC1aSquMwLlKYmpRGdMjLhUuOi_dL5PAkZuVzqySLJFZNQ_vd4ZwVrpH7878vr3z84adxi4CAeY0j46riF0jL5ZLFL--31svAKA4fPVHCIHxiEg9IEOrdrvY_eWGipRv-ogKR9-CGCpuEvwn-qyNsX53_mZAJFkQtDAOMKcIK36QjPrR-U7PnAw5zz4FUOQSRksNKrV6o3-Z3ZIIxdo0x"/>
+<div>
+<h4 class="font-semibold">Tytianah H.</h4>
+<div class="flex items-center text-yellow-400">
+<span class="material-icons-outlined text-base">star</span>
+<span class="material-icons-outlined text-base">star</span>
+<span class="material-icons-outlined text-base">star</span>
+<span class="material-icons-outlined text-base">star</span>
+<span class="material-icons-outlined text-base">star</span>
+</div>
+</div>
+</div>
+<img alt="Google logo" class="w-6 h-6" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5vWVRzJub0Kj6s-tEObsRzrrVvLN7Ut2VCmlg2u0UIMwWL5C_x88QRh9oEVLdimaHgKVZW29vE3o5ojpCly29PJWTD-h4TIgZSDYNsn9R1hPSXO88Q-4IZlQgD6SZ47lhzj62Ra0zmM1Ob6RuaEKoBw-xZo9fnEG3HdR2hfzW4dppD99P5RjoHurnwDAGaDIlBRKl8fX10Mi8abuFW570CFxA5kixZjedyxLaYwJTaJK-x62sCaEdWnxVIIuKXOhruEJdPAlWwYi8"/>
+</div>
+<p class="text-text-light-secondary dark:text-text-dark-secondary mb-4">"I was looking for a phone repair service in the area and I called a bunch of places and nobody was answering or they couldn't give me a price quote. The guy who answered was very knowledgeable..."</p>
+<span class="text-sm text-gray-500 dark:text-gray-400">1 month ago</span>
+</div>
+<div class="bg-background-light dark:bg-background-dark p-8 rounded-lg">
+<div class="flex items-start justify-between mb-4">
+<div class="flex items-center space-x-4">
+<img alt="Avatar of Jake Scherer" class="w-12 h-12 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCob2TCw-9KCsNniRRdpr2jh30oGdvS9kdbMo8xIUTptIviFD77jDA-Xv2ZOE04iwwT0z1wGD3YoCA8bn1EmTqavuee-hXwdnU0LEIKqNZ31fs091buEpZ_1EFw2Swo5dswRslgLW9zvUYxSQ6nYIngB0-U6iK3OCNF_laZEw15UcNlNwPT8q8X3l80qgDQzuke_8p8Yw1BOhQ5yyhz_HZVSuwBSG96-jmZS7mYnapozLQwpGs-pd6diVJspQX3v4SJpxKqM7IZfso8"/>
+<div>
+<h4 class="font-semibold">Jake Scherer</h4>
+<div class="flex items-center text-yellow-400">
+<span class="material-icons-outlined text-base">star</span>
+<span class="material-icons-outlined text-base">star</span>
+<span class="material-icons-outlined text-base">star</span>
+<span class="material-icons-outlined text-base">star</span>
+<span class="material-icons-outlined text-base">star</span>
+</div>
+</div>
+</div>
+<img alt="Google logo" class="w-6 h-6" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUFlXSJBg94HGKeXPMsyu4YQGo7-tTZsuzs2ILQbHxv7lsx8mo1KS3eUEcmLq0cKjNEC8ET7XxhElKpERplZd0MIvgH3FOUen99pscGoMum-eRAjr1gl-rGxAhyJId_QYNHMQaquP9LvyiCjFUQ0MTksragdoU-9pwRBX4-Vap66k-RCcgMlXtJ5AQiCZerEtAieSPc9lx4w1-yDfJehN96ih2CbZqZUdWnx2STCCRKjkGZFVkD85rvPB9qc8MieBy2HgjkwR9smVQ"/>
+</div>
+<p class="text-text-light-secondary dark:text-text-dark-secondary mb-4">"Awesome service, fixed my iPad in 2 hours, and was extremely reasonable with their pricing. My daughter can continue doing her school work back if there is any issues. Thank you for your service!"</p>
+<span class="text-sm text-gray-500 dark:text-gray-400">2 months ago</span>
+</div>
+</div>
+<div class="text-center mt-12">
+<a class="font-semibold text-primary inline-flex items-center group" href="#">
+                    Read All Reviews on Google
+                    <span class="material-icons-outlined ml-1.5 transition-transform group-hover:translate-x-1">arrow_forward</span>
+</a>
+</div>
+</div>
+</section>
+</main>
+<footer class="bg-background-off-white dark:bg-container-dark text-text-light-secondary dark:text-gray-300">
+<div class="container mx-auto px-6 pt-20 pb-16">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold text-text-light-primary dark:text-text-dark-primary tracking-tight">Ready to Restore Your Device?</h2>
+<p class="text-text-light-secondary dark:text-text-dark-secondary mt-2 max-w-2xl mx-auto">Don't let a broken device slow you down. Get a free, instant quote from our experts.</p>
+<div class="mt-8">
+<a class="inline-flex items-center justify-center bg-accent text-white font-semibold py-3 px-8 rounded-lg text-lg hover:bg-orange-600 transition-colors" href="#">
+                        Call Us Now
+                    </a>
+<p class="text-xs text-text-light-secondary dark:text-text-dark-secondary mt-2">No Fix, No Fee Guarantee</p>
+</div>
+</div>
+<div class="border-t border-gray-200 dark:border-gray-700 pt-16">
+<div class="grid grid-cols-2 md:grid-cols-5 gap-8">
+<div class="col-span-2 md:col-span-2">
+<div class="flex items-center space-x-2 mb-4">
+<span class="material-icons-outlined text-primary text-3xl">build</span>
+<span class="font-bold text-xl text-text-light-primary dark:text-white">WE FIX 4U</span>
+</div>
+<p class="text-sm max-w-sm mb-6">Your go-to for fast, reliable, and professional device repairs. We bring devices back to life with quality parts and expert care.</p>
+<div class="flex space-x-4">
+<a class="text-gray-400 hover:text-text-light-primary dark:hover:text-white transition-colors" href="#"><svg aria-hidden="true" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path clip-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" fill-rule="evenodd"></path></svg></a>
+<a class="text-gray-400 hover:text-text-light-primary dark:hover:text-white transition-colors" href="#"><svg aria-hidden="true" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.71v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path></svg></a>
+<a class="text-gray-400 hover:text-text-light-primary dark:hover:text-white transition-colors" href="#"><svg aria-hidden="true" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path clip-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.024.06 1.378.06 3.808s-.012 2.784-.06 3.808c-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.024.048-1.378.06-3.808.06s-2.784-.013-3.808-.06c-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.048-1.024-.06-1.378-.06-3.808s.012-2.784.06-3.808c.049 1.064.218 1.791.465 2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 016.345 2.525c.636-.247 1.363-.416 2.427-.465C9.793 2.013 10.147 2 12.315 2h.001zm-1.04 2.04c-1.849 0-3.354 1.506-3.354 3.354s1.505 3.354 3.354 3.354c1.849 0 3.354-1.506 3.354-3.354s-1.505-3.354-3.354-3.354zm0 5.462c-1.168 0-2.112-.943-2.112-2.108 0-1.166.944-2.108 2.112-2.108 1.166 0 2.108.942 2.108 2.108 0 1.165-.942 2.108-2.108-2.108zm5.123-5.518c-.426 0-.771.344-.771.77s.345.77.771.77.771-.344.771-.77c0-.426-.345-.77-.771-.77z" fill-rule="evenodd"></path></svg></a>
+</div>
+</div>
+<div>
+<h5 class="font-semibold text-text-light-primary dark:text-white tracking-wider mb-4">Company</h5>
+<ul class="space-y-3">
+<li><a class="text-sm hover:text-text-light-primary dark:hover:text-white transition-colors" href="#">About</a></li>
+<li><a class="text-sm hover:text-text-light-primary dark:hover:text-white transition-colors" href="#">Careers</a></li>
+<li><a class="text-sm hover:text-text-light-primary dark:hover:text-white transition-colors" href="#">Contact</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-semibold text-text-light-primary dark:text-white tracking-wider mb-4">Services</h5>
+<ul class="space-y-3">
+<li><a class="text-sm hover:text-text-light-primary dark:hover:text-white transition-colors" href="#">iPhone Repair</a></li>
+<li><a class="text-sm hover:text-text-light-primary dark:hover:text-white transition-colors" href="#">Samsung Repair</a></li>
+<li><a class="text-sm hover:text-text-light-primary dark:hover:text-white transition-colors" href="#">Laptop Repair</a></li>
+<li><a class="text-sm hover:text-text-light-primary dark:hover:text-white transition-colors" href="#">Game Console</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-semibold text-text-light-primary dark:text-white tracking-wider mb-4">Legal</h5>
+<ul class="space-y-3">
+<li><a class="text-sm hover:text-text-light-primary dark:hover:text-white transition-colors" href="#">Terms of Service</a></li>
+<li><a class="text-sm hover:text-text-light-primary dark:hover:text-white transition-colors" href="#">Privacy Policy</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="mt-16 pt-8 border-t border-gray-200 dark:border-gray-700 flex flex-col sm:flex-row justify-between items-center text-sm">
+<p>© 2024 WeFix4U. All Rights Reserved.</p>
+<div class="flex items-center space-x-2 mt-4 sm:mt-0">
+<div class="w-2 h-2 rounded-full bg-green-500"></div>
+<span>Operational Status: Normal</span>
+</div>
+</div>
+</div>
+</footer>
+
+</body></html>
