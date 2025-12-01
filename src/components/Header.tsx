@@ -34,7 +34,7 @@ export default function Header() {
 
         {/* Mobile Menu Overlay */}
         <div
-          className={`fixed inset-0 z-50 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-xl transition-all duration-300 ease-in-out md:hidden flex flex-col ${isMobileMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-full pointer-events-none'
+          className={`fixed inset-0 z-50 bg-white/98 dark:bg-gray-950/98 backdrop-blur-xl transition-all duration-300 ease-in-out md:hidden flex flex-col ${isMobileMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-full pointer-events-none'
             }`}
         >
           {/* Mobile Header */}
