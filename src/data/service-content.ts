@@ -6,6 +6,7 @@ export const serviceContent = {
   'phone-repair': {
     'screen-replacement': {
       title: 'Professional iPhone & Android Screen Replacement',
+      price: 'Starting at $89',
       description: 'Expert phone screen replacement for iPhone, Samsung, and all major brands. Fast, reliable service with premium parts and 90-day warranty.',
       heroHeadline: 'Cracked Phone Screen? We\'ll Make It Look Brand New',
       heroSubheadline: 'Our certified technicians specialize in phone screen replacement, using premium parts to restore your device to perfect condition.',
@@ -45,6 +46,7 @@ export const serviceContent = {
     },
     'battery-repair': {
       title: 'Professional Phone Battery Replacement',
+      price: 'Starting at $49',
       description: 'Expert phone battery replacement to restore all-day battery life. Fast service with premium batteries and full warranty coverage.',
       heroHeadline: 'Phone Battery Draining Too Fast? We\'ll Fix That',
       heroSubheadline: 'Get back to all-day battery life with our professional phone battery replacement service using high-quality, long-lasting batteries.',
@@ -84,6 +86,7 @@ export const serviceContent = {
     },
     'charging-port-repair': {
       title: 'Professional Phone Charging Port Repair',
+      price: 'Starting at $59',
       description: 'Expert phone charging port repair to restore reliable charging and connectivity. Fast, professional service with premium parts and full warranty.',
       heroHeadline: 'Phone Charging Issues? We\'ll Get You Plugged In Again',
       heroSubheadline: 'Our skilled technicians diagnose and repair phone charging port problems quickly, so you can get back to reliable charging and data transfer.',
@@ -123,6 +126,7 @@ export const serviceContent = {
     },
     'water-damage-repair': {
       title: 'Expert Phone Water Damage Repair',
+      price: 'Diagnostic Fee $29',
       description: 'Comprehensive water damage repair service to rescue and restore your water-damaged phone. We act fast to prevent corrosion and save your device.',
       heroHeadline: 'Dropped Your Phone in Water? Don\'t Panic, We Can Help',
       heroSubheadline: 'Our expert technicians use advanced techniques to meticulously clean and repair water-damaged phones, giving you the best chance of a full recovery.',
@@ -158,6 +162,7 @@ export const serviceContent = {
     },
     'software-issues': {
       title: 'Phone Software Troubleshooting & Repair',
+      price: 'Starting at $49',
       description: 'Expert solutions for phone software problems, including boot loops, app crashes, and performance issues. We get your phone running smoothly again.',
       heroHeadline: 'Phone Acting Strange? We Fix Software Glitches',
       heroSubheadline: 'From operating system errors to malware removal, our technicians can diagnose and resolve a wide range of software issues to restore your phone\'s performance.',
@@ -193,6 +198,7 @@ export const serviceContent = {
     },
     'camera-repair': {
       title: 'Professional Phone Camera Repair',
+      price: 'Starting at $69',
       description: 'Expert repair for blurry, cracked, or non-working phone cameras. We use high-quality replacement parts to restore your phone\'s picture-perfect quality.',
       heroHeadline: 'Blurry Photos? We\'ll Bring Your Camera Back into Focus',
       heroSubheadline: 'Whether it\'s a cracked lens or a malfunctioning sensor, our technicians can repair or replace your phone\'s camera to get you back to capturing memories.',
@@ -228,6 +234,7 @@ export const serviceContent = {
     },
     'speaker-repair': {
       title: 'Phone Speaker & Earpiece Repair',
+      price: 'Starting at $49',
       description: 'Can\'t hear callers or play music? We repair and replace faulty phone speakers and earpieces, restoring your phone\'s sound.',
       heroHeadline: 'No Sound? We\'ll Make Your Phone Loud and Clear Again',
       heroSubheadline: 'From crackling audio to complete silence, we fix all phone speaker issues. Get your sound back for calls, music, and notifications.',
@@ -263,6 +270,7 @@ export const serviceContent = {
     },
     'button-repair': {
       title: 'Phone Button Repair & Replacement',
+      price: 'Starting at $49',
       description: 'Expert repair for stuck, unresponsive, or broken power, volume, and home buttons on your phone. We restore the click you\'ve been missing.',
       heroHeadline: 'Unresponsive Buttons? We\'ll Get Your Phone Clicking Again',
       heroSubheadline: 'Don\'t struggle with a faulty button. Our technicians can quickly repair or replace power, volume, or home buttons on iPhones and Androids.',
@@ -300,6 +308,7 @@ export const serviceContent = {
   'laptop-repair': {
     'screen-replacement': {
       title: 'Professional Laptop Screen Replacement',
+      price: 'Starting at $149',
       description: 'Expert laptop screen replacement for MacBook, Dell, HP, and all major brands. Fast, reliable service with premium parts and 90-day warranty.',
       heroHeadline: 'Cracked Laptop Screen? We\'ll Make It Look Brand New',
       heroSubheadline: 'Our certified technicians specialize in laptop screen replacement, using premium parts to restore your laptop to perfect working condition.',
@@ -339,6 +348,7 @@ export const serviceContent = {
     },
     'charging-port-repair': {
       title: 'Professional Laptop Charging Port Repair',
+      price: 'Starting at $99',
       description: 'Expert laptop charging port repair for reliable power and connectivity. Fast, professional service for MacBook, Dell, HP, and all major brands.',
       heroHeadline: 'Laptop Not Charging? We\'ll Fix Your Power Connection',
       heroSubheadline: 'Our skilled technicians diagnose and repair laptop charging port problems quickly, so you can get back to reliable power and uninterrupted work.',
@@ -378,6 +388,7 @@ export const serviceContent = {
     },
     'virus-malware-removal': {
       title: 'Expert Virus & Malware Removal for Laptops',
+      price: 'Starting at $79',
       description: 'Comprehensive virus, spyware, and malware removal service to restore your laptop\'s speed and security. We get rid of threats and protect your data.',
       heroHeadline: 'Laptop Running Slow? We Clean Out Viruses and Malware',
       heroSubheadline: 'Our thorough removal process eliminates malicious software, stops annoying pop-ups, and secures your personal information, restoring your laptop to peak performance.',
@@ -413,6 +424,7 @@ export const serviceContent = {
     },
     'hardware-upgrades': {
       title: 'Laptop Hardware Upgrades',
+      price: 'Starting at $49 + Parts',
       description: 'Boost your laptop\'s performance with our professional hardware upgrade services. We install SSDs, RAM, and other components to make your laptop faster than ever.',
       heroHeadline: 'Is Your Laptop Slowing Down? Upgrade It!',
       heroSubheadline: 'Don\'t replace your slow laptop—upgrade it! A new Solid State Drive (SSD) or more RAM can dramatically improve speed and responsiveness for a fraction of the cost of a new machine.',
@@ -448,6 +460,7 @@ export const serviceContent = {
     },
     'diagnostic-services': {
       title: 'Comprehensive Laptop Diagnostic Services',
+      price: 'Free Diagnostic',
       description: 'Not sure what\'s wrong with your laptop? Our comprehensive diagnostic service will identify the root cause of the problem, so you can make an informed decision.',
       heroHeadline: 'Laptop Problems? We\'ll Find the Fix',
       heroSubheadline: 'Our expert technicians use advanced tools and a systematic approach to accurately diagnose both hardware and software issues, providing you with a clear explanation and a fair quote for the repair.',
@@ -483,6 +496,7 @@ export const serviceContent = {
     },
     'data-recovery': {
       title: 'Laptop Data Recovery Services',
+      price: 'Starting at $99',
       description: 'Deleted a file by accident? Hard drive crashed? We offer professional data recovery services to retrieve your valuable files from failing or damaged storage.',
       heroHeadline: 'Lost Files? We Can Get Them Back',
       heroSubheadline: 'Our data recovery experts use advanced techniques to recover photos, documents, and other important files from failing hard drives, SSDs, and external storage.',
@@ -518,6 +532,7 @@ export const serviceContent = {
     },
     'battery-replacement': {
       title: 'Professional Laptop Battery Replacement',
+      price: 'Starting at $89',
       description: 'Restore your laptop\'s portability and unplug from the wall. We offer fast and professional battery replacement for all major laptop brands.',
       heroHeadline: 'Laptop Battery Dead? We\'ll Give It New Life',
       heroSubheadline: 'Get back the freedom to work from anywhere. Our high-quality replacement batteries will restore your laptop\'s original battery life and performance.',
@@ -555,6 +570,7 @@ export const serviceContent = {
   'tablet-repair': {
     'screen-replacement': {
       title: 'Professional Tablet Screen Replacement',
+      price: 'Starting at $99',
       description: 'Expert tablet screen replacement for iPad, Samsung Galaxy Tab, and all major brands. Fast, reliable service with premium parts and 90-day warranty.',
       heroHeadline: 'Cracked Tablet Screen? We\'ll Make It Look Brand New',
       heroSubheadline: 'Our certified technicians specialize in tablet screen replacement, using premium parts to restore your tablet to perfect working condition.',
@@ -594,6 +610,7 @@ export const serviceContent = {
     },
     'battery-repair': {
       title: 'Professional Tablet Battery Replacement',
+      price: 'Starting at $59',
       description: 'Expert tablet battery replacement to restore all-day battery life. Fast service with premium batteries and full warranty coverage.',
       heroHeadline: 'Tablet Battery Draining Too Fast? We\'ll Fix That',
       heroSubheadline: 'Get back to all-day battery life with our professional tablet battery replacement service using high-quality, long-lasting batteries.',
@@ -633,6 +650,7 @@ export const serviceContent = {
     },
     'charging-port-repair': {
       title: 'Tablet Charging Port Repair',
+      price: 'Starting at $79',
       description: 'Expert repair for loose or non-working tablet charging ports. We restore reliable charging to your iPad, Samsung Galaxy Tab, and other tablets.',
       heroHeadline: 'Tablet Not Charging? We\'ll Fix the Connection',
       heroSubheadline: 'A faulty charging port can be frustrating. Our technicians will clean, repair, or replace your tablet\'s port to ensure a solid and reliable charge, every time.',
@@ -668,6 +686,7 @@ export const serviceContent = {
     },
     'hdmi-port-repair': {
       title: 'Gaming Console HDMI Port Repair',
+      price: 'Starting at $99',
       description: 'No signal from your PlayStation, Xbox, or Nintendo Switch? We provide expert HDMI port repair to get you back in the game.',
       heroHeadline: 'No Picture on Your TV? We Fix Console HDMI Ports',
       heroSubheadline: 'A broken HDMI port is a common issue that stops you from playing. Our technicians use micro-soldering techniques to professionally replace damaged ports.',
@@ -704,6 +723,7 @@ export const serviceContent = {
     },
     'disk-drive-issues': {
       title: 'Gaming Console Disk Drive Repair',
+      price: 'Starting at $89',
       description: 'Console not reading games? Making grinding noises? We repair and replace faulty disk drives on PlayStation and Xbox consoles.',
       heroHeadline: 'Game Discs Not Loading? We Fix Console Disk Drives',
       heroSubheadline: 'Don\'t let a broken disk drive stop you from playing your favorite physical games. We can repair the laser or replace the entire drive to get you back in the action.',
@@ -739,6 +759,7 @@ export const serviceContent = {
     },
     'overheating-solutions': {
       title: 'Console & Laptop Overheating Solutions',
+      price: 'Starting at $69',
       description: 'Is your console or laptop shutting down or running loud? Our deep cleaning and thermal paste replacement service will solve overheating issues.',
       heroHeadline: 'Loud Fan? We Stop Overheating in its Tracks',
       heroSubheadline: 'Dust buildup is the #1 enemy of high-performance electronics. We perform a full internal cleaning and replace dried-out thermal paste to restore your device\'s cooling system to factory-fresh condition.',

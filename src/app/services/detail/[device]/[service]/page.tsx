@@ -2,6 +2,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { notFound } from 'next/navigation';
 import { serviceContent } from '@/data/service-content';
+import BookingForm from '@/components/BookingForm';
 import { Metadata } from 'next';
 
 interface ServicePageProps {
@@ -73,6 +74,14 @@ export default function IndividualServicePage({ params }: ServicePageProps) {
                     <p className="text-white text-lg text-center max-w-2xl">
                       {content.heroSubheadline}
                     </p>
+                    
+                    {content.price && (
+                      <div className="mt-4 bg-white/10 backdrop-blur-sm px-8 py-3 rounded-full border border-white/20 shadow-lg">
+                        <p className="text-white text-2xl font-bold tracking-wide">
+                          {content.price}
+                        </p>
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>
@@ -144,66 +153,11 @@ export default function IndividualServicePage({ params }: ServicePageProps) {
               </div>
 
               {/* Contact Form Section */}
-              <div className="bg-white p-8 rounded-xl shadow-sm mt-8 mb-16 mx-4 md:mx-20 lg:mx-40">
-                <div className="max-w-[960px] mx-auto">
-                  <h2 className="text-center text-[#111218] text-[22px] font-bold leading-tight tracking-[-0.015em] mb-6 font-montserrat">
-                    Get Your {content.title} Quote
-                  </h2>
-                  
-                  <form className="space-y-6">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                      <div>
-                        <label className="block text-sm font-medium text-[#5f678c] mb-1" htmlFor="name">Name</label>
-                        <input 
-                          className="w-full h-10 px-4 rounded-xl border border-gray-300 focus:ring-[#3D5AFE] focus:border-[#3D5AFE] transition duration-300" 
-                          id="name" 
-                          name="name" 
-                          type="text"
-                        />
-                      </div>
-                      
-                      <div>
-                        <label className="block text-sm font-medium text-[#5f678c] mb-1" htmlFor="email">Email</label>
-                        <input 
-                          className="w-full h-10 px-4 rounded-xl border border-gray-300 focus:ring-[#3D5AFE] focus:border-[#3D5AFE] transition duration-300" 
-                          id="email" 
-                          name="email" 
-                          type="email"
-                        />
-                      </div>
-                    </div>
-                    
-                    <div>
-                      <label className="block text-sm font-medium text-[#5f678c] mb-1" htmlFor="phone">Phone</label>
-                      <input 
-                        className="w-full h-10 px-4 rounded-xl border border-gray-300 focus:ring-[#3D5AFE] focus:border-[#3D5AFE] transition duration-300" 
-                        id="phone" 
-                        name="phone" 
-                        type="tel"
-                      />
-                    </div>
-                    
-                    <div>
-                      <label className="block text-sm font-medium text-[#5f678c] mb-1" htmlFor="message">Message</label>
-                      <textarea 
-                        className="w-full p-4 rounded-xl border border-gray-300 focus:ring-[#3D5AFE] focus:border-[#3D5AFE] transition duration-300" 
-                        id="message" 
-                        name="message" 
-                        rows={4}
-                      />
-                    </div>
-                    
-                    <div className="text-center">
-                      <button 
-                        className="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 bg-[#3D5AFE] text-white text-sm font-bold leading-normal tracking-[0.015em] mx-auto hover:bg-[#304FFE] transition-colors duration-300" 
-                        type="submit"
-                      >
-                        <span className="truncate">Submit</span>
-                      </button>
-                    </div>
-                  </form>
-                </div>
-              </div>
+              <BookingForm 
+                deviceType={deviceType} 
+                serviceType={serviceType} 
+                serviceTitle={content.title} 
+              />
             </main>
 
             <Footer />

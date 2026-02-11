@@ -142,6 +142,21 @@ const schema = a.schema({
     .authorization((allow) => [
       allow.group('Admins'), // Only admins can see/edit inventory
     ]),
+
+  RepairInquiry: a
+    .model({
+      name: a.string().required(),
+      email: a.string().required(),
+      phone: a.string().required(),
+      deviceType: a.string().required(),
+      serviceType: a.string().required(),
+      message: a.string(),
+      status: a.enum(['new', 'contacted', 'converted', 'archived']),
+    })
+    .authorization((allow) => [
+      allow.publicApiKey().to(['create']),
+      allow.group('Admins'),
+    ]),
 });
 
 export type Schema = ClientSchema<typeof schema>;
@@ -150,5 +165,8 @@ export const data = defineData({
   schema,
   authorizationModes: {
     defaultAuthorizationMode: 'userPool',
+    apiKeyAuthorizationMode: {
+      expiresInDays: 30,
+    },
   },
 });
