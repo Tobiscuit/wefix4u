@@ -33,9 +33,9 @@ export default function ServicesPage() {
                     <p className="text-[#111218] text-base font-medium leading-normal">Screen Replacement</p>
                     <p className="text-[#5f678c] text-sm font-normal leading-normal mt-1">Cracked or broken screens are no match for our expert technicians.</p>
                   </div>
-                  <button className="flex mt-auto min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 bg-[#3D5AFE] text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-[#304FFE]">
+                  <a href="/services/detail/phone-repair/screen-replacement" className="flex mt-auto min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 bg-[#3D5AFE] text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-[#304FFE]">
                     <span className="truncate">Request a Repair</span>
-                  </button>
+                  </a>
                 </div>
                 <div className="flex flex-col gap-4 p-6 bg-white rounded-xl shadow-sm">
                   <span className="material-icons text-4xl text-[#3D5AFE]">battery_charging_full</span>
@@ -43,9 +43,9 @@ export default function ServicesPage() {
                     <p className="text-[#111218] text-base font-medium leading-normal">Battery Repair</p>
                     <p className="text-[#5f678c] text-sm font-normal leading-normal mt-1">Restore your phone&apos;s battery life with a quick and efficient replacement.</p>
                   </div>
-                  <button className="flex mt-auto min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 bg-[#3D5AFE] text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-[#304FFE]">
+                  <a href="/services/detail/phone-repair/battery-repair" className="flex mt-auto min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 bg-[#3D5AFE] text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-[#304FFE]">
                     <span className="truncate">Request a Repair</span>
-                  </button>
+                  </a>
                 </div>
                 <div className="flex flex-col gap-4 p-6 bg-white rounded-xl shadow-sm">
                   <span className="material-icons text-4xl text-[#3D5AFE]">power</span>
@@ -53,9 +53,9 @@ export default function ServicesPage() {
                     <p className="text-[#111218] text-base font-medium leading-normal">Charging Port Repair</p>
                     <p className="text-[#5f678c] text-sm font-normal leading-normal mt-1">Fix issues with charging or connectivity due to a faulty port.</p>
                   </div>
-                  <button className="flex mt-auto min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 bg-[#3D5AFE] text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-[#304FFE]">
+                  <a href="/services/detail/phone-repair/charging-port-repair" className="flex mt-auto min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 bg-[#3D5AFE] text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-[#304FFE]">
                     <span className="truncate">Request a Repair</span>
-                  </button>
+                  </a>
                 </div>
                 <div className="flex flex-col gap-4 p-6 bg-white rounded-xl shadow-sm">
                   <span className="material-icons text-4xl text-[#3D5AFE]">water_drop</span>
@@ -63,9 +63,9 @@ export default function ServicesPage() {
                     <p className="text-[#111218] text-base font-medium leading-normal">Water Damage Repair</p>
                     <p className="text-[#5f678c] text-sm font-normal leading-normal mt-1">Professional drying and repair services for water-damaged devices.</p>
                   </div>
-                  <button className="flex mt-auto min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 bg-[#3D5AFE] text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-[#304FFE]">
+                  <a href="/services/detail/phone-repair/water-damage-repair" className="flex mt-auto min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 bg-[#3D5AFE] text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-[#304FFE]">
                     <span className="truncate">Request a Repair</span>
-                  </button>
+                  </a>
                 </div>
                 <div className="flex flex-col gap-4 p-6 bg-white rounded-xl shadow-sm">
                   <span className="material-icons text-4xl text-[#3D5AFE]">build_circle</span>
@@ -73,9 +73,9 @@ export default function ServicesPage() {
                     <p className="text-[#111218] text-base font-medium leading-normal">Software Issues</p>
                     <p className="text-[#5f678c] text-sm font-normal leading-normal mt-1">Troubleshoot and resolve various software glitches and malfunctions.</p>
                   </div>
-                  <button className="flex mt-auto min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 bg-[#3D5AFE] text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-[#304FFE]">
+                  <a href="/services/detail/phone-repair/software-repair" className="flex mt-auto min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 bg-[#3D5AFE] text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-[#304FFE]">
                     <span className="truncate">Request a Repair</span>
-                  </button>
+                  </a>
                 </div>
                 <div className="flex flex-col gap-4 p-6 bg-white rounded-xl shadow-sm">
                   <span className="material-icons text-4xl text-[#3D5AFE]">build</span>
@@ -83,9 +83,9 @@ export default function ServicesPage() {
                     <p className="text-[#111218] text-base font-medium leading-normal">Other Phone Repairs</p>
                     <p className="text-[#5f678c] text-sm font-normal leading-normal mt-1">If your issue isn&apos;t listed, describe it to us, and we&apos;ll see how we can help.</p>
                   </div>
-                  <button className="flex mt-auto min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 bg-[#3D5AFE] text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-[#304FFE]">
+                  <a href="/services/detail/phone-repair/other-repair" className="flex mt-auto min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 bg-[#3D5AFE] text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-[#304FFE]">
                     <span className="truncate">Request a Repair</span>
-                  </button>
+                  </a>
                 </div>
               </div>
 

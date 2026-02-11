@@ -49,7 +49,7 @@ export default function Services() {
                   <li key={idx} className="flex items-center"><span className="material-icons-outlined text-green-500 mr-3">check_circle</span>{feature}</li>
                 ))}
               </ul>
-              <a className="mt-auto w-full text-center bg-primary text-white font-semibold py-3 px-6 rounded-lg hover:opacity-90 transition-opacity" href="#">Request Repair</a>
+              <a className="mt-auto w-full text-center bg-primary text-white font-semibold py-3 px-6 rounded-lg hover:opacity-90 transition-opacity" href="/services">Request Repair</a>
             </div>
           ))}
         </div>

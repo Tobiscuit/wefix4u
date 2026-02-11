@@ -15,10 +15,10 @@ export default function Header() {
             <span className="font-bold text-xl text-text-light-primary dark:text-text-dark-primary">WE FIX 4U</span>
           </div>
           <nav className="hidden md:flex items-center space-x-8 text-sm font-semibold text-text-light-secondary dark:text-text-dark-secondary">
-            <Link className="hover:text-primary dark:hover:text-primary transition-colors" href="/#services">Services</Link>
-            <Link className="hover:text-primary dark:hover:text-primary transition-colors" href="#about">About Us</Link>
-            <Link className="hover:text-primary dark:hover:text-primary transition-colors" href="#reviews">Reviews</Link>
-            <Link className="hover:text-primary dark:hover:text-primary transition-colors" href="#footer">Contact</Link>
+            <Link className="hover:text-primary dark:hover:text-primary transition-colors" href="/services">Services</Link>
+            <Link className="hover:text-primary dark:hover:text-primary transition-colors" href="/#about">About Us</Link>
+            <Link className="hover:text-primary dark:hover:text-primary transition-colors" href="/#reviews">Reviews</Link>
+            <Link className="hover:text-primary dark:hover:text-primary transition-colors" href="/#footer">Contact</Link>
           </nav>
           <a className="hidden md:inline-flex items-center justify-center px-5 py-2.5 text-sm font-semibold text-white bg-primary rounded-lg hover:opacity-90 transition-opacity" href="#">
             <span className="material-icons-outlined mr-2 text-base">sell</span>
@@ -55,28 +55,28 @@ export default function Header() {
           <nav className="grow flex flex-col items-center justify-center space-y-8 p-6">
             <Link
               className="text-3xl font-bold text-text-light-primary dark:text-text-dark-primary hover:text-primary dark:hover:text-primary transition-colors"
-              href="/#services"
+              href="/services"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Services
             </Link>
             <Link
               className="text-3xl font-bold text-text-light-primary dark:text-text-dark-primary hover:text-primary dark:hover:text-primary transition-colors"
-              href="#about"
+              href="/#about"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               About Us
             </Link>
             <Link
               className="text-3xl font-bold text-text-light-primary dark:text-text-dark-primary hover:text-primary dark:hover:text-primary transition-colors"
-              href="#reviews"
+              href="/#reviews"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Reviews
             </Link>
             <Link
               className="text-3xl font-bold text-text-light-primary dark:text-text-dark-primary hover:text-primary dark:hover:text-primary transition-colors"
-              href="#footer"
+              href="/#footer"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Contact
