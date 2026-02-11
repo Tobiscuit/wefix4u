@@ -5,28 +5,36 @@ export default function Services() {
       iconBg: 'bg-blue-100 dark:bg-blue-900/50',
       iconColor: 'text-primary',
       icon: 'phone_iphone',
-      features: ['Screen Replacement', 'Battery Replacement', 'Charging Port Fix']
+      features: ['Screen Replacement', 'Battery Replacement', 'Charging Port Fix'],
+      deviceType: 'phone-repair',
+      price: 'Starting at $89'
     },
     {
       title: 'Samsung Repair',
       iconBg: 'bg-purple-100 dark:bg-purple-900/50',
       iconColor: 'text-purple-500',
       icon: 'smartphone',
-      features: ['Screen & Back Glass', 'Camera Lens', 'Charging Port Fix']
+      features: ['Screen & Back Glass', 'Camera Lens', 'Charging Port Fix'],
+      deviceType: 'phone-repair',
+      price: 'Starting at $99'
     },
     {
       title: 'Computer Repair',
       iconBg: 'bg-orange-100 dark:bg-orange-900/50',
       iconColor: 'text-accent',
       icon: 'laptop_mac',
-      features: ['Screen Replacement', 'Data Recovery', 'SSD Upgrades']
+      features: ['Screen Replacement', 'Data Recovery', 'SSD Upgrades'],
+      deviceType: 'laptop-repair',
+      price: 'Starting at $149'
     },
     {
       title: 'Game Console',
       iconBg: 'bg-green-100 dark:bg-green-900/50',
       iconColor: 'text-green-500',
       icon: 'sports_esports',
-      features: ['HDMI Port Repair', 'Overheating Fix', 'Controller Repair']
+      features: ['HDMI Port Repair', 'Overheating Fix', 'Controller Repair'],
+      deviceType: 'console-repair',
+      price: 'Starting at $89'
     }
   ]
 
@@ -43,13 +51,14 @@ export default function Services() {
               <div className={`shrink-0 flex items-center justify-center h-16 w-16 rounded-full ${service.iconBg} mb-6`}>
                 <span className={`material-icons-outlined text-3xl ${service.iconColor}`}>{service.icon}</span>
               </div>
-              <h3 className="text-xl font-bold mb-3">{service.title}</h3>
+              <h3 className="text-xl font-bold mb-1">{service.title}</h3>
+              <p className="text-sm font-semibold text-primary mb-3">{service.price}</p>
               <ul className="space-y-3 text-text-light-secondary dark:text-text-dark-secondary mb-6 grow">
                 {service.features.map((feature, idx) => (
                   <li key={idx} className="flex items-center"><span className="material-icons-outlined text-green-500 mr-3">check_circle</span>{feature}</li>
                 ))}
               </ul>
-              <a className="mt-auto w-full text-center bg-primary text-white font-semibold py-3 px-6 rounded-lg hover:opacity-90 transition-opacity" href="/services">Request Repair</a>
+              <a className="mt-auto w-full text-center bg-primary text-white font-semibold py-3 px-6 rounded-lg hover:opacity-90 transition-opacity" href={`/book?device=${service.deviceType}`}>Request Repair</a>
             </div>
           ))}
         </div>

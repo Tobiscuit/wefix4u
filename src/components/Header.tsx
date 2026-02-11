@@ -15,7 +15,7 @@ export default function Header() {
             <span className="font-bold text-xl text-text-light-primary dark:text-text-dark-primary">WE FIX 4U</span>
           </div>
           <nav className="hidden md:flex items-center space-x-8 text-sm font-semibold text-text-light-secondary dark:text-text-dark-secondary">
-            <Link className="hover:text-primary dark:hover:text-primary transition-colors" href="/services">Services</Link>
+            <Link className="hover:text-primary dark:hover:text-primary transition-colors" href="/#services">Services</Link>
             <Link className="hover:text-primary dark:hover:text-primary transition-colors" href="/#about">About Us</Link>
             <Link className="hover:text-primary dark:hover:text-primary transition-colors" href="/#reviews">Reviews</Link>
             <Link className="hover:text-primary dark:hover:text-primary transition-colors" href="/#footer">Contact</Link>
@@ -55,7 +55,7 @@ export default function Header() {
           <nav className="grow flex flex-col items-center justify-center space-y-8 p-6">
             <Link
               className="text-3xl font-bold text-text-light-primary dark:text-text-dark-primary hover:text-primary dark:hover:text-primary transition-colors"
-              href="/services"
+              href="/#services"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Services
