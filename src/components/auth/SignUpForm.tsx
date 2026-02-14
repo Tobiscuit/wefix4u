@@ -63,7 +63,7 @@ export default function SignUpForm() {
       <form onSubmit={handleSignUp} className="space-y-4">
         <div className="grid grid-cols-2 gap-4">
           <div className="space-y-2">
-            <label htmlFor="firstName" className="block text-sm font-semibold text-gray-700 dark:text-gray-300 ml-1">
+            <label htmlFor="firstName" className="block text-sm font-semibold text-text-light-primary dark:text-text-dark-primary ml-1">
               First Name
             </label>
             <div className="relative group">
@@ -76,13 +76,13 @@ export default function SignUpForm() {
                   onChange={handleChange}
                   required
                   placeholder="John"
-                  className="pl-12 bg-white/50 backdrop-blur-sm border-gray-200 dark:border-gray-700 focus:ring-primary/50 focus:border-primary transition-all"
+                  className="pl-12 bg-gray-50 dark:bg-gray-800 border-gray-200 dark:border-gray-700 focus:ring-primary focus:border-primary transition-all"
                 />
             </div>
           </div>
           
           <div className="space-y-2">
-            <label htmlFor="lastName" className="block text-sm font-semibold text-gray-700 dark:text-gray-300 ml-1">
+            <label htmlFor="lastName" className="block text-sm font-semibold text-text-light-primary dark:text-text-dark-primary ml-1">
               Last Name
             </label>
             <Input
@@ -93,13 +93,13 @@ export default function SignUpForm() {
               onChange={handleChange}
               required
               placeholder="Doe"
-              className="bg-white/50 backdrop-blur-sm border-gray-200 dark:border-gray-700 focus:ring-primary/50 focus:border-primary transition-all"
+              className="bg-gray-50 dark:bg-gray-800 border-gray-200 dark:border-gray-700 focus:ring-primary focus:border-primary transition-all"
             />
           </div>
         </div>
         
         <div className="space-y-2">
-          <label htmlFor="email" className="block text-sm font-semibold text-gray-700 dark:text-gray-300 ml-1">
+          <label htmlFor="email" className="block text-sm font-semibold text-text-light-primary dark:text-text-dark-primary ml-1">
             Email Address
           </label>
           <div className="relative group">
@@ -112,13 +112,13 @@ export default function SignUpForm() {
                 onChange={handleChange}
                 required
                 placeholder="you@example.com"
-                className="pl-12 bg-white/50 backdrop-blur-sm border-gray-200 dark:border-gray-700 focus:ring-primary/50 focus:border-primary transition-all"
+                className="pl-12 bg-gray-50 dark:bg-gray-800 border-gray-200 dark:border-gray-700 focus:ring-primary focus:border-primary transition-all"
             />
           </div>
         </div>
         
         <div className="space-y-2">
-          <label htmlFor="phoneNumber" className="block text-sm font-semibold text-gray-700 dark:text-gray-300 ml-1">
+          <label htmlFor="phoneNumber" className="block text-sm font-semibold text-text-light-primary dark:text-text-dark-primary ml-1">
             Phone Number <span className="text-gray-400 font-normal">(Optional)</span>
           </label>
           <div className="relative group">
@@ -130,13 +130,13 @@ export default function SignUpForm() {
                 value={formData.phoneNumber}
                 onChange={handleChange}
                 placeholder="+1 (555) 000-0000"
-                className="pl-12 bg-white/50 backdrop-blur-sm border-gray-200 dark:border-gray-700 focus:ring-primary/50 focus:border-primary transition-all"
+                className="pl-12 bg-gray-50 dark:bg-gray-800 border-gray-200 dark:border-gray-700 focus:ring-primary focus:border-primary transition-all"
             />
           </div>
         </div>
         
         <div className="space-y-2">
-          <label htmlFor="password" className="block text-sm font-semibold text-gray-700 dark:text-gray-300 ml-1">
+          <label htmlFor="password" className="block text-sm font-semibold text-text-light-primary dark:text-text-dark-primary ml-1">
             Password
           </label>
           <div className="relative group">
@@ -149,13 +149,13 @@ export default function SignUpForm() {
                 onChange={handleChange}
                 required
                 placeholder="••••••••"
-                className="pl-12 bg-white/50 backdrop-blur-sm border-gray-200 dark:border-gray-700 focus:ring-primary/50 focus:border-primary transition-all"
+                className="pl-12 bg-gray-50 dark:bg-gray-800 border-gray-200 dark:border-gray-700 focus:ring-primary focus:border-primary transition-all"
             />
           </div>
         </div>
         
         <div className="space-y-2">
-          <label htmlFor="confirmPassword" className="block text-sm font-semibold text-gray-700 dark:text-gray-300 ml-1">
+          <label htmlFor="confirmPassword" className="block text-sm font-semibold text-text-light-primary dark:text-text-dark-primary ml-1">
             Confirm Password
           </label>
           <div className="relative group">
@@ -168,16 +168,14 @@ export default function SignUpForm() {
                 onChange={handleChange}
                 required
                 placeholder="••••••••"
-                className="pl-12 bg-white/50 backdrop-blur-sm border-gray-200 dark:border-gray-700 focus:ring-primary/50 focus:border-primary transition-all"
+                className="pl-12 bg-gray-50 dark:bg-gray-800 border-gray-200 dark:border-gray-700 focus:ring-primary focus:border-primary transition-all"
             />
           </div>
         </div>
         
         {error && (
-          <div className="p-4 bg-red-50 dark:bg-red-900/20 text-red-600 dark:text-red-400 text-sm font-medium rounded-xl border border-red-100 dark:border-red-800 flex items-center gap-2 animate-in fade-in slide-in-from-top-2">
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-              <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
-            </svg>
+          <div className="p-4 bg-red-50 dark:bg-red-900/20 text-red-600 dark:text-red-400 text-sm font-medium rounded-lg border border-red-100 dark:border-red-800 flex items-center gap-2">
+            <span className="material-icons-outlined text-red-500 text-sm">error_outline</span>
             {error}
           </div>
         )}
@@ -198,7 +196,7 @@ export default function SignUpForm() {
       </form>
       
       <div className="pt-2 text-center">
-        <p className="text-sm text-gray-500 dark:text-gray-400">
+        <p className="text-sm text-text-light-secondary dark:text-text-dark-secondary">
           Already have an account?{' '}
           <a href="/sign-in" className="text-primary hover:text-blue-700 font-bold transition-colors">
             Sign in
