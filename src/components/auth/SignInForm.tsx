@@ -1,8 +1,11 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import { signIn } from 'aws-amplify/auth';
+import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { signIn } from '@/lib/auth-client';
+import { Button } from '@/components/ui/Button';
+import { Input } from '@/components/ui/Input';
+import { Fingerprint, Loader2, Mail } from 'lucide-react';
 
 export default function SignInForm() {
   const [email, setEmail] = useState('');
@@ -11,100 +14,132 @@ export default function SignInForm() {
   const [error, setError] = useState('');
   const router = useRouter();
 
-  // Check if Amplify is configured
-  const [isAmplifyConfigured, setIsAmplifyConfigured] = useState(false);
-
-  useEffect(() => {
-    // Simple check if we're in development mode
-    setIsAmplifyConfigured(process.env.NODE_ENV === 'development' || window.location.hostname !== 'localhost');
-  }, []);
-
   const handleSignIn = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
     setError('');
 
     try {
-      await signIn({ username: email, password });
-      router.push('/dashboard');
-    } catch (err: unknown) {
-      setError((err as Error).message || 'An error occurred during sign in');
-    } finally {
+      await signIn.email({
+        email,
+        password,
+        callbackURL: '/dashboard'
+      }, {
+        onRequest: () => setIsLoading(true),
+        onSuccess: () => router.push('/dashboard'),
+        onError: (ctx) => {
+            setError(ctx.error.message || 'Invalid email or password');
+            setIsLoading(false);
+        }
+      });
+    } catch (err: any) {
+      setError(err.message || 'An error occurred during sign in');
       setIsLoading(false);
     }
   };
 
-  if (!isAmplifyConfigured) {
-    return (
-      <div className="max-w-md mx-auto bg-white p-8 rounded-xl shadow-sm">
-        <div className="text-center">
-          <div className="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
-            <span className="material-icons text-yellow-600 text-2xl">warning</span>
-          </div>
-          <h2 className="text-2xl font-bold text-[#111218] font-montserrat mb-4">
-            Authentication Not Configured
-          </h2>
-          <p className="text-[#5f678c] mb-6">
-            AWS Amplify backend needs to be deployed first. Please contact your developer to set up authentication.
-          </p>
-        </div>
-      </div>
-    );
-  }
+  const handlePasskeySignIn = async () => {
+    // TODO: Implement Passkey when plugin is resolved
+    alert("Passkey support is coming soon!");
+  };
 
   return (
-    <div className="max-w-md mx-auto bg-white p-8 rounded-xl shadow-sm">
-      <h2 className="text-2xl font-bold text-center mb-6 text-[#111218] font-montserrat">
-        Sign In to Your Account
-      </h2>
+    <div className="w-full space-y-8">
       
-      <form onSubmit={handleSignIn} className="space-y-4">
-        <div>
-          <label htmlFor="email" className="block text-sm font-medium text-[#5f678c] mb-1">
-            Email
+      {/* Passkey Button - The "Modern" Way */}
+      <div className="space-y-4">
+        <Button
+            variant="primary"
+            className="w-full h-14 text-lg bg-indigo-600 hover:bg-indigo-700 shadow-lg shadow-indigo-500/20 flex items-center justify-center gap-3 transition-all active:scale-95"
+            onClick={handlePasskeySignIn}
+            disabled={isLoading}
+            type="button"
+        >
+            {isLoading ? (
+                <Loader2 className="h-6 w-6 animate-spin text-white/80" />
+            ) : (
+                <Fingerprint className="h-6 w-6" />
+            )}
+            Sign in with Passkey
+        </Button>
+        <div className="relative pt-2">
+            <div className="absolute inset-0 flex items-center">
+                <span className="w-full border-t border-gray-200 dark:border-gray-700" />
+            </div>
+            <div className="relative flex justify-center text-xs uppercase tracking-widest font-semibold">
+                <span className="bg-white dark:bg-gray-800 px-4 text-gray-400 dark:text-gray-500">
+                    Or use password
+                </span>
+            </div>
+        </div>
+      </div>
+
+      <form onSubmit={handleSignIn} className="space-y-5">
+        <div className="space-y-2">
+          <label htmlFor="email" className="block text-sm font-semibold text-gray-700 dark:text-gray-300 ml-1">
+            Email Address
           </label>
-          <input
-            id="email"
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-            className="w-full h-10 px-4 rounded-xl border border-gray-300 focus:ring-[#3D5AFE] focus:border-[#3D5AFE] transition duration-300"
-          />
+          <div className="relative group">
+            <Mail className="absolute left-4 top-3.5 h-5 w-5 text-gray-400 group-focus-within:text-indigo-500 transition-colors" />
+            <Input
+                id="email"
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+                className="pl-12 bg-gray-50 dark:bg-gray-900 border-transparent focus:bg-white dark:focus:bg-gray-800 transition-all"
+                placeholder="you@example.com"
+            />
+          </div>
         </div>
         
-        <div>
-          <label htmlFor="password" className="block text-sm font-medium text-[#5f678c] mb-1">
-            Password
-          </label>
-          <input
+        <div className="space-y-2">
+          <div className="flex items-center justify-between ml-1">
+            <label htmlFor="password" className="block text-sm font-semibold text-gray-700 dark:text-gray-300">
+              Password
+            </label>
+            <a href="#" className="text-sm font-medium text-indigo-600 hover:text-indigo-500">Forgot password?</a>
+          </div>
+          <Input
             id="password"
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
-            className="w-full h-10 px-4 rounded-xl border border-gray-300 focus:ring-[#3D5AFE] focus:border-[#3D5AFE] transition duration-300"
+            className="bg-gray-50 dark:bg-gray-900 border-transparent focus:bg-white dark:focus:bg-gray-800 transition-all"
+            placeholder="••••••••"
           />
         </div>
         
         {error && (
-          <div className="text-red-600 text-sm">{error}</div>
+          <div className="p-4 bg-red-50 dark:bg-red-900/20 text-red-600 dark:text-red-400 text-sm font-medium rounded-xl border border-red-100 dark:border-red-800 flex items-center gap-2 animate-in fade-in slide-in-from-top-2">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+              <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
+            </svg>
+            {error}
+          </div>
         )}
         
-        <button
+        <Button
           type="submit"
           disabled={isLoading}
-          className="w-full flex items-center justify-center rounded-xl h-10 px-4 bg-[#3D5AFE] text-white text-sm font-bold hover:bg-[#304FFE] disabled:opacity-50 transition-colors duration-300"
+          variant="secondary"
+          className="w-full font-bold h-12"
         >
-          {isLoading ? 'Signing In...' : 'Sign In'}
-        </button>
+          {isLoading ? (
+             <span className="flex items-center gap-2">
+                <Loader2 className="h-4 w-4 animate-spin" />
+                Verifying...
+             </span>
+          ) : 'Sign In'}
+        </Button>
       </form>
       
-      <div className="mt-4 text-center">
-        <p className="text-sm text-[#5f678c]">
-          Don&apos;t have an account?{' '}
-          <a href="/sign-up" className="text-[#3D5AFE] hover:underline">
-            Sign up
+      <div className="pt-2 text-center">
+        <p className="text-sm text-gray-500 dark:text-gray-400">
+          New customer?{' '}
+          <a href="/sign-up" className="text-indigo-600 dark:text-indigo-400 hover:text-indigo-500 font-bold transition-colors">
+            Create an account
           </a>
         </p>
       </div>
