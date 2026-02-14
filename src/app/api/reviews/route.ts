@@ -39,9 +39,6 @@ export async function GET(request: NextRequest) {
 
     const data = await response.json()
     
-    // Debug logging to see what we're getting
-    console.log('Google Places API Response:', JSON.stringify(data, null, 2))
-    
     // The new Places API (New) doesn't have a status field like the old API
     if (!data) {
       throw new Error('No data received from Google Places API')
