@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 import { signIn } from '@/lib/auth-client';
 import { Button } from '@/components/ui/Button';
 import { Input } from '@/components/ui/Input';
-import { Fingerprint, Loader2, Mail } from 'lucide-react';
+import { Fingerprint, Loader2, Mail, Lock } from 'lucide-react';
 
 export default function SignInForm() {
   const [email, setEmail] = useState('');
@@ -50,7 +50,7 @@ export default function SignInForm() {
       <div className="space-y-4">
         <Button
             variant="primary"
-            className="w-full h-14 text-lg bg-indigo-600 hover:bg-indigo-700 shadow-lg shadow-indigo-500/20 flex items-center justify-center gap-3 transition-all active:scale-95"
+            className="w-full h-14 text-lg shadow-lg shadow-orange-500/20 flex items-center justify-center gap-3 transition-all active:scale-95"
             onClick={handlePasskeySignIn}
             disabled={isLoading}
             type="button"
@@ -67,7 +67,7 @@ export default function SignInForm() {
                 <span className="w-full border-t border-gray-200 dark:border-gray-700" />
             </div>
             <div className="relative flex justify-center text-xs uppercase tracking-widest font-semibold">
-                <span className="bg-white dark:bg-gray-800 px-4 text-gray-400 dark:text-gray-500">
+                <span className="bg-white/50 backdrop-blur-xl px-4 text-gray-500 dark:text-gray-400">
                     Or use password
                 </span>
             </div>
@@ -80,14 +80,14 @@ export default function SignInForm() {
             Email Address
           </label>
           <div className="relative group">
-            <Mail className="absolute left-4 top-3.5 h-5 w-5 text-gray-400 group-focus-within:text-indigo-500 transition-colors" />
+            <Mail className="absolute left-4 top-3.5 h-5 w-5 text-gray-400 group-focus-within:text-primary transition-colors" />
             <Input
                 id="email"
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
-                className="pl-12 bg-gray-50 dark:bg-gray-900 border-transparent focus:bg-white dark:focus:bg-gray-800 transition-all"
+                className="pl-12 bg-white/50 backdrop-blur-sm border-gray-200 dark:border-gray-700 focus:ring-primary/50 focus:border-primary transition-all"
                 placeholder="you@example.com"
             />
           </div>
@@ -98,17 +98,20 @@ export default function SignInForm() {
             <label htmlFor="password" className="block text-sm font-semibold text-gray-700 dark:text-gray-300">
               Password
             </label>
-            <a href="#" className="text-sm font-medium text-indigo-600 hover:text-indigo-500">Forgot password?</a>
+            <a href="#" className="text-sm font-medium text-primary hover:text-blue-700 transition-colors">Forgot password?</a>
           </div>
-          <Input
-            id="password"
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-            className="bg-gray-50 dark:bg-gray-900 border-transparent focus:bg-white dark:focus:bg-gray-800 transition-all"
-            placeholder="••••••••"
-          />
+          <div className="relative group">
+            <Lock className="absolute left-4 top-3.5 h-5 w-5 text-gray-400 group-focus-within:text-primary transition-colors" />
+            <Input
+                id="password"
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+                className="pl-12 bg-white/50 backdrop-blur-sm border-gray-200 dark:border-gray-700 focus:ring-primary/50 focus:border-primary transition-all"
+                placeholder="••••••••"
+            />
+          </div>
         </div>
         
         {error && (
@@ -131,14 +134,14 @@ export default function SignInForm() {
                 <Loader2 className="h-4 w-4 animate-spin" />
                 Verifying...
              </span>
-          ) : 'Sign In'}
+          ) : 'Sign In with Password'}
         </Button>
       </form>
       
       <div className="pt-2 text-center">
         <p className="text-sm text-gray-500 dark:text-gray-400">
           New customer?{' '}
-          <a href="/sign-up" className="text-indigo-600 dark:text-indigo-400 hover:text-indigo-500 font-bold transition-colors">
+          <a href="/sign-up" className="text-accent hover:text-orange-700 font-bold transition-colors">
             Create an account
           </a>
         </p>

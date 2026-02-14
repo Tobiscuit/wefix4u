@@ -1,8 +1,11 @@
 'use client';
 
 import { useState } from 'react';
-import { signUp } from 'aws-amplify/auth';
-// import { useRouter } from 'next/navigation'; // Not used yet
+import { signUp } from '@/lib/auth-client';
+import { useRouter } from 'next/navigation';
+import { Button } from '@/components/ui/Button';
+import { Input } from '@/components/ui/Input';
+import { Loader2, User, Mail, Lock, Phone } from 'lucide-react';
 
 export default function SignUpForm() {
   const [formData, setFormData] = useState({
@@ -15,8 +18,7 @@ export default function SignUpForm() {
   });
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
-  const [success, setSuccess] = useState(false);
-  // const router = useRouter(); // Not used yet
+  const router = useRouter();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({
@@ -37,165 +39,168 @@ export default function SignUpForm() {
     }
 
     try {
-      await signUp({
-        username: formData.email,
+      await signUp.email({
+        email: formData.email,
         password: formData.password,
-        options: {
-          userAttributes: {
-            email: formData.email,
-            givenName: formData.firstName,
-            familyName: formData.lastName,
-            phoneNumber: formData.phoneNumber,
-          },
-        },
+        name: `${formData.firstName} ${formData.lastName}`,
+        callbackURL: '/dashboard',
+      }, {
+        onRequest: () => setIsLoading(true),
+        onSuccess: () => router.push('/dashboard'),
+        onError: (ctx) => {
+            setError(ctx.error.message || 'An error occurred during sign up');
+            setIsLoading(false);
+        }
       });
-      setSuccess(true);
-    } catch (err: unknown) {
-      setError((err as Error).message || 'An error occurred during sign up');
-    } finally {
+    } catch (err: any) {
+      setError(err.message || 'An error occurred during sign up');
       setIsLoading(false);
     }
   };
 
-  if (success) {
-    return (
-      <div className="max-w-md mx-auto bg-white p-8 rounded-xl shadow-sm">
-        <div className="text-center">
-          <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-            <span className="material-icons text-green-600 text-2xl">check</span>
-          </div>
-          <h2 className="text-2xl font-bold text-[#111218] font-montserrat mb-4">
-            Check Your Email
-          </h2>
-          <p className="text-[#5f678c] mb-6">
-            We&apos;ve sent you a confirmation link. Please check your email and click the link to verify your account.
-          </p>
-          <a
-            href="/sign-in"
-            className="inline-flex items-center justify-center rounded-xl h-10 px-4 bg-[#3D5AFE] text-white text-sm font-bold hover:bg-[#304FFE] transition-colors duration-300"
-          >
-            Go to Sign In
-          </a>
-        </div>
-      </div>
-    );
-  }
-
   return (
-    <div className="max-w-md mx-auto bg-white p-8 rounded-xl shadow-sm">
-      <h2 className="text-2xl font-bold text-center mb-6 text-[#111218] font-montserrat">
-        Create Your Account
-      </h2>
-      
+    <div className="w-full space-y-6">
       <form onSubmit={handleSignUp} className="space-y-4">
         <div className="grid grid-cols-2 gap-4">
-          <div>
-            <label htmlFor="firstName" className="block text-sm font-medium text-[#5f678c] mb-1">
+          <div className="space-y-2">
+            <label htmlFor="firstName" className="block text-sm font-semibold text-gray-700 dark:text-gray-300 ml-1">
               First Name
             </label>
-            <input
-              id="firstName"
-              name="firstName"
-              type="text"
-              value={formData.firstName}
-              onChange={handleChange}
-              required
-              className="w-full h-10 px-4 rounded-xl border border-gray-300 focus:ring-[#3D5AFE] focus:border-[#3D5AFE] transition duration-300"
-            />
+            <div className="relative group">
+                <User className="absolute left-4 top-3.5 h-5 w-5 text-gray-400 group-focus-within:text-primary transition-colors" />
+                <Input
+                  id="firstName"
+                  name="firstName"
+                  type="text"
+                  value={formData.firstName}
+                  onChange={handleChange}
+                  required
+                  placeholder="John"
+                  className="pl-12 bg-white/50 backdrop-blur-sm border-gray-200 dark:border-gray-700 focus:ring-primary/50 focus:border-primary transition-all"
+                />
+            </div>
           </div>
           
-          <div>
-            <label htmlFor="lastName" className="block text-sm font-medium text-[#5f678c] mb-1">
+          <div className="space-y-2">
+            <label htmlFor="lastName" className="block text-sm font-semibold text-gray-700 dark:text-gray-300 ml-1">
               Last Name
             </label>
-            <input
+            <Input
               id="lastName"
               name="lastName"
               type="text"
               value={formData.lastName}
               onChange={handleChange}
               required
-              className="w-full h-10 px-4 rounded-xl border border-gray-300 focus:ring-[#3D5AFE] focus:border-[#3D5AFE] transition duration-300"
+              placeholder="Doe"
+              className="bg-white/50 backdrop-blur-sm border-gray-200 dark:border-gray-700 focus:ring-primary/50 focus:border-primary transition-all"
             />
           </div>
         </div>
         
-        <div>
-          <label htmlFor="email" className="block text-sm font-medium text-[#5f678c] mb-1">
-            Email
+        <div className="space-y-2">
+          <label htmlFor="email" className="block text-sm font-semibold text-gray-700 dark:text-gray-300 ml-1">
+            Email Address
           </label>
-          <input
-            id="email"
-            name="email"
-            type="email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-            className="w-full h-10 px-4 rounded-xl border border-gray-300 focus:ring-[#3D5AFE] focus:border-[#3D5AFE] transition duration-300"
-          />
+          <div className="relative group">
+            <Mail className="absolute left-4 top-3.5 h-5 w-5 text-gray-400 group-focus-within:text-primary transition-colors" />
+            <Input
+                id="email"
+                name="email"
+                type="email"
+                value={formData.email}
+                onChange={handleChange}
+                required
+                placeholder="you@example.com"
+                className="pl-12 bg-white/50 backdrop-blur-sm border-gray-200 dark:border-gray-700 focus:ring-primary/50 focus:border-primary transition-all"
+            />
+          </div>
         </div>
         
-        <div>
-          <label htmlFor="phoneNumber" className="block text-sm font-medium text-[#5f678c] mb-1">
-            Phone Number (Optional)
+        <div className="space-y-2">
+          <label htmlFor="phoneNumber" className="block text-sm font-semibold text-gray-700 dark:text-gray-300 ml-1">
+            Phone Number <span className="text-gray-400 font-normal">(Optional)</span>
           </label>
-          <input
-            id="phoneNumber"
-            name="phoneNumber"
-            type="tel"
-            value={formData.phoneNumber}
-            onChange={handleChange}
-            className="w-full h-10 px-4 rounded-xl border border-gray-300 focus:ring-[#3D5AFE] focus:border-[#3D5AFE] transition duration-300"
-          />
+          <div className="relative group">
+            <Phone className="absolute left-4 top-3.5 h-5 w-5 text-gray-400 group-focus-within:text-primary transition-colors" />
+            <Input
+                id="phoneNumber"
+                name="phoneNumber"
+                type="tel"
+                value={formData.phoneNumber}
+                onChange={handleChange}
+                placeholder="+1 (555) 000-0000"
+                className="pl-12 bg-white/50 backdrop-blur-sm border-gray-200 dark:border-gray-700 focus:ring-primary/50 focus:border-primary transition-all"
+            />
+          </div>
         </div>
         
-        <div>
-          <label htmlFor="password" className="block text-sm font-medium text-[#5f678c] mb-1">
+        <div className="space-y-2">
+          <label htmlFor="password" className="block text-sm font-semibold text-gray-700 dark:text-gray-300 ml-1">
             Password
           </label>
-          <input
-            id="password"
-            name="password"
-            type="password"
-            value={formData.password}
-            onChange={handleChange}
-            required
-            className="w-full h-10 px-4 rounded-xl border border-gray-300 focus:ring-[#3D5AFE] focus:border-[#3D5AFE] transition duration-300"
-          />
+          <div className="relative group">
+            <Lock className="absolute left-4 top-3.5 h-5 w-5 text-gray-400 group-focus-within:text-primary transition-colors" />
+            <Input
+                id="password"
+                name="password"
+                type="password"
+                value={formData.password}
+                onChange={handleChange}
+                required
+                placeholder="••••••••"
+                className="pl-12 bg-white/50 backdrop-blur-sm border-gray-200 dark:border-gray-700 focus:ring-primary/50 focus:border-primary transition-all"
+            />
+          </div>
         </div>
         
-        <div>
-          <label htmlFor="confirmPassword" className="block text-sm font-medium text-[#5f678c] mb-1">
+        <div className="space-y-2">
+          <label htmlFor="confirmPassword" className="block text-sm font-semibold text-gray-700 dark:text-gray-300 ml-1">
             Confirm Password
           </label>
-          <input
-            id="confirmPassword"
-            name="confirmPassword"
-            type="password"
-            value={formData.confirmPassword}
-            onChange={handleChange}
-            required
-            className="w-full h-10 px-4 rounded-xl border border-gray-300 focus:ring-[#3D5AFE] focus:border-[#3D5AFE] transition duration-300"
-          />
+          <div className="relative group">
+            <Lock className="absolute left-4 top-3.5 h-5 w-5 text-gray-400 group-focus-within:text-primary transition-colors" />
+            <Input
+                id="confirmPassword"
+                name="confirmPassword"
+                type="password"
+                value={formData.confirmPassword}
+                onChange={handleChange}
+                required
+                placeholder="••••••••"
+                className="pl-12 bg-white/50 backdrop-blur-sm border-gray-200 dark:border-gray-700 focus:ring-primary/50 focus:border-primary transition-all"
+            />
+          </div>
         </div>
         
         {error && (
-          <div className="text-red-600 text-sm">{error}</div>
+          <div className="p-4 bg-red-50 dark:bg-red-900/20 text-red-600 dark:text-red-400 text-sm font-medium rounded-xl border border-red-100 dark:border-red-800 flex items-center gap-2 animate-in fade-in slide-in-from-top-2">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+              <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
+            </svg>
+            {error}
+          </div>
         )}
         
-        <button
+        <Button
           type="submit"
           disabled={isLoading}
-          className="w-full flex items-center justify-center rounded-xl h-10 px-4 bg-[#3D5AFE] text-white text-sm font-bold hover:bg-[#304FFE] disabled:opacity-50 transition-colors duration-300"
+          variant="secondary"
+          className="w-full font-bold h-12 mt-4"
         >
-          {isLoading ? 'Creating Account...' : 'Create Account'}
-        </button>
+          {isLoading ? (
+             <span className="flex items-center gap-2">
+                <Loader2 className="h-4 w-4 animate-spin" />
+                Creating Account...
+             </span>
+          ) : 'Create Account'}
+        </Button>
       </form>
       
-      <div className="mt-4 text-center">
-        <p className="text-sm text-[#5f678c]">
+      <div className="pt-2 text-center">
+        <p className="text-sm text-gray-500 dark:text-gray-400">
           Already have an account?{' '}
-          <a href="/sign-in" className="text-[#3D5AFE] hover:underline">
+          <a href="/sign-in" className="text-primary hover:text-blue-700 font-bold transition-colors">
             Sign in
           </a>
         </p>
