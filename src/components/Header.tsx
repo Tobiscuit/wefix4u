@@ -86,7 +86,7 @@ export default function Header() {
           {/* Mobile Footer Info */}
           <div className="p-6 bg-gray-50 dark:bg-gray-900/50 border-t border-gray-100 dark:border-gray-800">
             <div className="flex flex-col space-y-4">
-              <a className="w-full flex items-center justify-center px-6 py-4 text-lg font-bold text-white bg-primary rounded-xl hover:opacity-90 transition-opacity shadow-lg shadow-blue-500/20" href="#">
+              <a className="w-full flex items-center justify-center px-6 py-4 text-lg font-bold text-white bg-primary rounded-xl hover:opacity-90 transition-opacity shadow-lg shadow-blue-500/20" href="tel:+17134430908">
                 <span className="material-icons-outlined mr-2">call</span>
                 Call Now
               </a>

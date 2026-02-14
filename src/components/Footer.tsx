@@ -6,7 +6,7 @@ export default function Footer() {
           <h2 className="text-3xl md:text-4xl font-bold text-text-light-primary dark:text-text-dark-primary tracking-tight">Ready to Restore Your Device?</h2>
           <p className="text-text-light-secondary dark:text-text-dark-secondary mt-2 max-w-2xl mx-auto">Don't let a broken device slow you down. Get a free, instant quote from our experts.</p>
           <div className="mt-8">
-            <a className="inline-flex items-center justify-center bg-accent text-white font-semibold py-3 px-8 rounded-lg text-lg hover:bg-orange-600 transition-colors" href="#">
+            <a className="inline-flex items-center justify-center bg-accent text-white font-semibold py-3 px-8 rounded-lg text-lg hover:bg-orange-600 transition-colors" href="tel:+17134430908">
               Call Us Now
             </a>
             <p className="text-xs text-text-light-secondary dark:text-text-dark-secondary mt-2">No Fix, No Fee Guarantee</p>
