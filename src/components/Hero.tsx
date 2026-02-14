@@ -10,11 +10,11 @@ export default function Hero() {
             <h1 className="text-4xl md:text-6xl font-extrabold tracking-tighter text-text-light-primary dark:text-text-dark-primary mb-6">Your Devices, <span className="text-accent">Fixed Fast</span></h1>
             <p className="text-lg text-text-light-secondary dark:text-text-dark-secondary max-w-xl mx-auto md:mx-0 mb-8">From phone screens to battery replacements, our expert technicians bring your devices back to life. Same-day service available.</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start mb-8">
-              <a className="flex items-center justify-center bg-accent text-white font-semibold py-3 px-6 rounded-lg hover:bg-orange-600 transition-colors" href="#">
+              <a className="flex items-center justify-center bg-accent text-white font-semibold py-3 px-6 rounded-lg hover:bg-orange-600 transition-colors" href="/book">
                 <span className="material-icons-outlined mr-2">sell</span>
                 Get Instant Quote
               </a>
-              <a className="flex items-center justify-center bg-container-light dark:bg-container-dark border border-gray-300 dark:border-gray-600 font-semibold py-3 px-6 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors" href="#">
+              <a className="flex items-center justify-center bg-container-light dark:bg-container-dark border border-gray-300 dark:border-gray-600 font-semibold py-3 px-6 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors" href="/sign-in">
                 <span className="material-icons-outlined mr-2">location_on</span>
                 Track My Repair
               </a>
