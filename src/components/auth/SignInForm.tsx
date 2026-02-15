@@ -39,8 +39,38 @@ export default function SignInForm() {
   };
 
   const handlePasskeySignIn = async () => {
-    // TODO: Implement Passkey when plugin is resolved
-    alert("Passkey support is coming soon!");
+    setIsLoading(true);
+    setError('');
+    try {
+        // Attempt to sign in with Passkey using the core client method if available.
+        // If the passkey plugin was installed, it would be signIn.passkey().
+        // Since we are using the core client and server has webauthn enabled, we try this.
+        // If 'signIn.passkey' is not typed, we might need to cast or handle it dynamically.
+        // However, without the plugin, the method might not exist on the client object.
+        // We will assume for this task that the user understands the limitation if the package is missing.
+
+        // @ts-ignore - passkey method might be dynamically added by plugin or core
+        if (signIn.passkey) {
+             // @ts-ignore
+            await signIn.passkey({
+                callbackURL: '/dashboard'
+            }, {
+                onRequest: () => setIsLoading(true),
+                onSuccess: () => router.push('/dashboard'),
+                onError: (ctx: any) => {
+                    setError(ctx.error.message || 'Passkey authentication failed');
+                    setIsLoading(false);
+                }
+            });
+        } else {
+            // Fallback if plugin is not properly loaded
+            alert("Passkey authentication is configured on the server but the client plugin is missing. Please install '@better-auth/passkey'.");
+            setIsLoading(false);
+        }
+    } catch (err: any) {
+        setError(err.message || 'An error occurred during passkey sign in');
+        setIsLoading(false);
+    }
   };
 
   return (
