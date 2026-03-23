@@ -41,8 +41,8 @@ export default function Testimonials() {
 
         const data = await response.json()
         if (data.reviews && data.reviews.length > 0) {
-          // Take only the top 2 reviews to match the design layout
-          setReviews(data.reviews.slice(0, 2))
+          // Take only the top 2 5-star reviews to match the design layout
+          setReviews(data.reviews.filter((r: Review) => r.rating === 5).slice(0, 2))
         }
         if (data.totalRatings) {
           setTotalReviews(data.totalRatings)
