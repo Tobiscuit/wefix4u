@@ -67,7 +67,7 @@ export default function Testimonials() {
           <p className="text-text-light-secondary dark:text-text-dark-secondary mb-12">Based on <a className="text-primary font-semibold underline" href={googleMapsUrl} target="_blank" rel="noopener noreferrer">{totalReviews} Google reviews</a></p>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {reviews.map((review, index) => (
+          {reviews.filter(r => Number(r.rating) === 5).slice(0, 2).map((review, index) => (
             <div key={index} className="bg-background-light dark:bg-background-dark p-8 rounded-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
               <div className="flex items-start justify-between mb-4">
                 <div className="flex items-center space-x-4">
